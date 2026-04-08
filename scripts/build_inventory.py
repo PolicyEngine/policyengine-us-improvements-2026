@@ -205,6 +205,323 @@ THEME_RULES = {
 }
 
 
+THEME_TO_DOMAIN = {
+    "state_tax_and_legislation": "state_tax_policy",
+    "state_benefits_and_childcare": "benefits_and_childcare",
+    "federal_tax_and_retirement": "federal_tax_policy",
+    "federal_benefits_and_health": "health_and_safety_net",
+    "geography_and_baseline_inputs": "geography_and_local_area",
+    "quality_tooling_and_docs": "quality_tooling_and_docs",
+    "calibration_pipeline": "calibration_and_data_pipeline",
+    "imputation_and_new_variables": "calibration_and_data_pipeline",
+    "takeup_and_participation": "calibration_and_data_pipeline",
+    "geography_and_dataset_build": "geography_and_local_area",
+    "validation_and_ci": "quality_tooling_and_docs",
+    "other": "other",
+}
+
+
+CHANGE_TYPE_RULES = (
+    (
+        "new_coverage",
+        (
+            "add ",
+            "implement ",
+            "wire up",
+            "introduce",
+            "create ",
+            "supporting all",
+            "make the calibration database first class",
+        ),
+    ),
+    (
+        "annual_update",
+        (
+            "2025",
+            "2026",
+            "update cbo baseline",
+            "update cpi projections",
+            "update package version",
+        ),
+    ),
+    (
+        "reform_modeling",
+        (
+            "reform",
+            "proposal",
+            "hb",
+            "sb",
+            "act ",
+            "bill ",
+            "surtax",
+            "rebate",
+            "phase-out",
+            "phaseout",
+            "stay nj",
+            "anchor",
+        ),
+    ),
+    (
+        "historical_backfill",
+        (
+            "backdate",
+            "backfill",
+            "historical",
+            "pre-2018",
+            "pre-2022",
+            "2018-2024",
+            "through 2100",
+        ),
+    ),
+    (
+        "bug_fix",
+        (
+            "fix ",
+            "fixes ",
+            "restore ",
+            "correct ",
+            "prevent ",
+            "repair ",
+            "explicit",
+            "safety catch",
+            "cap all",
+        ),
+    ),
+    (
+        "infrastructure",
+        (
+            "database",
+            "pipeline",
+            "workflow",
+            "migrate",
+            "switch from",
+            "modal",
+            "checkpoint",
+            "cli",
+            "publish",
+            "package",
+            "first class",
+            "derive",
+            "remove .claude submodule",
+        ),
+    ),
+    (
+        "testing_validation",
+        (
+            "test",
+            "tests",
+            "validation",
+            "coverage",
+            "lint",
+            "sanity",
+        ),
+    ),
+    (
+        "performance",
+        (
+            "oom",
+            "efficient",
+            "memory",
+            "half-sample",
+        ),
+    ),
+    (
+        "documentation",
+        (
+            "documentation",
+            "guide",
+            "readme",
+            "changelog",
+            "claude.md",
+        ),
+    ),
+)
+
+
+TOPICAL_TAG_RULES = (
+    (
+        "state_income_tax",
+        (
+            "income tax",
+            "local income tax",
+            "capital gains tax",
+            "alternative minimum tax",
+        ),
+    ),
+    (
+        "property_tax_relief",
+        (
+            "property tax",
+            "renters credit",
+            "anchor",
+            "stay nj",
+            "senior freeze",
+        ),
+    ),
+    (
+        "ctc",
+        (
+            "ctc",
+            "child tax credit",
+            "actc",
+            "recovery rebate",
+        ),
+    ),
+    (
+        "eitc",
+        (
+            "eitc",
+            "earned income tax credit",
+            "working families tax credit",
+            "wftc",
+        ),
+    ),
+    (
+        "childcare",
+        (
+            "child care",
+            "ccap",
+            "ccdf",
+            "cdcc",
+            "childcare",
+        ),
+    ),
+    (
+        "tanf",
+        (
+            "tanf",
+            "temporary family assistance",
+            "temporary cash assistance",
+            "cash assistance",
+            "reach up",
+            "wv works",
+            "families first",
+            "power program",
+        ),
+    ),
+    (
+        "aca",
+        (
+            "aca",
+            "ptc",
+            "slcsp",
+            "marketplace",
+            "premium tax credit",
+        ),
+    ),
+    (
+        "medicaid_chip",
+        (
+            "medicaid",
+            "medi-cal",
+            "chip",
+            "apple health",
+        ),
+    ),
+    (
+        "snap_school_meals",
+        (
+            "snap",
+            "school meals",
+            "abawd",
+            "wic",
+            "csfp",
+        ),
+    ),
+    (
+        "social_security_retirement",
+        (
+            "social security",
+            "ssi",
+            "401k",
+            "401(k)",
+            "retirement",
+            "payroll cap",
+            "wage base",
+            "nawi",
+        ),
+    ),
+    (
+        "filing_behavior",
+        (
+            "filer",
+            "filing",
+            "taxsim",
+            "student loan",
+            "head of household",
+        ),
+    ),
+    (
+        "geography_local_area",
+        (
+            "county",
+            "zip code",
+            "sldu",
+            "sldl",
+            "local area",
+            "census block",
+            "rating area",
+        ),
+    ),
+    (
+        "calibration",
+        (
+            "calibration",
+            "targets",
+            "constraints",
+            "database",
+        ),
+    ),
+    (
+        "imputation",
+        (
+            "impute",
+            "imputation",
+            "qrf",
+            "sipp",
+            "puf clone",
+            "enhanced cps",
+            "liquid asset",
+            "pregnancy",
+        ),
+    ),
+    (
+        "takeup",
+        (
+            "takeup",
+            "take-up",
+            "reported recipients",
+            "voluntary tax filer",
+        ),
+    ),
+    (
+        "validation_tooling",
+        (
+            "validation",
+            "coverage",
+            "tests",
+            "ruff",
+            "towncrier",
+            "workflow",
+            "python 3.14",
+            "documentation",
+            "claude.md",
+        ),
+    ),
+    (
+        "long_run_projections",
+        (
+            "2100",
+            "uprating",
+            "nawi",
+            "wage base",
+            "cbo baseline",
+            "cpi projections",
+        ),
+    ),
+)
+
+
 def run(*args: str) -> str:
     return subprocess.check_output(args, text=True)
 
@@ -229,8 +546,39 @@ def normalize_summary(body: str) -> str:
     lines = [line.strip() for line in body.splitlines() if line.strip()]
     if not lines:
         return ""
-    summary = lines[0]
-    return summary[:500]
+    return lines[0][:500]
+
+
+def quarter_for_date(date: str) -> str:
+    year, month, _day = date.split("-")
+    quarter = (int(month) - 1) // 3 + 1
+    return f"{year}-Q{quarter}"
+
+
+def unique_preserve_order(values: list[str]) -> list[str]:
+    output = []
+    seen = set()
+    for value in values:
+        if value in seen:
+            continue
+        seen.add(value)
+        output.append(value)
+    return output
+
+
+def classify_rules(
+    text: str, rules: tuple[tuple[str, tuple[str, ...]], ...], default: str | None
+) -> list[str]:
+    lowered = text.lower()
+    matches = [
+        tag
+        for tag, needles in rules
+        if any(needle in lowered for needle in needles)
+    ]
+    matches = unique_preserve_order(matches)
+    if not matches and default is not None:
+        return [default]
+    return matches
 
 
 def fetch_pr(repo: RepoConfig, pr_number: int) -> dict:
@@ -277,23 +625,36 @@ def iter_commits(repo: RepoConfig) -> Iterable[dict]:
         }
 
 
-def resolve_title(commit: dict, pr_lookup: dict[int, dict]) -> tuple[str, str, str]:
+def resolve_pr_data(commit: dict, pr_lookup: dict[int, dict]) -> dict:
     if commit["pr_numbers"]:
         pr = pr_lookup.get(commit["pr_numbers"][0])
         if pr:
-            return pr["title"], normalize_summary(pr["body"]), pr["url"]
-    return commit["subject"], "", ""
+            return {
+                "resolved_title": pr["title"],
+                "pr_summary": normalize_summary(pr["body"]),
+                "pr_url": pr["url"],
+                "pr_author": pr.get("author", ""),
+                "pr_changed_files": pr.get("changed_files"),
+            }
+    return {
+        "resolved_title": commit["subject"],
+        "pr_summary": "",
+        "pr_url": "",
+        "pr_author": "",
+        "pr_changed_files": None,
+    }
 
 
-def classify(repo_name: str, text: str) -> list[str]:
-    lowered = text.lower()
-    themes = []
-    for theme, needles in THEME_RULES[repo_name]:
-        if any(needle in lowered for needle in needles):
-            themes.append(theme)
-    if not themes:
-        themes.append("other")
+def classify_themes(repo_name: str, text: str) -> list[str]:
+    themes = classify_rules(text, THEME_RULES[repo_name], default="other")
     return themes
+
+
+def pick_primary_theme(themes: list[str]) -> str:
+    for theme in themes:
+        if theme != "other":
+            return theme
+    return themes[0]
 
 
 def is_noise(subject: str) -> bool:
@@ -321,18 +682,51 @@ def build_repo_inventory(repo: RepoConfig) -> list[dict]:
 
     inventory = []
     for commit in commits:
-        title, pr_summary, pr_url = resolve_title(commit, pr_lookup)
+        pr_data = resolve_pr_data(commit, pr_lookup)
+        text_blob = "\n".join(
+            [pr_data["resolved_title"], pr_data["pr_summary"], commit["subject"]]
+        )
+        themes = classify_themes(repo.name, text_blob)
+        primary_theme = pick_primary_theme(themes)
         inventory.append(
             {
                 **commit,
-                "resolved_title": title,
-                "pr_summary": pr_summary,
-                "pr_url": pr_url,
-                "themes": classify(repo.name, f"{title}\n{pr_summary}\n{commit['subject']}"),
+                **pr_data,
+                "month": commit["date"][:7],
+                "quarter": quarter_for_date(commit["date"]),
+                "themes": themes,
+                "primary_theme": primary_theme,
+                "primary_domain": THEME_TO_DOMAIN[primary_theme],
+                "change_tags": classify_rules(text_blob, CHANGE_TYPE_RULES, default="other"),
+                "topical_tags": classify_rules(text_blob, TOPICAL_TAG_RULES, default="other"),
                 "noise": is_noise(commit["subject"]),
             }
         )
     return inventory
+
+
+def build_counter_summary(
+    items: list[dict],
+    field: str,
+    *,
+    multiple: bool,
+    skip_values: set[str] | None = None,
+) -> dict:
+    skip_values = skip_values or set()
+    by_repo = defaultdict(Counter)
+    for item in items:
+        if item["noise"]:
+            continue
+        raw_values = item[field] if multiple else [item[field]]
+        for value in raw_values:
+            if not value or value in skip_values:
+                continue
+            by_repo[item["repo"]][value] += 1
+
+    return {
+        repo_name: dict(counter.most_common())
+        for repo_name, counter in by_repo.items()
+    }
 
 
 def build_theme_summary(inventory: list[dict]) -> dict:
@@ -351,6 +745,140 @@ def build_theme_summary(inventory: list[dict]) -> dict:
     return output
 
 
+def build_storylines(inventory: list[dict]) -> list[dict]:
+    by_tag = defaultdict(list)
+    for item in inventory:
+        if item["noise"]:
+            continue
+        for tag in item["topical_tags"]:
+            if tag == "other":
+                continue
+            by_tag[tag].append(item)
+
+    storylines = []
+    for tag, items in by_tag.items():
+        month_counts = Counter(item["month"] for item in items)
+        peak_count = max(month_counts.values())
+        peak_month = min(
+            month for month, count in month_counts.items() if count == peak_count
+        )
+        repo_counts = Counter(item["repo"] for item in items)
+        theme_counts = Counter(item["primary_theme"] for item in items)
+        change_counts = Counter(
+            change_tag
+            for item in items
+            for change_tag in item["change_tags"]
+            if change_tag != "other"
+        )
+
+        sample_titles = []
+        seen_titles = set()
+        for item in sorted(items, key=lambda value: (value["date"], value["resolved_title"])):
+            title = item["resolved_title"]
+            if title in seen_titles:
+                continue
+            seen_titles.add(title)
+            sample_titles.append(title)
+            if len(sample_titles) >= 5:
+                break
+
+        storylines.append(
+            {
+                "tag": tag,
+                "count": len(items),
+                "first_month": min(month_counts),
+                "last_month": max(month_counts),
+                "peak_month": peak_month,
+                "peak_count": peak_count,
+                "repos": dict(repo_counts.most_common()),
+                "themes": dict(theme_counts.most_common(5)),
+                "change_tags": dict(change_counts.most_common(5)),
+                "sample_titles": sample_titles,
+            }
+        )
+
+    return sorted(storylines, key=lambda value: (-value["count"], value["tag"]))
+
+
+def build_timeline_summary(inventory: list[dict]) -> list[dict]:
+    signal_items = [item for item in inventory if not item["noise"]]
+    months = sorted({item["month"] for item in signal_items})
+    output = []
+    for month in months:
+        month_items = [item for item in signal_items if item["month"] == month]
+        output.append(
+            {
+                "month": month,
+                "quarter": quarter_for_date(f"{month}-01"),
+                "policyengine-us": sum(
+                    1 for item in month_items if item["repo"] == "policyengine-us"
+                ),
+                "policyengine-us-data": sum(
+                    1
+                    for item in month_items
+                    if item["repo"] == "policyengine-us-data"
+                ),
+                "domains": dict(
+                    Counter(item["primary_domain"] for item in month_items).most_common()
+                ),
+                "themes": dict(
+                    Counter(item["primary_theme"] for item in month_items).most_common()
+                ),
+                "change_tags": dict(
+                    Counter(
+                        tag
+                        for item in month_items
+                        for tag in item["change_tags"]
+                        if tag != "other"
+                    ).most_common(10)
+                ),
+                "topical_tags": dict(
+                    Counter(
+                        tag
+                        for item in month_items
+                        for tag in item["topical_tags"]
+                        if tag != "other"
+                    ).most_common(10)
+                ),
+            }
+        )
+    return output
+
+
+def build_taxonomy_summary(inventory: list[dict]) -> dict:
+    signal_items = [item for item in inventory if not item["noise"]]
+    return {
+        "domains": build_counter_summary(
+            signal_items,
+            "primary_domain",
+            multiple=False,
+        ),
+        "themes": build_counter_summary(
+            signal_items,
+            "primary_theme",
+            multiple=False,
+        ),
+        "change_tags": build_counter_summary(
+            signal_items,
+            "change_tags",
+            multiple=True,
+            skip_values={"other"},
+        ),
+        "topical_tags": build_counter_summary(
+            signal_items,
+            "topical_tags",
+            multiple=True,
+            skip_values={"other"},
+        ),
+        "quarters": build_counter_summary(
+            signal_items,
+            "quarter",
+            multiple=False,
+        ),
+        "storylines": build_storylines(inventory),
+    }
+
+
 def main() -> None:
     ensure_dirs()
     inventory = []
@@ -364,10 +892,21 @@ def main() -> None:
     commit_inventory_path.write_text(json.dumps(inventory, indent=2))
 
     theme_summary = build_theme_summary(inventory)
+    taxonomy_summary = build_taxonomy_summary(inventory)
+    timeline_summary = build_timeline_summary(inventory)
+
     (DATA_DIR / "theme_summary.json").write_text(json.dumps(theme_summary, indent=2))
+    (DATA_DIR / "taxonomy_summary.json").write_text(
+        json.dumps(taxonomy_summary, indent=2)
+    )
+    (DATA_DIR / "timeline_summary.json").write_text(
+        json.dumps(timeline_summary, indent=2)
+    )
 
     print(f"wrote {commit_inventory_path}")
     print(f"wrote {DATA_DIR / 'theme_summary.json'}")
+    print(f"wrote {DATA_DIR / 'taxonomy_summary.json'}")
+    print(f"wrote {DATA_DIR / 'timeline_summary.json'}")
 
 
 if __name__ == "__main__":

@@ -16,9 +16,10 @@ async function loadText(relativePath) {
 }
 
 export default async function Page() {
-  const [inventory, themeSummary, executiveSummary] = await Promise.all([
+  const [inventory, taxonomySummary, timelineSummary, executiveSummary] = await Promise.all([
     loadJson("commit_inventory.json"),
-    loadJson("theme_summary.json"),
+    loadJson("taxonomy_summary.json"),
+    loadJson("timeline_summary.json"),
     loadText("notes/executive-summary.md"),
   ]);
 
@@ -26,7 +27,8 @@ export default async function Page() {
     <DashboardClient
       executiveSummary={executiveSummary}
       inventory={inventory}
-      themeSummary={themeSummary}
+      taxonomySummary={taxonomySummary}
+      timelineSummary={timelineSummary}
     />
   );
 }

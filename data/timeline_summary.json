@@ -1,0 +1,180 @@
+[
+  {
+    "month": "2026-01",
+    "quarter": "2026-Q1",
+    "policyengine-us": 95,
+    "policyengine-us-data": 22,
+    "domains": {
+      "other": 37,
+      "benefits_and_childcare": 21,
+      "health_and_safety_net": 13,
+      "quality_tooling_and_docs": 12,
+      "calibration_and_data_pipeline": 11,
+      "state_tax_policy": 11,
+      "federal_tax_policy": 8,
+      "geography_and_local_area": 4
+    },
+    "themes": {
+      "other": 37,
+      "state_benefits_and_childcare": 21,
+      "federal_benefits_and_health": 13,
+      "state_tax_and_legislation": 11,
+      "federal_tax_and_retirement": 8,
+      "quality_tooling_and_docs": 8,
+      "calibration_pipeline": 5,
+      "validation_and_ci": 4,
+      "imputation_and_new_variables": 4,
+      "geography_and_baseline_inputs": 3,
+      "takeup_and_participation": 2,
+      "geography_and_dataset_build": 1
+    },
+    "change_tags": {
+      "new_coverage": 54,
+      "bug_fix": 24,
+      "infrastructure": 13,
+      "reform_modeling": 12,
+      "annual_update": 11,
+      "testing_validation": 7,
+      "documentation": 5,
+      "historical_backfill": 3
+    },
+    "topical_tags": {
+      "tanf": 19,
+      "validation_tooling": 18,
+      "social_security_retirement": 12,
+      "geography_local_area": 7,
+      "state_income_tax": 7,
+      "calibration": 6,
+      "aca": 5,
+      "medicaid_chip": 4,
+      "ctc": 3,
+      "childcare": 2
+    }
+  },
+  {
+    "month": "2026-02",
+    "quarter": "2026-Q1",
+    "policyengine-us": 127,
+    "policyengine-us-data": 19,
+    "domains": {
+      "state_tax_policy": 61,
+      "other": 33,
+      "benefits_and_childcare": 21,
+      "calibration_and_data_pipeline": 14,
+      "quality_tooling_and_docs": 6,
+      "health_and_safety_net": 5,
+      "federal_tax_policy": 4,
+      "geography_and_local_area": 2
+    },
+    "themes": {
+      "state_tax_and_legislation": 61,
+      "other": 33,
+      "state_benefits_and_childcare": 21,
+      "calibration_pipeline": 10,
+      "federal_benefits_and_health": 5,
+      "federal_tax_and_retirement": 4,
+      "quality_tooling_and_docs": 4,
+      "imputation_and_new_variables": 3,
+      "validation_and_ci": 2,
+      "geography_and_baseline_inputs": 2,
+      "takeup_and_participation": 1
+    },
+    "change_tags": {
+      "bug_fix": 50,
+      "new_coverage": 48,
+      "annual_update": 42,
+      "reform_modeling": 20,
+      "infrastructure": 10,
+      "historical_backfill": 5,
+      "testing_validation": 5,
+      "documentation": 2,
+      "performance": 1
+    },
+    "topical_tags": {
+      "state_income_tax": 43,
+      "tanf": 21,
+      "social_security_retirement": 13,
+      "calibration": 10,
+      "ctc": 8,
+      "imputation": 6,
+      "validation_tooling": 6,
+      "filing_behavior": 4,
+      "takeup": 4,
+      "eitc": 4
+    }
+  },
+  {
+    "month": "2026-03",
+    "quarter": "2026-Q1",
+    "policyengine-us": 44,
+    "policyengine-us-data": 20,
+    "domains": {
+      "other": 20,
+      "calibration_and_data_pipeline": 13,
+      "state_tax_policy": 9,
+      "quality_tooling_and_docs": 9,
+      "benefits_and_childcare": 7,
+      "health_and_safety_net": 3,
+      "federal_tax_policy": 2,
+      "geography_and_local_area": 1
+    },
+    "themes": {
+      "other": 20,
+      "state_tax_and_legislation": 9,
+      "state_benefits_and_childcare": 7,
+      "calibration_pipeline": 6,
+      "quality_tooling_and_docs": 5,
+      "takeup_and_participation": 4,
+      "validation_and_ci": 4,
+      "imputation_and_new_variables": 3,
+      "federal_benefits_and_health": 3,
+      "federal_tax_and_retirement": 2,
+      "geography_and_dataset_build": 1
+    },
+    "change_tags": {
+      "bug_fix": 23,
+      "new_coverage": 18,
+      "reform_modeling": 13,
+      "testing_validation": 8,
+      "infrastructure": 6,
+      "historical_backfill": 5,
+      "documentation": 2,
+      "annual_update": 2,
+      "performance": 1
+    },
+    "topical_tags": {
+      "validation_tooling": 12,
+      "childcare": 7,
+      "social_security_retirement": 6,
+      "imputation": 5,
+      "aca": 5,
+      "ctc": 4,
+      "takeup": 4,
+      "tanf": 3,
+      "calibration": 3,
+      "filing_behavior": 2
+    }
+  },
+  {
+    "month": "2026-04",
+    "quarter": "2026-Q2",
+    "policyengine-us": 3,
+    "policyengine-us-data": 0,
+    "domains": {
+      "federal_tax_policy": 3
+    },
+    "themes": {
+      "federal_tax_and_retirement": 3
+    },
+    "change_tags": {
+      "infrastructure": 1,
+      "historical_backfill": 1,
+      "testing_validation": 1
+    },
+    "topical_tags": {
+      "long_run_projections": 3,
+      "social_security_retirement": 2,
+      "validation_tooling": 1
+    }
+  }
+]

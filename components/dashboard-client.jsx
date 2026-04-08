@@ -5,16 +5,68 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
+  Legend,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
 
-function formatTheme(theme) {
-  return theme
-    .replace(/_/g, " ")
-    .replace(/\b\w/g, (char) => char.toUpperCase());
+const LABEL_OVERRIDES = {
+  state_tax_policy: "State Tax Policy",
+  benefits_and_childcare: "Benefits And Childcare",
+  federal_tax_policy: "Federal Tax Policy",
+  health_and_safety_net: "Health And Safety Net",
+  calibration_and_data_pipeline: "Calibration And Data Pipeline",
+  geography_and_local_area: "Geography And Local Area",
+  quality_tooling_and_docs: "Quality, Tooling, And Docs",
+  state_tax_and_legislation: "State Tax And Legislation",
+  state_benefits_and_childcare: "State Benefits And Childcare",
+  federal_tax_and_retirement: "Federal Tax And Retirement",
+  federal_benefits_and_health: "Federal Benefits And Health",
+  geography_and_baseline_inputs: "Geography And Baseline Inputs",
+  calibration_pipeline: "Calibration Pipeline",
+  imputation_and_new_variables: "Imputation And New Variables",
+  takeup_and_participation: "Take-up And Participation",
+  geography_and_dataset_build: "Geography And Dataset Build",
+  validation_and_ci: "Validation And CI",
+  new_coverage: "New Coverage",
+  annual_update: "Annual Update",
+  reform_modeling: "Reform Modeling",
+  historical_backfill: "Historical Backfill",
+  bug_fix: "Bug Fix",
+  infrastructure: "Infrastructure",
+  testing_validation: "Testing And Validation",
+  performance: "Performance",
+  documentation: "Documentation",
+  state_income_tax: "State Income Tax",
+  property_tax_relief: "Property Tax Relief",
+  ctc: "CTC",
+  eitc: "EITC",
+  childcare: "Childcare",
+  tanf: "TANF",
+  aca: "ACA / PTC",
+  medicaid_chip: "Medicaid / CHIP",
+  snap_school_meals: "SNAP / School Meals",
+  social_security_retirement: "Social Security / Retirement",
+  filing_behavior: "Filing Behavior",
+  geography_local_area: "Geography / Local Area",
+  calibration: "Calibration",
+  imputation: "Imputation",
+  takeup: "Take-up",
+  validation_tooling: "Validation / Tooling",
+  long_run_projections: "Long-run Projections",
+  other: "Other",
+};
+
+function formatLabel(value) {
+  if (!value) {
+    return "";
+  }
+  return (
+    LABEL_OVERRIDES[value] ||
+    value.replace(/_/g, " ").replace(/\b\w/g, (char) => char.toUpperCase())
+  );
 }
 
 function formatRepo(repo) {
@@ -29,6 +81,149 @@ function getCssVar(name, fallback) {
     .getPropertyValue(name)
     .trim();
   return value || fallback;
+}
+
+function countValues(items, key, { multiple = false, skip = new Set() } = {}) {
+  const counts = new Map();
+  for (const item of items) {
+    const rawValues = multiple ? item[key] || [] : [item[key]];
+    for (const value of rawValues) {
+      if (!value || skip.has(value)) {
+        continue;
+      }
+      counts.set(value, (counts.get(value) || 0) + 1);
+    }
+  }
+  return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+}
+
+function buildMetricCards(items) {
+  if (!items.length) {
+    return [
+      { label: "Visible changes", value: 0, detail: "No items match the current filters." },
+      { label: "Active months", value: 0, detail: "No months in scope." },
+      { label: "Top category", value: "None", detail: "No primary domain selected." },
+      { label: "Busiest month", value: "None", detail: "No monthly trend available." },
+    ];
+  }
+
+  const activeMonths = new Set(items.map((item) => item.month)).size;
+  const topDomain = countValues(items, "primary_domain")[0];
+  const busiestMonth = countValues(items, "month")[0];
+
+  return [
+    {
+      label: "Visible changes",
+      value: items.length,
+      detail: "Current filtered view across both repos.",
+    },
+    {
+      label: "Active months",
+      value: activeMonths,
+      detail: "How many months this slice stayed active.",
+    },
+    {
+      label: "Top category",
+      value: topDomain ? formatLabel(topDomain[0]) : "None",
+      detail: topDomain ? `${topDomain[1]} matching changes.` : "No category data.",
+    },
+    {
+      label: "Busiest month",
+      value: busiestMonth ? busiestMonth[0] : "None",
+      detail: busiestMonth ? `${busiestMonth[1]} matching changes.` : "No trend data.",
+    },
+  ];
+}
+
+function buildDomainRows(items) {
+  const rows = new Map();
+  for (const item of items) {
+    const key = item.primary_domain;
+    const existing = rows.get(key) || {
+      domain: key,
+      label: formatLabel(key),
+      policyengineUs: 0,
+      policyengineUsData: 0,
+    };
+    if (item.repo === "policyengine-us") {
+      existing.policyengineUs += 1;
+    } else {
+      existing.policyengineUsData += 1;
+    }
+    rows.set(key, existing);
+  }
+  return [...rows.values()]
+    .sort(
+      (a, b) =>
+        b.policyengineUs +
+        b.policyengineUsData -
+        (a.policyengineUs + a.policyengineUsData),
+    )
+    .slice(0, 8);
+}
+
+function buildMonthRows(items) {
+  const months = [...new Set(items.map((item) => item.month))].sort();
+  return months.map((month) => ({
+    month,
+    policyengineUs: items.filter(
+      (item) => item.month === month && item.repo === "policyengine-us",
+    ).length,
+    policyengineUsData: items.filter(
+      (item) => item.month === month && item.repo === "policyengine-us-data",
+    ).length,
+  }));
+}
+
+function buildStorylines(items) {
+  const byTag = new Map();
+  for (const item of items) {
+    for (const tag of item.topical_tags || []) {
+      if (!tag || tag === "other") {
+        continue;
+      }
+      const bucket = byTag.get(tag) || [];
+      bucket.push(item);
+      byTag.set(tag, bucket);
+    }
+  }
+
+  return [...byTag.entries()]
+    .map(([tag, taggedItems]) => {
+      const monthCounts = countValues(taggedItems, "month");
+      const months = [...new Set(taggedItems.map((item) => item.month))].sort();
+      const repoCounts = countValues(taggedItems, "repo");
+      return {
+        tag,
+        count: taggedItems.length,
+        firstMonth: months[0] || "",
+        peakMonth: monthCounts[0]?.[0] || "",
+        peakCount: monthCounts[0]?.[1] || 0,
+        lastMonth: months.at(-1) || "",
+        repos: repoCounts,
+      };
+    })
+    .sort((a, b) => b.count - a.count);
+}
+
+function buildFilterOptions(items, key, { multiple = false, skip = new Set() } = {}) {
+  return countValues(items, key, { multiple, skip }).map(([value]) => value);
+}
+
+function SummaryIntro({ executiveSummary }) {
+  const lines = executiveSummary
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .slice(1, 5);
+
+  return (
+    <div className="space-y-3 text-sm leading-6 text-pe-text-secondary">
+      {lines.map((line) => (
+        <p key={line}>{line}</p>
+      ))}
+    </div>
+  );
 }
 
 function CustomTooltip({ active, label, payload }) {
@@ -51,96 +246,30 @@ function CustomTooltip({ active, label, payload }) {
   );
 }
 
-function SummaryIntro({ executiveSummary }) {
-  const lines = executiveSummary
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean)
-    .slice(1, 4);
-
-  return (
-    <div className="space-y-3 text-sm leading-6 text-pe-text-secondary">
-      {lines.map((line) => (
-        <p key={line}>{line}</p>
-      ))}
-    </div>
-  );
-}
-
-function buildThemeRows(themeSummary) {
-  const allThemes = new Set([
-    ...Object.keys(themeSummary["policyengine-us"]?.signal || {}),
-    ...Object.keys(themeSummary["policyengine-us-data"]?.signal || {}),
-  ]);
-
-  return [...allThemes]
-    .map((theme) => ({
-      theme,
-      label: formatTheme(theme),
-      policyengineUs: themeSummary["policyengine-us"]?.signal?.[theme] || 0,
-      policyengineUsData: themeSummary["policyengine-us-data"]?.signal?.[theme] || 0,
-    }))
-    .sort(
-      (a, b) =>
-        b.policyengineUs +
-        b.policyengineUsData -
-        (a.policyengineUs + a.policyengineUsData),
-    )
-    .slice(0, 8);
-}
-
-function buildMetricCards(items) {
-  const signalItems = items.filter((item) => !item.noise);
-  const prBacked = signalItems.filter((item) => item.pr_numbers.length > 0).length;
-  const latestDate = signalItems.reduce(
-    (latest, item) => (item.date > latest ? item.date : latest),
-    "",
-  );
-  return [
-    {
-      label: "Signal entries",
-      value: signalItems.length,
-      detail: "Excludes version bumps and routine sync commits",
-    },
-    {
-      label: "PR-backed entries",
-      value: prBacked,
-      detail: "Resolved through cached GitHub PR metadata",
-    },
-    {
-      label: "Repos covered",
-      value: 2,
-      detail: "policyengine-us and policyengine-us-data",
-    },
-    {
-      label: "Latest change",
-      value: latestDate,
-      detail: "Current cutoff in the local inventory",
-    },
-  ];
-}
-
-function topThemesForItems(items) {
-  const counts = new Map();
-  for (const item of items) {
-    if (item.noise) {
-      continue;
-    }
-    for (const theme of item.themes) {
-      counts.set(theme, (counts.get(theme) || 0) + 1);
-    }
+function ChartFrame({ hasMounted, children }) {
+  if (!hasMounted) {
+    return (
+      <div className="flex h-full items-center justify-center rounded-pe-container bg-pe-gray-50 text-sm text-pe-text-secondary">
+        Loading chart…
+      </div>
+    );
   }
-  return [...counts.entries()].sort((a, b) => b[1] - a[1]);
+  return children;
 }
 
 export default function DashboardClient({
   executiveSummary,
   inventory,
-  themeSummary,
+  taxonomySummary,
+  timelineSummary,
 }) {
+  const signalItems = inventory.filter((item) => !item.noise);
   const [search, setSearch] = useState("");
   const [repoFilter, setRepoFilter] = useState("all");
-  const [themeFilter, setThemeFilter] = useState("all");
+  const [quarterFilter, setQuarterFilter] = useState("all");
+  const [domainFilter, setDomainFilter] = useState("all");
+  const [changeFilter, setChangeFilter] = useState("all");
+  const [tagFilter, setTagFilter] = useState("all");
   const [hasMounted, setHasMounted] = useState(false);
   const [colors, setColors] = useState({
     policyengineUs: "#1f6f78",
@@ -156,27 +285,41 @@ export default function DashboardClient({
     });
   }, []);
 
-  const themeRows = buildThemeRows(themeSummary);
-  const metricCards = buildMetricCards(inventory);
-  const themeOptions = [...new Set(inventory.flatMap((item) => item.themes))].sort();
+  const quarterOptions = buildFilterOptions(signalItems, "quarter");
+  const domainOptions = buildFilterOptions(signalItems, "primary_domain", {
+    skip: new Set(["other"]),
+  });
+  const changeOptions = buildFilterOptions(signalItems, "change_tags", {
+    multiple: true,
+    skip: new Set(["other"]),
+  });
+  const tagOptions = buildFilterOptions(signalItems, "topical_tags", {
+    multiple: true,
+    skip: new Set(["other"]),
+  });
 
-  const filteredItems = inventory
-    .filter((item) => !item.noise)
+  const filteredItems = signalItems
     .filter((item) => repoFilter === "all" || item.repo === repoFilter)
-    .filter((item) => themeFilter === "all" || item.themes.includes(themeFilter))
+    .filter((item) => quarterFilter === "all" || item.quarter === quarterFilter)
+    .filter((item) => domainFilter === "all" || item.primary_domain === domainFilter)
+    .filter((item) => changeFilter === "all" || item.change_tags.includes(changeFilter))
+    .filter((item) => tagFilter === "all" || item.topical_tags.includes(tagFilter))
     .filter((item) => {
       const query = deferredSearch.trim().toLowerCase();
       if (!query) {
         return true;
       }
-
       const haystack = [
         item.repo,
         item.date,
+        item.quarter,
+        item.primary_domain,
+        item.primary_theme,
+        item.change_tags.join(" "),
+        item.topical_tags.join(" "),
         item.resolved_title,
         item.pr_summary,
         item.subject,
-        item.themes.join(" "),
       ]
         .join(" ")
         .toLowerCase();
@@ -184,54 +327,79 @@ export default function DashboardClient({
     })
     .sort((a, b) => b.date.localeCompare(a.date));
 
-  const filteredThemeCounts = topThemesForItems(filteredItems).slice(0, 10);
+  const metricCards = buildMetricCards(filteredItems);
+  const domainRows = buildDomainRows(filteredItems);
+  const monthRows = buildMonthRows(filteredItems);
+  const storylines = buildStorylines(filteredItems).slice(0, 6);
+  const topChangeTags = countValues(filteredItems, "change_tags", {
+    multiple: true,
+    skip: new Set(["other"]),
+  }).slice(0, 8);
+  const topThemes = countValues(filteredItems, "themes", {
+    multiple: true,
+    skip: new Set(["other"]),
+  }).slice(0, 8);
+  const topTags = countValues(filteredItems, "topical_tags", {
+    multiple: true,
+    skip: new Set(["other"]),
+  }).slice(0, 10);
+  const overallStorylines = taxonomySummary.storylines.slice(0, 4);
+  const activeTimelineRows =
+    quarterFilter === "all"
+      ? timelineSummary
+      : timelineSummary.filter((row) => row.quarter === quarterFilter);
 
   return (
     <main className="pe-shell space-y-6">
       <section className="pe-panel overflow-hidden">
-        <div className="grid gap-8 px-6 py-8 lg:grid-cols-[1.4fr_0.9fr] lg:px-8">
+        <div className="grid gap-8 px-6 py-8 lg:grid-cols-[1.25fr_0.95fr] lg:px-8">
           <div className="space-y-5">
-            <div className="pe-label">PolicyEngine new-tool style dashboard</div>
+            <div className="pe-label">PolicyEngine improvements taxonomy</div>
             <div className="max-w-4xl space-y-4">
               <h1 className="max-w-4xl text-4xl font-semibold tracking-tight text-pe-text-primary sm:text-5xl">
-                Improvements to PolicyEngine US since January 1, 2026
+                Understand what improved, how it clustered, and when it accelerated
               </h1>
               <p className="max-w-3xl text-base leading-7 text-pe-text-secondary sm:text-lg">
-                This app reads the local analysis inventory directly from the workspace
-                and turns it into a searchable, token-styled dashboard for
-                <span className="font-semibold text-pe-text-primary"> policyengine-us </span>
-                and
-                <span className="font-semibold text-pe-text-primary">
-                  {" "}policyengine-us-data
-                </span>.
+                This dashboard now tags each change by primary domain, change type,
+                topical tags, month, and quarter. The goal is to move from raw PR
+                enumeration to a navigable picture of how the US model stack evolved
+                over 2026.
               </p>
             </div>
             <SummaryIntro executiveSummary={executiveSummary} />
           </div>
 
-          <div className="rounded-pe-container border border-pe-border-light bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(244,249,248,0.96))] p-5">
-            <div className="pe-label">Current read</div>
-            <div className="mt-3 space-y-3 text-sm leading-6 text-pe-text-secondary">
-              <p>
-                <span className="font-semibold text-pe-text-primary">
-                  policyengine-us
-                </span>{" "}
-                broadened the policy surface: 2025 baseline tax refreshes,
-                2026 reform coverage, national TANF wiring, and stronger federal
-                health and tax modeling.
-              </p>
-              <p>
-                <span className="font-semibold text-pe-text-primary">
-                  policyengine-us-data
-                </span>{" "}
-                strengthened the backend: block-first calibration, richer
-                imputation, better take-up assignment, and stronger validation.
-              </p>
-              <p className="rounded-pe-element bg-pe-primary-50 px-3 py-3 text-pe-text-primary">
-                The strongest overall pattern is a broader front-end model paired with a
-                more credible calibration and imputation spine underneath it.
-              </p>
+          <div className="rounded-pe-container border border-pe-border-light bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(242,249,247,0.96))] p-5">
+            <div className="pe-label">Largest storylines this year</div>
+            <div className="mt-4 space-y-3">
+              {overallStorylines.map((storyline) => (
+                <button
+                  key={storyline.tag}
+                  className="w-full rounded-pe-element border border-pe-border-light bg-white px-4 py-3 text-left transition hover:border-pe-primary-500"
+                  onClick={() => setTagFilter(storyline.tag)}
+                  type="button"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="font-semibold text-pe-text-primary">
+                      {formatLabel(storyline.tag)}
+                    </span>
+                    <span className="text-sm text-pe-text-secondary">
+                      {storyline.count} changes
+                    </span>
+                  </div>
+                  <div className="mt-2 text-sm text-pe-text-secondary">
+                    {storyline.first_month} to {storyline.last_month}
+                    {" · "}
+                    peak in {storyline.peak_month}
+                  </div>
+                </button>
+              ))}
             </div>
+            <p className="mt-4 text-sm leading-6 text-pe-text-secondary">
+              Tags are heuristic. They come from PR titles, PR summaries, and local
+              code-verified synthesis, so they are best used as navigation and
+              summarization aids rather than strict canonical labels.
+            </p>
           </div>
         </div>
       </section>
@@ -248,92 +416,14 @@ export default function DashboardClient({
         ))}
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.2fr_0.8fr]">
-        <article className="pe-panel p-5 sm:p-6">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <div className="pe-label">Theme coverage</div>
-              <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
-                Highest-volume improvement areas
-              </h2>
-            </div>
-            <div className="flex flex-wrap gap-2 text-xs text-pe-text-secondary">
-              <span className="pe-chip">policyengine-us</span>
-              <span className="pe-chip">policyengine-us-data</span>
-            </div>
-          </div>
-          <div className="mt-6 h-[360px]">
-            {hasMounted ? (
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  data={themeRows}
-                  layout="vertical"
-                  margin={{ top: 4, right: 12, left: 12, bottom: 4 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" stroke="#d9e1e0" horizontal={false} />
-                  <XAxis type="number" tickLine={false} axisLine={false} />
-                  <YAxis
-                    type="category"
-                    dataKey="label"
-                    tickLine={false}
-                    axisLine={false}
-                    width={170}
-                  />
-                  <Tooltip content={<CustomTooltip />} cursor={{ fill: "#f3f7f6" }} />
-                  <Bar
-                    dataKey="policyengineUs"
-                    name="policyengine-us"
-                    fill={colors.policyengineUs}
-                    radius={[0, 8, 8, 0]}
-                  />
-                  <Bar
-                    dataKey="policyengineUsData"
-                    name="policyengine-us-data"
-                    fill={colors.policyengineUsData}
-                    radius={[0, 8, 8, 0]}
-                  />
-                </BarChart>
-              </ResponsiveContainer>
-            ) : (
-              <div className="flex h-full items-center justify-center rounded-pe-container bg-pe-gray-50 text-sm text-pe-text-secondary">
-                Loading chart…
-              </div>
-            )}
-          </div>
-        </article>
-
-        <article className="pe-panel p-5 sm:p-6">
-          <div className="pe-label">Filter snapshot</div>
-          <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
-            Top themes in the current view
-          </h2>
-          <div className="mt-6 flex flex-wrap gap-2">
-            {filteredThemeCounts.map(([theme, count]) => (
-              <button
-                key={theme}
-                className="pe-chip cursor-pointer hover:border-pe-primary-500"
-                onClick={() => setThemeFilter(theme)}
-                type="button"
-              >
-                {formatTheme(theme)}: {count}
-              </button>
-            ))}
-          </div>
-          <div className="mt-6 rounded-pe-container bg-pe-gray-50 p-4 text-sm leading-6 text-pe-text-secondary">
-            Search works across dates, titles, PR summaries, repo names, and theme tags.
-            The list below excludes pure version-bump noise by default.
-          </div>
-        </article>
-      </section>
-
       <section className="pe-panel p-5 sm:p-6">
-        <div className="grid gap-4 lg:grid-cols-[1.5fr_0.8fr_0.8fr]">
-          <label className="space-y-2">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-6">
+          <label className="space-y-2 xl:col-span-2">
             <span className="pe-label">Search</span>
             <input
               className="pe-input w-full"
               type="search"
-              placeholder="Search titles, summaries, themes, or dates"
+              placeholder="Search titles, tags, themes, months, or summaries"
               value={search}
               onChange={(event) => setSearch(event.target.value)}
             />
@@ -351,21 +441,270 @@ export default function DashboardClient({
             </select>
           </label>
           <label className="space-y-2">
-            <span className="pe-label">Theme</span>
+            <span className="pe-label">Quarter</span>
             <select
               className="pe-input w-full"
-              value={themeFilter}
-              onChange={(event) => setThemeFilter(event.target.value)}
+              value={quarterFilter}
+              onChange={(event) => setQuarterFilter(event.target.value)}
             >
-              <option value="all">All themes</option>
-              {themeOptions.map((theme) => (
-                <option key={theme} value={theme}>
-                  {formatTheme(theme)}
+              <option value="all">All quarters</option>
+              {quarterOptions.map((quarter) => (
+                <option key={quarter} value={quarter}>
+                  {quarter}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="space-y-2">
+            <span className="pe-label">Primary Domain</span>
+            <select
+              className="pe-input w-full"
+              value={domainFilter}
+              onChange={(event) => setDomainFilter(event.target.value)}
+            >
+              <option value="all">All domains</option>
+              {domainOptions.map((domain) => (
+                <option key={domain} value={domain}>
+                  {formatLabel(domain)}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="space-y-2">
+            <span className="pe-label">Change Type</span>
+            <select
+              className="pe-input w-full"
+              value={changeFilter}
+              onChange={(event) => setChangeFilter(event.target.value)}
+            >
+              <option value="all">All change types</option>
+              {changeOptions.map((change) => (
+                <option key={change} value={change}>
+                  {formatLabel(change)}
                 </option>
               ))}
             </select>
           </label>
         </div>
+
+        <div className="mt-4 grid gap-4 md:grid-cols-[1fr_auto]">
+          <label className="space-y-2">
+            <span className="pe-label">Topical Tag</span>
+            <select
+              className="pe-input w-full"
+              value={tagFilter}
+              onChange={(event) => setTagFilter(event.target.value)}
+            >
+              <option value="all">All topical tags</option>
+              {tagOptions.map((tag) => (
+                <option key={tag} value={tag}>
+                  {formatLabel(tag)}
+                </option>
+              ))}
+            </select>
+          </label>
+          <div className="flex items-end">
+            <button
+              className="rounded-pe-element border border-pe-border-light bg-white px-4 py-3 text-sm font-medium text-pe-text-primary transition hover:border-pe-primary-500"
+              onClick={() => {
+                setSearch("");
+                setRepoFilter("all");
+                setQuarterFilter("all");
+                setDomainFilter("all");
+                setChangeFilter("all");
+                setTagFilter("all");
+              }}
+              type="button"
+            >
+              Reset filters
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="grid gap-6 xl:grid-cols-2">
+        <article className="pe-panel p-5 sm:p-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <div className="pe-label">Category coverage</div>
+              <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
+                What kinds of work dominate this slice?
+              </h2>
+            </div>
+          </div>
+          <div className="mt-6 h-[360px]">
+            <ChartFrame hasMounted={hasMounted}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={domainRows}
+                  layout="vertical"
+                  margin={{ top: 4, right: 12, left: 12, bottom: 4 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#d9e1e0" horizontal={false} />
+                  <XAxis type="number" tickLine={false} axisLine={false} />
+                  <YAxis
+                    type="category"
+                    dataKey="label"
+                    tickLine={false}
+                    axisLine={false}
+                    width={180}
+                  />
+                  <Tooltip content={<CustomTooltip />} cursor={{ fill: "#f3f7f6" }} />
+                  <Legend />
+                  <Bar
+                    dataKey="policyengineUs"
+                    name="policyengine-us"
+                    fill={colors.policyengineUs}
+                    radius={[0, 8, 8, 0]}
+                  />
+                  <Bar
+                    dataKey="policyengineUsData"
+                    name="policyengine-us-data"
+                    fill={colors.policyengineUsData}
+                    radius={[0, 8, 8, 0]}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartFrame>
+          </div>
+        </article>
+
+        <article className="pe-panel p-5 sm:p-6">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <div className="pe-label">Monthly evolution</div>
+              <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
+                When did this work cluster?
+              </h2>
+            </div>
+            <div className="text-sm text-pe-text-secondary">
+              {activeTimelineRows.length} months in stored timeline
+            </div>
+          </div>
+          <div className="mt-6 h-[360px]">
+            <ChartFrame hasMounted={hasMounted}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={monthRows} margin={{ top: 4, right: 12, left: 0, bottom: 4 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#d9e1e0" vertical={false} />
+                  <XAxis dataKey="month" tickLine={false} axisLine={false} />
+                  <YAxis tickLine={false} axisLine={false} />
+                  <Tooltip content={<CustomTooltip />} cursor={{ fill: "#f3f7f6" }} />
+                  <Legend />
+                  <Bar
+                    dataKey="policyengineUs"
+                    name="policyengine-us"
+                    fill={colors.policyengineUs}
+                    radius={[8, 8, 0, 0]}
+                  />
+                  <Bar
+                    dataKey="policyengineUsData"
+                    name="policyengine-us-data"
+                    fill={colors.policyengineUsData}
+                    radius={[8, 8, 0, 0]}
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </ChartFrame>
+          </div>
+        </article>
+      </section>
+
+      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+        <article className="pe-panel p-5 sm:p-6">
+          <div className="pe-label">Storylines</div>
+          <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
+            What threads ran through the year?
+          </h2>
+          <div className="mt-6 grid gap-3">
+            {storylines.map((storyline) => (
+              <button
+                key={storyline.tag}
+                className="rounded-pe-container border border-pe-border-light bg-pe-gray-50/80 p-4 text-left transition hover:border-pe-primary-500"
+                onClick={() => setTagFilter(storyline.tag)}
+                type="button"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="font-semibold text-pe-text-primary">
+                    {formatLabel(storyline.tag)}
+                  </div>
+                  <div className="text-sm text-pe-text-secondary">
+                    {storyline.count} matching changes
+                  </div>
+                </div>
+                <div className="mt-2 text-sm leading-6 text-pe-text-secondary">
+                  First seen {storyline.firstMonth}. Peak month {storyline.peakMonth}
+                  {" "}
+                  with {storyline.peakCount}. Last active {storyline.lastMonth}.
+                </div>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {storyline.repos.map(([repo, count]) => (
+                    <span key={repo} className="pe-chip">
+                      {formatRepo(repo)}: {count}
+                    </span>
+                  ))}
+                </div>
+              </button>
+            ))}
+          </div>
+        </article>
+
+        <article className="pe-panel p-5 sm:p-6">
+          <div className="pe-label">Taxonomy snapshot</div>
+          <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
+            Drill deeper by category
+          </h2>
+
+          <div className="mt-6 space-y-5">
+            <div>
+              <div className="mb-2 text-sm font-semibold text-pe-text-primary">
+                Top change types
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {topChangeTags.map(([value, count]) => (
+                  <button
+                    key={value}
+                    className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                    onClick={() => setChangeFilter(value)}
+                    type="button"
+                  >
+                    {formatLabel(value)}: {count}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-2 text-sm font-semibold text-pe-text-primary">
+                Top themes
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {topThemes.map(([value, count]) => (
+                  <span key={value} className="pe-chip">
+                    {formatLabel(value)}: {count}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-2 text-sm font-semibold text-pe-text-primary">
+                Top topical tags
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {topTags.map(([value, count]) => (
+                  <button
+                    key={value}
+                    className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                    onClick={() => setTagFilter(value)}
+                    type="button"
+                  >
+                    {formatLabel(value)}: {count}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section className="space-y-4">
@@ -377,52 +716,97 @@ export default function DashboardClient({
             </h2>
           </div>
           <div className="text-sm text-pe-text-secondary">
-            Data source: local git history + cached GitHub PR metadata
+            Stored summaries: domains, change types, topical storylines, and timeline rollups
           </div>
         </div>
 
         <div className="grid gap-4">
-          {filteredItems.map((item) => (
-            <article key={`${item.repo}-${item.sha}`} className="pe-panel p-5">
-              <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-pe-text-secondary">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="pe-chip">{formatRepo(item.repo)}</span>
-                  <span>{item.date}</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {item.themes.map((theme) => (
+          {filteredItems.map((item) => {
+            const visibleTopicalTags = item.topical_tags.filter((tag) => tag !== "other").slice(0, 4);
+            const visibleChangeTags = item.change_tags.filter((tag) => tag !== "other").slice(0, 4);
+            return (
+              <article key={`${item.repo}-${item.sha}`} className="pe-panel p-5">
+                <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-pe-text-secondary">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="pe-chip">{formatRepo(item.repo)}</span>
                     <button
-                      key={theme}
                       className="pe-chip cursor-pointer hover:border-pe-primary-500"
-                      onClick={() => setThemeFilter(theme)}
+                      onClick={() => setDomainFilter(item.primary_domain)}
                       type="button"
                     >
-                      {formatTheme(theme)}
+                      {formatLabel(item.primary_domain)}
                     </button>
-                  ))}
+                    <span>{item.date}</span>
+                    <span>{item.quarter}</span>
+                  </div>
+                  <div className="text-pe-text-tertiary">
+                    Theme: {formatLabel(item.primary_theme)}
+                  </div>
                 </div>
-              </div>
-              <h3 className="mt-4 text-xl font-semibold text-pe-text-primary">
-                {item.resolved_title}
-              </h3>
-              <p className="mt-3 max-w-4xl text-sm leading-6 text-pe-text-secondary">
-                {item.pr_summary || item.subject}
-              </p>
-              <div className="mt-4 flex flex-wrap items-center gap-4 text-sm">
-                {item.pr_url ? (
-                  <a
-                    className="font-medium text-pe-primary-700 hover:text-pe-primary-600"
-                    href={item.pr_url}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    Open PR
-                  </a>
+
+                <h3 className="mt-4 text-xl font-semibold text-pe-text-primary">
+                  {item.resolved_title}
+                </h3>
+                <p className="mt-3 max-w-4xl text-sm leading-6 text-pe-text-secondary">
+                  {item.pr_summary || item.subject}
+                </p>
+
+                {visibleChangeTags.length ? (
+                  <div className="mt-4">
+                    <div className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-pe-text-tertiary">
+                      Change tags
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {visibleChangeTags.map((tag) => (
+                        <button
+                          key={tag}
+                          className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                          onClick={() => setChangeFilter(tag)}
+                          type="button"
+                        >
+                          {formatLabel(tag)}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 ) : null}
-                <span className="text-pe-text-tertiary">{item.sha.slice(0, 10)}</span>
-              </div>
-            </article>
-          ))}
+
+                {visibleTopicalTags.length ? (
+                  <div className="mt-4">
+                    <div className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-pe-text-tertiary">
+                      Topical tags
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {visibleTopicalTags.map((tag) => (
+                        <button
+                          key={tag}
+                          className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                          onClick={() => setTagFilter(tag)}
+                          type="button"
+                        >
+                          {formatLabel(tag)}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                <div className="mt-4 flex flex-wrap items-center gap-4 text-sm">
+                  {item.pr_url ? (
+                    <a
+                      className="font-medium text-pe-primary-700 hover:text-pe-primary-600"
+                      href={item.pr_url}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Open PR
+                    </a>
+                  ) : null}
+                  <span className="text-pe-text-tertiary">{item.sha.slice(0, 10)}</span>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </section>
     </main>
