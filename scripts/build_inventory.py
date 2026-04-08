@@ -862,6 +862,120 @@ CONCEPT_METADATA = {
 }
 
 
+MILESTONE_METADATA = {
+    "tanf_nationalization": {
+        "label": "51-State TANF Coverage",
+        "description": (
+            "TANF moved from scattered state implementations to a national modeled "
+            "layer with backdating, benefit hardening, and calibrated take-up."
+        ),
+        "tweet_angle": (
+            "PolicyEngine US now covers TANF across all 51 jurisdictions, then "
+            "connects that coverage to take-up and calibration in the data pipeline."
+        ),
+    },
+    "childcare_infrastructure": {
+        "label": "Childcare Infrastructure",
+        "description": (
+            "Childcare work shifted from isolated state fixes toward reusable CCDF, "
+            "CCAP, and CDCC infrastructure that can scale across states."
+        ),
+        "tweet_angle": (
+            "The childcare stack got more reusable: stronger state CDCC coverage, "
+            "new CCAP modeling, and federal CCDF infrastructure for scaling."
+        ),
+    },
+    "health_coverage_realism": {
+        "label": "ACA And Medicaid Realism",
+        "description": (
+            "ACA, Medicaid, and CHIP modeling became more realistic through "
+            "eligibility fixes, immigrant coverage work, pricing inputs, and take-up."
+        ),
+        "tweet_angle": (
+            "ACA and Medicaid realism stepped up with better eligibility logic, "
+            "immigrant coverage modeling, rating-area premiums, and post-calibration overrides."
+        ),
+    },
+    "state_tax_refresh": {
+        "label": "State Tax Refresh And Reform Depth",
+        "description": (
+            "A broad 2025 baseline refresh landed across many states, while the reform "
+            "library deepened with contributed proposals and better state-specific logic."
+        ),
+        "tweet_angle": (
+            "State-tax coverage broadened sharply in 2026: wide 2025 baseline refreshes "
+            "plus deeper reform modeling across states like CT, KY, PA, SC, VA, and more."
+        ),
+    },
+    "local_tax_depth": {
+        "label": "Local Tax And Property Relief Depth",
+        "description": (
+            "Local-area tax modeling got more detailed, especially county income taxes, "
+            "property-tax relief, renter credits, and programs like Stay NJ."
+        ),
+        "tweet_angle": (
+            "Local tax depth improved too, with county income taxes, property-tax credits, "
+            "renter relief, and more realistic local benefit offsets."
+        ),
+    },
+    "district_calibration": {
+        "label": "District-Level Calibration",
+        "description": (
+            "The stack moved toward congressional-district, state-legislative-district, "
+            "and census-block-aware modeling instead of coarse geography only."
+        ),
+        "tweet_angle": (
+            "One of the biggest data milestones: calibration is now much more district- "
+            "and block-aware, opening the door to cleaner congressional and state-legislative analysis."
+        ),
+    },
+    "high_income_realism": {
+        "label": "High-Income Realism",
+        "description": (
+            "Top-end income handling improved through better AGI ceilings, richer "
+            "high-income brackets, and more robust calibration for ultra-rich households."
+        ),
+        "tweet_angle": (
+            "High-income realism improved materially: the stack can now represent much "
+            "richer households without blowing up calibration."
+        ),
+    },
+    "retirement_social_security_upgrade": {
+        "label": "Retirement And Social Security Upgrades",
+        "description": (
+            "Retirement and Social Security modeling deepened through exclusion fixes, "
+            "SECURE 2.0 work, contribution calibration, and long-run wage-base paths."
+        ),
+        "tweet_angle": (
+            "Retirement and Social Security got deeper, from SECURE 2.0 catch-up "
+            "modeling to NAWI-based payroll-cap and wage-base extensions through 2100."
+        ),
+    },
+    "calibration_platform_maturity": {
+        "label": "Calibration Platform Maturity",
+        "description": (
+            "Calibration became a production-grade platform with a governed targets "
+            "database, Modal workflows, validation, checkpointing, and release gates."
+        ),
+        "tweet_angle": (
+            "The data pipeline is no longer just a one-off build: calibration now runs "
+            "through a more production-grade platform with Modal, validation, and promotion gates."
+        ),
+    },
+    "filer_behavior_and_taxsim": {
+        "label": "Filer Behavior And TAXSIM Validation",
+        "description": (
+            "Filer behavior, filing propensity, and TAXSIM validation all improved, "
+            "strengthening the simulation layer around who files and how outputs compare."
+        ),
+        "tweet_angle": (
+            "The filing layer improved too: better filer assignment, filing-propensity "
+            "variables, and stronger TAXSIM validation."
+        ),
+    },
+}
+
+
 def run(*args: str) -> str:
     return subprocess.check_output(args, text=True)
 
@@ -928,6 +1042,167 @@ def classify_rules(
     if not matches and default is not None:
         return [default]
     return matches
+
+
+def matches_regex(text: str, *patterns: str) -> bool:
+    return any(re.search(pattern, text) for pattern in patterns)
+
+
+def has_any_tag(item: dict, field: str, values: set[str]) -> bool:
+    return any(value in item.get(field, []) for value in values)
+
+
+def classify_milestones(item: dict, text: str) -> list[str]:
+    milestones = []
+
+    if "tanf" in item.get("topical_tags", []) or matches_regex(
+        text,
+        r"\btanf\b",
+        r"workfirst",
+        r"temporary family assistance",
+        r"temporary cash assistance",
+        r"wv works",
+        r"reach up",
+        r"tafdc",
+        r"families first",
+    ):
+        milestones.append("tanf_nationalization")
+
+    if matches_regex(
+        text,
+        r"ccap",
+        r"ccdf",
+        r"cdcc",
+        r"child care",
+        r"childcare",
+        r"capp",
+        r"calworks childcare",
+    ):
+        milestones.append("childcare_infrastructure")
+
+    if matches_regex(
+        text,
+        r"\baca\b",
+        r"ptc",
+        r"slcsp",
+        r"medicaid",
+        r"chip",
+        r"medi-cal",
+        r"apple health",
+        r"marketplace",
+    ):
+        milestones.append("health_coverage_realism")
+
+    if (
+        "state_income_tax" in item.get("topical_tags", [])
+        and has_any_tag(item, "change_tags", {"annual_update", "reform_modeling"})
+    ) or matches_regex(
+        text,
+        r"individual income tax model",
+        r"income tax parameters",
+        r"income tax reform",
+        r"tax rebate proposal",
+        r"agi surtax reform",
+        r"contributed reform",
+        r"graduated income tax",
+    ):
+        milestones.append("state_tax_refresh")
+
+    if matches_regex(
+        text,
+        r"multnomah",
+        r"county income tax",
+        r"property tax",
+        r"renter'?s tax credit",
+        r"stay nj",
+        r"senior freeze",
+        r"real estate tax deferral",
+        r"property tax credit",
+        r"county tax rates",
+    ):
+        milestones.append("local_tax_depth")
+
+    if has_any_tag(
+        item,
+        "concept_tags",
+        {
+            "district_level_geography",
+            "census_block_assignment",
+            "unified_national_calibration",
+        },
+    ) or matches_regex(
+        text,
+        r"congressional district",
+        r"census block",
+        r"state legislative district",
+        r"county\|cd",
+        r"county assignment",
+        r"\bsldu\b",
+        r"\bsldl\b",
+    ):
+        milestones.append("district_calibration")
+
+    if "top_end_income_modeling" in item.get("concept_tags", []) or matches_regex(
+        text,
+        r"agi ceiling",
+        r"\$25 million",
+        r"25 million",
+        r"soi table 4\.3",
+        r"high income brackets",
+        r"high agi",
+        r"income_tax_positive",
+    ):
+        milestones.append("high_income_realism")
+
+    if matches_regex(
+        text,
+        r"social security",
+        r"retirement",
+        r"payroll cap",
+        r"wage base",
+        r"401\(k\)",
+        r"401k",
+        r"secure 2\.0",
+        r"nawi",
+        r"retirement contributions",
+        r"ss reconciliation",
+    ):
+        milestones.append("retirement_social_security_upgrade")
+
+    if has_any_tag(
+        item,
+        "concept_tags",
+        {
+            "targets_database_and_schema",
+            "calibration_target_expansion",
+            "modal_gpu_pipeline",
+            "provenance_and_quality_gates",
+        },
+    ) or matches_regex(
+        text,
+        r"calibration database",
+        r"target loading",
+        r"\bmodal\b",
+        r"checkpointing",
+        r"upload validation",
+        r"deterministic country package",
+        r"pep 735",
+        r"versioning workflow",
+        r"publish workflow",
+    ):
+        milestones.append("calibration_platform_maturity")
+
+    if matches_regex(
+        text,
+        r"taxsim",
+        r"tax_unit_is_filer",
+        r"tax filing propensity",
+        r"voluntary tax filer",
+        r"filer assignment",
+    ):
+        milestones.append("filer_behavior_and_taxsim")
+
+    return unique_preserve_order(milestones)
 
 
 def fetch_pr(repo: RepoConfig, pr_number: int) -> dict:
@@ -1041,8 +1316,23 @@ def build_repo_inventory(repo: RepoConfig) -> list[dict]:
             pr_data["pr_summary"],
             commit["subject"],
         )
+        milestone_text = normalize_classification_text(
+            pr_data["resolved_title"],
+            commit["subject"],
+        )
         themes = classify_themes(repo.name, text_blob)
         primary_theme = pick_primary_theme(themes)
+        change_tags = classify_rules(text_blob, CHANGE_TYPE_RULES, default="other")
+        topical_tags = classify_rules(text_blob, TOPICAL_TAG_RULES, default="other")
+        concept_tags = classify_rules(text_blob, CONCEPT_RULES, default="other")
+        milestone_tags = classify_milestones(
+            {
+                "topical_tags": topical_tags,
+                "change_tags": change_tags,
+                "concept_tags": concept_tags,
+            },
+            milestone_text,
+        )
         inventory.append(
             {
                 **commit,
@@ -1052,9 +1342,10 @@ def build_repo_inventory(repo: RepoConfig) -> list[dict]:
                 "themes": themes,
                 "primary_theme": primary_theme,
                 "primary_domain": THEME_TO_DOMAIN[primary_theme],
-                "change_tags": classify_rules(text_blob, CHANGE_TYPE_RULES, default="other"),
-                "topical_tags": classify_rules(text_blob, TOPICAL_TAG_RULES, default="other"),
-                "concept_tags": classify_rules(text_blob, CONCEPT_RULES, default="other"),
+                "change_tags": change_tags,
+                "topical_tags": topical_tags,
+                "concept_tags": concept_tags,
+                "milestone_tags": milestone_tags,
                 "noise": is_noise(commit["subject"]),
             }
         )
@@ -1188,6 +1479,78 @@ def build_concept_cards(inventory: list[dict]) -> list[dict]:
     return cards
 
 
+def build_milestone_cards(inventory: list[dict]) -> list[dict]:
+    signal_items = [item for item in inventory if not item["noise"]]
+    by_tag = defaultdict(list)
+    for item in signal_items:
+        for tag in item["milestone_tags"]:
+            by_tag[tag].append(item)
+
+    cards = []
+    for tag, metadata in MILESTONE_METADATA.items():
+        items = by_tag.get(tag, [])
+        if not items:
+            continue
+
+        month_counts = Counter(item["month"] for item in items)
+        peak_count = max(month_counts.values())
+        peak_month = min(
+            month for month, count in month_counts.items() if count == peak_count
+        )
+        repo_counts = Counter(item["repo"] for item in items)
+        concept_counts = Counter(
+            concept
+            for item in items
+            for concept in item["concept_tags"]
+            if concept != "other"
+        )
+        change_counts = Counter(
+            change_tag
+            for item in items
+            for change_tag in item["change_tags"]
+            if change_tag != "other"
+        )
+
+        sample_items = []
+        seen_titles = set()
+        for item in sorted(items, key=lambda value: (value["date"], value["resolved_title"])):
+            title = item["resolved_title"]
+            if title in seen_titles:
+                continue
+            seen_titles.add(title)
+            sample_items.append(
+                {
+                    "title": title,
+                    "date": item["date"],
+                    "repo": item["repo"],
+                    "pr_url": item["pr_url"],
+                }
+            )
+            if len(sample_items) >= 4:
+                break
+
+        cards.append(
+            {
+                "id": tag,
+                "label": metadata["label"],
+                "description": metadata["description"],
+                "tweet_angle": metadata["tweet_angle"],
+                "count": len(items),
+                "first_month": min(month_counts),
+                "last_month": max(month_counts),
+                "peak_month": peak_month,
+                "peak_count": peak_count,
+                "repos": dict(repo_counts.most_common()),
+                "concepts": dict(concept_counts.most_common(4)),
+                "change_tags": dict(change_counts.most_common(4)),
+                "sample_titles": [item["title"] for item in sample_items],
+                "sample_items": sample_items,
+            }
+        )
+
+    return cards
+
+
 def build_timeline_summary(inventory: list[dict]) -> list[dict]:
     signal_items = [item for item in inventory if not item["noise"]]
     months = sorted({item["month"] for item in signal_items})
@@ -1236,6 +1599,13 @@ def build_timeline_summary(inventory: list[dict]) -> list[dict]:
                         if tag != "other"
                     ).most_common(12)
                 ),
+                "milestone_tags": dict(
+                    Counter(
+                        tag
+                        for item in month_items
+                        for tag in item["milestone_tags"]
+                    ).most_common(10)
+                ),
             }
         )
     return output
@@ -1272,12 +1642,18 @@ def build_taxonomy_summary(inventory: list[dict]) -> dict:
             multiple=True,
             skip_values={"other"},
         ),
+        "milestones": build_counter_summary(
+            signal_items,
+            "milestone_tags",
+            multiple=True,
+        ),
         "quarters": build_counter_summary(
             signal_items,
             "quarter",
             multiple=False,
         ),
         "concept_cards": build_concept_cards(inventory),
+        "milestone_cards": build_milestone_cards(inventory),
         "storylines": build_storylines(inventory),
         "concept_storylines": build_concept_storylines(inventory),
     }

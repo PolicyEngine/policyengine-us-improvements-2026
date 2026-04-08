@@ -63,6 +63,17 @@
       "calibration_target_expansion": 3,
       "unified_national_calibration": 2,
       "state_aware_imputation": 1
+    },
+    "milestone_tags": {
+      "tanf_nationalization": 24,
+      "calibration_platform_maturity": 9,
+      "state_tax_refresh": 9,
+      "district_calibration": 8,
+      "health_coverage_realism": 3,
+      "childcare_infrastructure": 2,
+      "high_income_realism": 2,
+      "filer_behavior_and_taxsim": 1,
+      "retirement_social_security_upgrade": 1
     }
   },
   {
@@ -128,6 +139,18 @@
       "census_block_assignment": 2,
       "unified_national_calibration": 2,
       "top_end_income_modeling": 2
+    },
+    "milestone_tags": {
+      "state_tax_refresh": 48,
+      "tanf_nationalization": 27,
+      "calibration_platform_maturity": 16,
+      "district_calibration": 8,
+      "retirement_social_security_upgrade": 3,
+      "childcare_infrastructure": 3,
+      "filer_behavior_and_taxsim": 2,
+      "high_income_realism": 2,
+      "local_tax_depth": 2,
+      "health_coverage_realism": 1
     }
   },
   {
@@ -190,6 +213,15 @@
       "district_level_geography": 3,
       "modal_gpu_pipeline": 2,
       "targets_database_and_schema": 2
+    },
+    "milestone_tags": {
+      "calibration_platform_maturity": 11,
+      "tanf_nationalization": 8,
+      "state_tax_refresh": 8,
+      "district_calibration": 8,
+      "childcare_infrastructure": 7,
+      "retirement_social_security_upgrade": 2,
+      "local_tax_depth": 1
     }
   },
   {
@@ -213,6 +245,9 @@
       "social_security_retirement": 2,
       "validation_tooling": 1
     },
-    "concept_tags": {}
+    "concept_tags": {},
+    "milestone_tags": {
+      "retirement_social_security_upgrade": 2
+    }
   }
 ]

@@ -68,6 +68,16 @@ const LABEL_OVERRIDES = {
   provenance_and_quality_gates: "Provenance And Quality Gates",
   sample_reforms_and_trackers: "Sample Reforms And Trackers",
   policy_surface_expansion: "Policy Surface Expansion",
+  tanf_nationalization: "51-State TANF Coverage",
+  childcare_infrastructure: "Childcare Infrastructure",
+  health_coverage_realism: "ACA And Medicaid Realism",
+  state_tax_refresh: "State Tax Refresh And Reform Depth",
+  local_tax_depth: "Local Tax And Property Relief Depth",
+  district_calibration: "District-Level Calibration",
+  high_income_realism: "High-Income Realism",
+  retirement_social_security_upgrade: "Retirement And Social Security Upgrades",
+  calibration_platform_maturity: "Calibration Platform Maturity",
+  filer_behavior_and_taxsim: "Filer Behavior And TAXSIM Validation",
   other: "Other",
 };
 
@@ -266,6 +276,10 @@ function buildConceptStorylines(items) {
   return buildMultiValueStorylines(items, "concept_tags");
 }
 
+function buildMilestoneStorylines(items) {
+  return buildMultiValueStorylines(items, "milestone_tags", { skip: new Set() });
+}
+
 function buildFilterOptions(items, key, { multiple = false, skip = new Set() } = {}) {
   return countValues(items, key, { multiple, skip }).map(([value]) => value);
 }
@@ -330,6 +344,7 @@ export default function DashboardClient({
   const [domainFilter, setDomainFilter] = useState("all");
   const [changeFilter, setChangeFilter] = useState("all");
   const [conceptFilter, setConceptFilter] = useState("all");
+  const [milestoneFilter, setMilestoneFilter] = useState("all");
   const [tagFilter, setTagFilter] = useState("all");
   const [hasMounted, setHasMounted] = useState(false);
   const [colors, setColors] = useState({
@@ -358,6 +373,10 @@ export default function DashboardClient({
     multiple: true,
     skip: new Set(["other"]),
   });
+  const milestoneOptions = buildFilterOptions(signalItems, "milestone_tags", {
+    multiple: true,
+    skip: new Set(),
+  });
   const tagOptions = buildFilterOptions(signalItems, "topical_tags", {
     multiple: true,
     skip: new Set(["other"]),
@@ -370,6 +389,9 @@ export default function DashboardClient({
     .filter((item) => changeFilter === "all" || item.change_tags.includes(changeFilter))
     .filter(
       (item) => conceptFilter === "all" || item.concept_tags.includes(conceptFilter),
+    )
+    .filter(
+      (item) => milestoneFilter === "all" || item.milestone_tags.includes(milestoneFilter),
     )
     .filter((item) => tagFilter === "all" || item.topical_tags.includes(tagFilter))
     .filter((item) => {
@@ -385,6 +407,7 @@ export default function DashboardClient({
         item.primary_theme,
         item.change_tags.join(" "),
         item.concept_tags.join(" "),
+        item.milestone_tags.join(" "),
         item.topical_tags.join(" "),
         item.resolved_title,
         item.pr_summary,
@@ -399,6 +422,16 @@ export default function DashboardClient({
   const metricCards = buildMetricCards(filteredItems);
   const domainRows = buildDomainRows(filteredItems);
   const monthRows = buildMonthRows(filteredItems);
+  const milestoneMetadata = Object.fromEntries(
+    (taxonomySummary.milestone_cards || []).map((card) => [card.id, card]),
+  );
+  const allMilestoneStorylines = buildMilestoneStorylines(filteredItems).map((storyline) => ({
+    ...storyline,
+    label: milestoneMetadata[storyline.tag]?.label || formatLabel(storyline.tag),
+    description: milestoneMetadata[storyline.tag]?.description || "",
+    tweet_angle: milestoneMetadata[storyline.tag]?.tweet_angle || "",
+  }));
+  const milestoneStorylines = allMilestoneStorylines.slice(0, 6);
   const allConceptStorylines = buildConceptStorylines(filteredItems);
   const conceptStorylines = allConceptStorylines.slice(0, 6);
   const storylines = buildStorylines(filteredItems).slice(0, 6);
@@ -410,6 +443,10 @@ export default function DashboardClient({
     multiple: true,
     skip: new Set(["other"]),
   }).slice(0, 10);
+  const topMilestones = countValues(filteredItems, "milestone_tags", {
+    multiple: true,
+    skip: new Set(),
+  }).slice(0, 8);
   const topThemes = countValues(filteredItems, "themes", {
     multiple: true,
     skip: new Set(["other"]),
@@ -419,10 +456,15 @@ export default function DashboardClient({
     skip: new Set(["other"]),
   }).slice(0, 10);
   const overallConcepts = taxonomySummary.concept_storylines.slice(0, 4);
+  const overallMilestones = (taxonomySummary.milestone_cards || []).slice(0, 4);
   const activeTimelineRows =
     quarterFilter === "all"
       ? timelineSummary
       : timelineSummary.filter((row) => row.quarter === quarterFilter);
+  const selectedMilestone =
+    milestoneFilter === "all" ? milestoneStorylines[0]?.tag || null : milestoneFilter;
+  const selectedMilestoneStoryline =
+    allMilestoneStorylines.find((storyline) => storyline.tag === selectedMilestone) || null;
   const selectedConcept =
     conceptFilter === "all" ? conceptStorylines[0]?.tag || null : conceptFilter;
   const selectedConceptStoryline =
@@ -440,9 +482,9 @@ export default function DashboardClient({
               </h1>
               <p className="max-w-3xl text-base leading-7 text-pe-text-secondary sm:text-lg">
                 This dashboard now tags each change by primary domain, change type,
-                concept lens, topical tags, month, and quarter. The goal is to move
-                from raw PR enumeration to a navigable picture of how the US model
-                stack evolved over 2026.
+                concept lens, milestone bundle, topical tags, month, and quarter.
+                The goal is to move from raw PR enumeration to a navigable picture
+                of how the US model stack evolved over 2026.
               </p>
             </div>
             <SummaryIntro executiveSummary={executiveSummary} />
@@ -581,7 +623,22 @@ export default function DashboardClient({
           </label>
         </div>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-[1fr_auto]">
+        <div className="mt-4 grid gap-4 md:grid-cols-[1fr_1fr_auto]">
+          <label className="space-y-2">
+            <span className="pe-label">Milestone</span>
+            <select
+              className="pe-input w-full"
+              value={milestoneFilter}
+              onChange={(event) => setMilestoneFilter(event.target.value)}
+            >
+              <option value="all">All milestones</option>
+              {milestoneOptions.map((milestone) => (
+                <option key={milestone} value={milestone}>
+                  {formatLabel(milestone)}
+                </option>
+              ))}
+            </select>
+          </label>
           <label className="space-y-2">
             <span className="pe-label">Topical Tag</span>
             <select
@@ -607,6 +664,7 @@ export default function DashboardClient({
                 setDomainFilter("all");
                 setChangeFilter("all");
                 setConceptFilter("all");
+                setMilestoneFilter("all");
                 setTagFilter("all");
               }}
               type="button"
@@ -701,6 +759,119 @@ export default function DashboardClient({
               </ResponsiveContainer>
             </ChartFrame>
           </div>
+        </article>
+      </section>
+
+      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+        <article className="pe-panel p-5 sm:p-6">
+          <div className="pe-label">Tweetable milestones</div>
+          <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
+            What concrete suites of changes are worth announcing?
+          </h2>
+          <div className="mt-6 grid gap-3">
+            {(milestoneStorylines.length ? milestoneStorylines : overallMilestones).map(
+              (storyline) => {
+                const id = storyline.tag || storyline.id;
+                return (
+                  <button
+                    key={id}
+                    className="rounded-pe-container border border-pe-border-light bg-pe-gray-50/80 p-4 text-left transition hover:border-pe-primary-500"
+                    onClick={() => setMilestoneFilter(id)}
+                    type="button"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div className="font-semibold text-pe-text-primary">
+                        {storyline.label || formatLabel(id)}
+                      </div>
+                      <div className="text-sm text-pe-text-secondary">
+                        {storyline.count} matching changes
+                      </div>
+                    </div>
+                    <p className="mt-2 text-sm leading-6 text-pe-text-secondary">
+                      {storyline.tweet_angle || milestoneMetadata[id]?.tweet_angle}
+                    </p>
+                    <div className="mt-3 text-sm text-pe-text-secondary">
+                      {storyline.firstMonth || storyline.first_month} to{" "}
+                      {storyline.lastMonth || storyline.last_month}
+                      {" · "}
+                      peak in {storyline.peakMonth || storyline.peak_month}
+                    </div>
+                  </button>
+                );
+              },
+            )}
+          </div>
+        </article>
+
+        <article className="pe-panel p-5 sm:p-6">
+          <div className="pe-label">Milestone detail</div>
+          <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
+            Turn clusters into release notes or tweets
+          </h2>
+
+          {selectedMilestoneStoryline ? (
+            <div className="mt-6 rounded-pe-container border border-pe-border-light bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,250,249,0.98))] p-4">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="text-lg font-semibold text-pe-text-primary">
+                  {selectedMilestoneStoryline.label}
+                </div>
+                <div className="text-sm text-pe-text-secondary">
+                  {selectedMilestoneStoryline.count} filtered changes
+                </div>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-pe-text-secondary">
+                {selectedMilestoneStoryline.description}
+              </p>
+              <div className="mt-4 rounded-pe-element border border-pe-border-light bg-white px-4 py-3 text-sm leading-6 text-pe-text-primary">
+                {selectedMilestoneStoryline.tweet_angle}
+              </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {selectedMilestoneStoryline.repos.map(([repo, count]) => (
+                  <span key={repo} className="pe-chip">
+                    {formatRepo(repo)}: {count}
+                  </span>
+                ))}
+              </div>
+              {selectedMilestoneStoryline.sampleTitles?.length ? (
+                <div className="mt-4">
+                  <div className="mb-2 text-sm font-semibold text-pe-text-primary">
+                    Sample changes in this milestone
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedMilestoneStoryline.sampleTitles.map((title) => (
+                      <span key={title} className="pe-chip">
+                        {title}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          ) : null}
+
+          <div className="mt-6">
+            <div className="mb-2 text-sm font-semibold text-pe-text-primary">
+              Top milestones in this slice
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {topMilestones.map(([value, count]) => (
+                <button
+                  key={value}
+                  className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                  onClick={() => setMilestoneFilter(value)}
+                  type="button"
+                >
+                  {formatLabel(value)}: {count}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-4 text-sm leading-6 text-pe-text-secondary">
+            Milestones are deliberately more editorial than concepts. They group
+            changes into announcement-ready arcs like national TANF coverage,
+            district calibration, high-income realism, and calibration platform maturity.
+          </p>
         </article>
       </section>
 
@@ -886,6 +1057,24 @@ export default function DashboardClient({
 
             <div>
               <div className="mb-2 text-sm font-semibold text-pe-text-primary">
+                Top milestones
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {topMilestones.map(([value, count]) => (
+                  <button
+                    key={value}
+                    className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                    onClick={() => setMilestoneFilter(value)}
+                    type="button"
+                  >
+                    {formatLabel(value)}: {count}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-2 text-sm font-semibold text-pe-text-primary">
                 Top themes
               </div>
               <div className="flex flex-wrap gap-2">
@@ -927,7 +1116,7 @@ export default function DashboardClient({
             </h2>
           </div>
           <div className="text-sm text-pe-text-secondary">
-            Stored summaries: domains, concepts, change types, topical storylines, and timeline rollups
+            Stored summaries: domains, concepts, milestones, change types, topical storylines, and timeline rollups
           </div>
         </div>
 
@@ -936,6 +1125,7 @@ export default function DashboardClient({
             const visibleTopicalTags = item.topical_tags.filter((tag) => tag !== "other").slice(0, 4);
             const visibleChangeTags = item.change_tags.filter((tag) => tag !== "other").slice(0, 4);
             const visibleConceptTags = item.concept_tags.filter((tag) => tag !== "other").slice(0, 4);
+            const visibleMilestoneTags = (item.milestone_tags || []).slice(0, 3);
             return (
               <article key={`${item.repo}-${item.sha}`} className="pe-panel p-5">
                 <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-pe-text-secondary">
@@ -994,6 +1184,26 @@ export default function DashboardClient({
                           key={tag}
                           className="pe-chip cursor-pointer hover:border-pe-primary-500"
                           onClick={() => setConceptFilter(tag)}
+                          type="button"
+                        >
+                          {formatLabel(tag)}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                {visibleMilestoneTags.length ? (
+                  <div className="mt-4">
+                    <div className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-pe-text-tertiary">
+                      Milestones
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {visibleMilestoneTags.map((tag) => (
+                        <button
+                          key={tag}
+                          className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                          onClick={() => setMilestoneFilter(tag)}
                           type="button"
                         >
                           {formatLabel(tag)}

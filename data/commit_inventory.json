@@ -27,6 +27,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -68,6 +69,9 @@
       "census_block_assignment",
       "unified_national_calibration"
     ],
+    "milestone_tags": [
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -97,6 +101,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -129,6 +134,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -158,6 +164,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -191,6 +198,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -220,6 +228,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -253,6 +262,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -288,6 +298,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -317,6 +328,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -346,6 +358,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -375,6 +388,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -412,6 +426,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -448,6 +465,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -488,6 +508,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -517,6 +540,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -553,6 +577,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -595,6 +622,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -632,6 +662,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -671,6 +704,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -700,6 +736,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -736,6 +773,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -774,6 +814,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -814,6 +857,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -843,6 +889,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -872,6 +919,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -901,6 +949,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -936,6 +985,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -965,6 +1015,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -994,6 +1045,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1023,6 +1075,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1052,6 +1105,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1081,6 +1135,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1110,6 +1165,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1139,6 +1195,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1172,6 +1229,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1208,6 +1266,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1243,6 +1302,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1272,6 +1332,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1303,6 +1364,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1338,6 +1400,9 @@
       "provenance_and_quality_gates",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -1368,6 +1433,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1397,6 +1463,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1429,6 +1496,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1468,6 +1536,9 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -1503,6 +1574,9 @@
       "targets_database_and_schema",
       "modal_gpu_pipeline"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -1536,6 +1610,9 @@
     "concept_tags": [
       "provenance_and_quality_gates"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -1565,6 +1642,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1602,6 +1680,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1631,6 +1710,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1660,6 +1740,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1689,6 +1770,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1720,6 +1802,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1752,6 +1835,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1783,6 +1867,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1812,6 +1897,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1841,6 +1927,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1875,6 +1962,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -1904,6 +1992,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -1942,6 +2031,9 @@
     "concept_tags": [
       "district_level_geography"
     ],
+    "milestone_tags": [
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -1973,6 +2065,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2009,6 +2102,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2038,6 +2132,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2067,6 +2162,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2096,6 +2192,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2133,6 +2230,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2162,6 +2260,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2194,6 +2293,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2229,6 +2329,9 @@
     "concept_tags": [
       "provenance_and_quality_gates"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -2258,6 +2361,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2293,6 +2397,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2331,6 +2436,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2360,6 +2466,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2389,6 +2496,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2418,6 +2526,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2458,6 +2567,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -2487,6 +2599,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2516,6 +2629,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2545,6 +2659,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2576,6 +2691,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2608,6 +2724,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2649,6 +2766,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -2692,6 +2812,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2721,6 +2842,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2750,6 +2872,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2779,6 +2902,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2808,6 +2932,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2845,6 +2970,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -2884,6 +3012,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -2913,6 +3042,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -2953,6 +3083,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -2991,6 +3124,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -3020,6 +3156,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3057,6 +3194,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -3093,6 +3233,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3122,6 +3263,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3160,6 +3302,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3189,6 +3332,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3225,6 +3369,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3262,6 +3407,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3291,6 +3437,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3320,6 +3467,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3355,6 +3503,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "childcare_infrastructure"
+    ],
     "noise": false
   },
   {
@@ -3384,6 +3535,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3420,6 +3572,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3449,6 +3602,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3479,6 +3633,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3511,6 +3666,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3540,6 +3696,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3577,6 +3734,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -3613,6 +3773,7 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3642,6 +3803,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3683,6 +3845,9 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -3712,6 +3877,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3741,6 +3907,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3776,6 +3943,7 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3807,6 +3975,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3837,6 +4006,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3866,6 +4036,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -3899,6 +4070,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3928,6 +4100,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3962,6 +4135,7 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -3999,6 +4173,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -4034,6 +4211,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4068,6 +4246,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4097,6 +4276,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4134,6 +4314,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4163,6 +4344,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4192,6 +4374,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4221,6 +4404,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4250,6 +4434,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4290,6 +4475,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -4319,6 +4507,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4348,6 +4537,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4389,6 +4579,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -4423,6 +4616,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4464,6 +4658,9 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -4493,6 +4690,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4533,6 +4731,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -4562,6 +4763,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4598,6 +4800,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "health_coverage_realism"
+    ],
     "noise": false
   },
   {
@@ -4627,6 +4832,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4656,6 +4862,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4685,6 +4892,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4714,6 +4922,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4752,6 +4961,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4781,6 +4991,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4814,6 +5025,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4844,6 +5056,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4873,6 +5086,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4909,6 +5123,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4938,6 +5153,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -4968,6 +5184,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -4999,6 +5216,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5028,6 +5246,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5056,6 +5275,9 @@
     ],
     "concept_tags": [
       "targets_database_and_schema"
+    ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -5090,6 +5312,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5129,6 +5352,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5161,6 +5385,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5190,6 +5415,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5223,6 +5449,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5252,6 +5479,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5290,6 +5518,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -5319,6 +5550,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5360,6 +5592,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -5398,6 +5633,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -5427,6 +5665,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5466,6 +5705,9 @@
       "district_level_geography",
       "census_block_assignment"
     ],
+    "milestone_tags": [
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -5495,6 +5737,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5527,6 +5770,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5565,6 +5809,9 @@
       "district_level_geography",
       "census_block_assignment"
     ],
+    "milestone_tags": [
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -5595,6 +5842,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5625,6 +5873,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5664,6 +5913,10 @@
       "district_level_geography",
       "modal_gpu_pipeline"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -5694,6 +5947,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5723,6 +5977,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5752,6 +6007,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5785,6 +6041,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5814,6 +6071,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5843,6 +6101,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5872,6 +6131,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5909,6 +6169,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -5938,6 +6199,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -5967,6 +6229,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6004,6 +6267,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -6048,6 +6314,10 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization",
+      "childcare_infrastructure"
+    ],
     "noise": false
   },
   {
@@ -6079,6 +6349,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -6117,6 +6388,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -6151,6 +6423,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -6186,6 +6459,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "health_coverage_realism"
+    ],
     "noise": false
   },
   {
@@ -6215,6 +6491,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6244,6 +6521,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6276,6 +6554,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -6305,6 +6584,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6334,6 +6614,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6363,6 +6644,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6400,6 +6682,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -6429,6 +6714,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6465,6 +6751,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "health_coverage_realism"
+    ],
     "noise": false
   },
   {
@@ -6494,6 +6783,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6523,6 +6813,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6562,6 +6853,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -6599,6 +6893,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "high_income_realism"
     ],
     "noise": false
   },
@@ -6638,6 +6935,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -6667,6 +6965,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6706,6 +7005,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -6735,6 +7037,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6783,6 +7086,10 @@
       "provenance_and_quality_gates",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -6816,6 +7123,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -6845,6 +7153,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6878,6 +7187,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -6914,6 +7224,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "filer_behavior_and_taxsim"
+    ],
     "noise": false
   },
   {
@@ -6943,6 +7256,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -6972,6 +7286,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7001,6 +7316,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7030,6 +7346,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7065,6 +7382,9 @@
     ],
     "concept_tags": [
       "unified_national_calibration"
+    ],
+    "milestone_tags": [
+      "district_calibration"
     ],
     "noise": false
   },
@@ -7103,6 +7423,10 @@
       "district_level_geography",
       "calibration_target_expansion"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -7133,6 +7457,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7168,6 +7493,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -7198,6 +7524,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7228,6 +7555,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7266,6 +7594,10 @@
     "concept_tags": [
       "calibration_target_expansion"
     ],
+    "milestone_tags": [
+      "retirement_social_security_upgrade",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -7296,6 +7628,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7333,6 +7666,10 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh",
+      "high_income_realism"
+    ],
     "noise": false
   },
   {
@@ -7363,6 +7700,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7397,6 +7735,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -7426,6 +7765,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7455,6 +7795,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7496,6 +7837,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -7536,6 +7880,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -7575,6 +7922,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -7612,6 +7962,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -7641,6 +7994,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7670,6 +8024,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7699,6 +8054,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7734,6 +8090,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -7768,6 +8125,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -7797,6 +8155,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7832,6 +8191,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "retirement_social_security_upgrade"
     ],
     "noise": false
   },
@@ -7875,6 +8237,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -7908,6 +8273,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -7937,6 +8305,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -7973,6 +8342,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -8002,6 +8374,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8037,6 +8410,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -8066,6 +8442,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8095,6 +8472,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8124,6 +8502,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8163,6 +8542,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -8195,6 +8575,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -8224,6 +8605,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8253,6 +8635,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8294,6 +8677,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -8333,6 +8719,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -8367,6 +8756,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -8405,6 +8795,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -8446,6 +8839,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -8486,6 +8882,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -8523,6 +8922,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -8552,6 +8954,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8587,6 +8990,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -8622,6 +9026,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -8666,6 +9073,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -8696,6 +9106,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8731,6 +9142,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -8761,6 +9173,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8796,6 +9209,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -8835,6 +9249,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -8864,6 +9281,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8900,6 +9318,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -8929,6 +9350,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -8966,6 +9388,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -9003,6 +9426,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -9032,6 +9456,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9061,6 +9486,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9090,6 +9516,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9119,6 +9546,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9148,6 +9576,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9177,6 +9606,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9206,6 +9636,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9235,6 +9666,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9264,6 +9696,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9293,6 +9726,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9322,6 +9756,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9351,6 +9786,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9380,6 +9816,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9417,6 +9854,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -9452,6 +9890,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -9481,6 +9920,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9510,6 +9950,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9550,6 +9991,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -9588,6 +10032,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -9630,6 +10077,9 @@
     "concept_tags": [
       "takeup_modeling",
       "provenance_and_quality_gates"
+    ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -9675,6 +10125,10 @@
       "takeup_modeling",
       "provenance_and_quality_gates"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -9704,6 +10158,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9747,6 +10202,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "filer_behavior_and_taxsim"
+    ],
     "noise": false
   },
   {
@@ -9785,6 +10243,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -9814,6 +10275,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9843,6 +10305,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9872,6 +10335,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9902,6 +10366,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -9944,6 +10409,10 @@
     "concept_tags": [
       "calibration_target_expansion"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity",
+      "filer_behavior_and_taxsim"
+    ],
     "noise": false
   },
   {
@@ -9974,6 +10443,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10011,6 +10481,9 @@
     "concept_tags": [
       "targets_database_and_schema",
       "calibration_target_expansion"
+    ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -10051,6 +10524,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -10082,6 +10558,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -10111,6 +10588,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10141,6 +10619,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10171,6 +10650,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10201,6 +10681,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10240,6 +10721,9 @@
       "targets_database_and_schema",
       "calibration_target_expansion"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -10269,6 +10753,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10306,6 +10791,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -10341,6 +10827,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -10370,6 +10857,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10409,6 +10897,9 @@
       "calibration_target_expansion",
       "modal_gpu_pipeline"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -10438,6 +10929,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10474,6 +10966,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -10503,6 +10996,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10532,6 +11026,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10570,6 +11065,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -10607,6 +11105,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -10647,6 +11148,10 @@
     "concept_tags": [
       "district_level_geography",
       "modal_gpu_pipeline"
+    ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -10691,6 +11196,10 @@
       "provenance_and_quality_gates",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -10721,6 +11230,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10751,6 +11261,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10781,6 +11292,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10822,6 +11334,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -10862,6 +11377,10 @@
     "concept_tags": [
       "targets_database_and_schema"
     ],
+    "milestone_tags": [
+      "state_tax_refresh",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -10900,6 +11419,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -10929,6 +11451,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10958,6 +11481,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -10991,6 +11515,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -11020,6 +11545,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -11057,6 +11583,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11086,6 +11615,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -11124,6 +11654,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -11153,6 +11684,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -11182,6 +11714,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -11211,6 +11744,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -11249,6 +11783,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11286,6 +11823,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -11326,6 +11866,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11355,6 +11898,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -11399,6 +11943,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11438,6 +11985,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11475,6 +12025,9 @@
     "concept_tags": [
       "targets_database_and_schema"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -11511,6 +12064,7 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -11548,6 +12102,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11583,6 +12140,7 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -11623,6 +12181,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11660,6 +12221,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -11697,6 +12259,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11733,6 +12298,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11768,6 +12336,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -11806,6 +12377,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -11842,6 +12416,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -11875,6 +12450,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -11904,6 +12480,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -11933,6 +12510,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -11962,6 +12540,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12002,6 +12581,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -12038,6 +12620,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -12067,6 +12652,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12096,6 +12682,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12125,6 +12712,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12154,6 +12742,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12183,6 +12772,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12219,6 +12809,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -12258,6 +12851,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -12287,6 +12883,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12316,6 +12913,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12345,6 +12943,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12374,6 +12973,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12403,6 +13003,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12432,6 +13033,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12474,6 +13076,9 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -12503,6 +13108,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12532,6 +13138,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12567,6 +13174,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -12596,6 +13206,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12625,6 +13236,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12654,6 +13266,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12697,6 +13310,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -12734,6 +13350,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -12763,6 +13382,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12792,6 +13412,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12821,6 +13442,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12858,6 +13480,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -12887,6 +13512,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12926,6 +13552,10 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization",
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -12955,6 +13585,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -12997,6 +13628,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -13026,6 +13660,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13055,6 +13690,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13093,6 +13729,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -13122,6 +13761,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13151,6 +13791,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13185,6 +13826,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -13214,6 +13856,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13248,6 +13891,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -13277,6 +13923,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13306,6 +13953,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13341,6 +13989,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "childcare_infrastructure"
+    ],
     "noise": false
   },
   {
@@ -13370,6 +14021,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13409,6 +14061,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -13439,6 +14094,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13491,6 +14147,10 @@
       "calibration_target_expansion",
       "unified_national_calibration"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -13531,6 +14191,10 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization",
+      "childcare_infrastructure"
+    ],
     "noise": false
   },
   {
@@ -13570,6 +14234,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -13601,6 +14266,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -13630,6 +14296,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13668,6 +14335,9 @@
     "concept_tags": [
       "takeup_modeling",
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -13710,6 +14380,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -13748,6 +14421,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -13786,6 +14460,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "retirement_social_security_upgrade"
+    ],
     "noise": false
   },
   {
@@ -13815,6 +14492,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -13852,6 +14530,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -13894,6 +14575,9 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -13931,6 +14615,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -13976,6 +14661,10 @@
       "takeup_modeling",
       "unified_national_calibration"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "high_income_realism"
+    ],
     "noise": false
   },
   {
@@ -14018,6 +14707,10 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization",
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -14048,6 +14741,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14077,6 +14771,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14106,6 +14801,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14135,6 +14831,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14164,6 +14861,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14193,6 +14891,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14222,6 +14921,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14251,6 +14951,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14280,6 +14981,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14310,6 +15012,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14340,6 +15043,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14370,6 +15074,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14409,6 +15114,9 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -14446,6 +15154,9 @@
     "concept_tags": [
       "takeup_modeling",
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -14487,6 +15198,9 @@
       "takeup_modeling",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -14516,6 +15230,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14545,6 +15260,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14583,6 +15299,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -14612,6 +15331,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14651,6 +15371,10 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh",
+      "local_tax_depth"
+    ],
     "noise": false
   },
   {
@@ -14687,6 +15411,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "health_coverage_realism"
     ],
     "noise": false
   },
@@ -14726,6 +15453,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "childcare_infrastructure"
+    ],
     "noise": false
   },
   {
@@ -14755,6 +15485,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14784,6 +15515,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14820,6 +15552,9 @@
     ],
     "concept_tags": [
       "sample_reforms_and_trackers"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -14858,6 +15593,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -14887,6 +15623,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14916,6 +15653,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -14953,6 +15691,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -14982,6 +15721,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15013,6 +15753,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15042,6 +15783,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15078,6 +15820,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15118,6 +15861,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -15155,6 +15901,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -15184,6 +15933,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15213,6 +15963,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15242,6 +15993,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15271,6 +16023,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15306,6 +16059,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15338,6 +16092,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15367,6 +16122,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15396,6 +16152,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15425,6 +16182,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15461,6 +16219,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15494,6 +16253,9 @@
     "concept_tags": [
       "district_level_geography"
     ],
+    "milestone_tags": [
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -15523,6 +16285,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15564,6 +16327,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -15600,6 +16366,9 @@
       "targets_database_and_schema",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -15629,6 +16398,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15658,6 +16428,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15695,6 +16466,10 @@
     "concept_tags": [
       "modal_gpu_pipeline"
     ],
+    "milestone_tags": [
+      "retirement_social_security_upgrade",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -15727,6 +16502,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15762,6 +16538,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15791,6 +16568,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15826,6 +16604,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15855,6 +16634,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15892,6 +16672,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -15921,6 +16702,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -15959,6 +16741,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "local_tax_depth"
+    ],
     "noise": false
   },
   {
@@ -15988,6 +16773,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16023,6 +16809,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -16061,6 +16850,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -16090,6 +16880,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16127,6 +16918,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -16156,6 +16948,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16185,6 +16978,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16214,6 +17008,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16245,6 +17040,9 @@
     ],
     "concept_tags": [
       "top_end_income_modeling"
+    ],
+    "milestone_tags": [
+      "high_income_realism"
     ],
     "noise": false
   },
@@ -16280,6 +17078,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -16310,6 +17109,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16345,6 +17145,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -16374,6 +17175,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16411,6 +17213,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -16440,6 +17245,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16473,6 +17279,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -16511,6 +17318,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -16540,6 +17350,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16569,6 +17380,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16609,6 +17421,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -16644,6 +17457,9 @@
     ],
     "concept_tags": [
       "modal_gpu_pipeline"
+    ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -16686,6 +17502,10 @@
       "calibration_target_expansion",
       "provenance_and_quality_gates"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -16724,6 +17544,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -16753,6 +17576,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16782,6 +17606,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16822,6 +17647,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -16851,6 +17679,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16881,6 +17710,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16911,6 +17741,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -16944,6 +17775,9 @@
     ],
     "concept_tags": [
       "calibration_target_expansion"
+    ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -16982,6 +17816,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -17011,6 +17848,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17040,6 +17878,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17077,6 +17916,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -17106,6 +17946,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17144,6 +17985,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -17180,6 +18022,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -17209,6 +18052,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17238,6 +18082,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17267,6 +18112,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17296,6 +18142,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17334,6 +18181,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization"
     ],
     "noise": false
   },
@@ -17375,6 +18225,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -17411,6 +18264,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -17439,6 +18295,9 @@
     ],
     "concept_tags": [
       "unified_national_calibration"
+    ],
+    "milestone_tags": [
+      "district_calibration"
     ],
     "noise": false
   },
@@ -17470,6 +18329,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17500,6 +18360,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17542,6 +18403,11 @@
       "calibration_target_expansion",
       "unified_national_calibration"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "retirement_social_security_upgrade",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -17572,6 +18438,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17602,6 +18469,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17635,6 +18503,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "retirement_social_security_upgrade"
     ],
     "noise": false
   },
@@ -17672,6 +18543,7 @@
     "concept_tags": [
       "takeup_modeling"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -17709,6 +18581,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -17745,6 +18620,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -17774,6 +18650,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17813,6 +18690,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -17842,6 +18722,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17872,6 +18753,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17902,6 +18784,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -17934,6 +18817,9 @@
     ],
     "concept_tags": [
       "provenance_and_quality_gates"
+    ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -17970,6 +18856,9 @@
     "concept_tags": [
       "provenance_and_quality_gates"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -18005,6 +18894,10 @@
       "unified_national_calibration",
       "provenance_and_quality_gates"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -18034,6 +18927,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18063,6 +18957,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18099,6 +18994,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -18128,6 +19024,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18157,6 +19054,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18191,6 +19089,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -18227,6 +19126,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -18256,6 +19158,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18300,6 +19203,9 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization"
+    ],
     "noise": false
   },
   {
@@ -18332,6 +19238,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -18361,6 +19268,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18390,6 +19298,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18419,6 +19328,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18456,6 +19366,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -18492,6 +19403,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -18521,6 +19435,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18554,6 +19469,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -18594,6 +19510,9 @@
       "district_level_geography",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -18629,6 +19548,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -18659,6 +19579,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18701,6 +19622,9 @@
       "provenance_and_quality_gates",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -18730,6 +19654,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18762,6 +19687,7 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -18791,6 +19717,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18820,6 +19747,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18849,6 +19777,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18878,6 +19807,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -18914,6 +19844,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "childcare_infrastructure"
     ],
     "noise": false
   },
@@ -18956,6 +19889,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -18991,6 +19927,9 @@
     ],
     "concept_tags": [
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "childcare_infrastructure"
     ],
     "noise": false
   },
@@ -19029,6 +19968,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -19058,6 +19998,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19093,6 +20034,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "childcare_infrastructure"
+    ],
     "noise": false
   },
   {
@@ -19122,6 +20066,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19151,6 +20096,9 @@
     ],
     "concept_tags": [
       "provenance_and_quality_gates"
+    ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -19182,6 +20130,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19217,6 +20166,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -19247,6 +20197,9 @@
     ],
     "concept_tags": [
       "provenance_and_quality_gates"
+    ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
     ],
     "noise": false
   },
@@ -19279,6 +20232,9 @@
     "concept_tags": [
       "provenance_and_quality_gates"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -19308,6 +20264,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19344,6 +20301,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -19377,6 +20335,9 @@
     "concept_tags": [
       "census_block_assignment"
     ],
+    "milestone_tags": [
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -19406,6 +20367,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19444,6 +20406,9 @@
     "concept_tags": [
       "district_level_geography"
     ],
+    "milestone_tags": [
+      "district_calibration"
+    ],
     "noise": false
   },
   {
@@ -19474,6 +20439,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19517,6 +20483,10 @@
       "modal_gpu_pipeline",
       "provenance_and_quality_gates"
     ],
+    "milestone_tags": [
+      "district_calibration",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -19546,6 +20516,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19575,6 +20546,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19604,6 +20576,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19639,6 +20612,10 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh",
+      "local_tax_depth"
     ],
     "noise": false
   },
@@ -19678,6 +20655,10 @@
     "concept_tags": [
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization",
+      "childcare_infrastructure"
+    ],
     "noise": false
   },
   {
@@ -19710,6 +20691,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -19746,6 +20728,9 @@
     ],
     "concept_tags": [
       "census_block_assignment"
+    ],
+    "milestone_tags": [
+      "district_calibration"
     ],
     "noise": false
   },
@@ -19786,6 +20771,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -19824,6 +20812,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -19853,6 +20842,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -19891,6 +20881,9 @@
     ],
     "concept_tags": [
       "sample_reforms_and_trackers"
+    ],
+    "milestone_tags": [
+      "childcare_infrastructure"
     ],
     "noise": false
   },
@@ -19931,6 +20924,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -19965,6 +20959,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20007,6 +21002,10 @@
     "concept_tags": [
       "takeup_modeling",
       "policy_surface_expansion"
+    ],
+    "milestone_tags": [
+      "tanf_nationalization",
+      "childcare_infrastructure"
     ],
     "noise": false
   },
@@ -20052,6 +21051,11 @@
       "targets_database_and_schema",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "tanf_nationalization",
+      "childcare_infrastructure",
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -20086,6 +21090,9 @@
       "targets_database_and_schema",
       "policy_surface_expansion"
     ],
+    "milestone_tags": [
+      "calibration_platform_maturity"
+    ],
     "noise": false
   },
   {
@@ -20115,6 +21122,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -20152,6 +21160,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "state_tax_refresh"
     ],
     "noise": false
   },
@@ -20191,6 +21202,9 @@
     "concept_tags": [
       "sample_reforms_and_trackers"
     ],
+    "milestone_tags": [
+      "state_tax_refresh"
+    ],
     "noise": false
   },
   {
@@ -20224,6 +21238,7 @@
     "concept_tags": [
       "takeup_modeling"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20255,6 +21270,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20288,6 +21304,7 @@
     "concept_tags": [
       "takeup_modeling"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20318,6 +21335,7 @@
     "concept_tags": [
       "takeup_modeling"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20347,6 +21365,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -20376,6 +21395,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -20411,6 +21431,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20448,6 +21469,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20477,6 +21499,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -20515,6 +21538,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20544,6 +21568,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": true
   },
   {
@@ -20573,6 +21598,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20604,6 +21630,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   },
   {
@@ -20634,6 +21661,9 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [
+      "retirement_social_security_upgrade"
+    ],
     "noise": false
   },
   {
@@ -20663,6 +21693,9 @@
     ],
     "concept_tags": [
       "other"
+    ],
+    "milestone_tags": [
+      "retirement_social_security_upgrade"
     ],
     "noise": false
   },
@@ -20695,6 +21728,7 @@
     "concept_tags": [
       "other"
     ],
+    "milestone_tags": [],
     "noise": false
   }
 ]

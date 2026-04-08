@@ -121,6 +121,29 @@
       "top_end_income_modeling": 1
     }
   },
+  "milestones": {
+    "policyengine-us-data": {
+      "calibration_platform_maturity": 27,
+      "district_calibration": 19,
+      "tanf_nationalization": 5,
+      "retirement_social_security_upgrade": 3,
+      "high_income_realism": 2,
+      "state_tax_refresh": 1,
+      "filer_behavior_and_taxsim": 1
+    },
+    "policyengine-us": {
+      "state_tax_refresh": 64,
+      "tanf_nationalization": 54,
+      "childcare_infrastructure": 12,
+      "calibration_platform_maturity": 9,
+      "district_calibration": 5,
+      "retirement_social_security_upgrade": 5,
+      "health_coverage_realism": 4,
+      "local_tax_depth": 3,
+      "high_income_realism": 2,
+      "filer_behavior_and_taxsim": 2
+    }
+  },
   "quarters": {
     "policyengine-us-data": {
       "2026-Q1": 61
@@ -373,6 +396,567 @@
       "sample_titles": [
         "Add PUF + source impute modules, fix AGI ceiling (issue #530)",
         "Add NY tax calculation for filters with AGI above $25 million"
+      ]
+    }
+  ],
+  "milestone_cards": [
+    {
+      "id": "tanf_nationalization",
+      "label": "51-State TANF Coverage",
+      "description": "TANF moved from scattered state implementations to a national modeled layer with backdating, benefit hardening, and calibrated take-up.",
+      "tweet_angle": "PolicyEngine US now covers TANF across all 51 jurisdictions, then connects that coverage to take-up and calibration in the data pipeline.",
+      "count": 59,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 27,
+      "repos": {
+        "policyengine-us": 54,
+        "policyengine-us-data": 5
+      },
+      "concepts": {
+        "policy_surface_expansion": 59,
+        "takeup_modeling": 12,
+        "district_level_geography": 1,
+        "targets_database_and_schema": 1
+      },
+      "change_tags": {
+        "testing_validation": 55,
+        "new_coverage": 36,
+        "bug_fix": 29,
+        "reform_modeling": 28
+      },
+      "sample_titles": [
+        "Add Hawaii TANF Program",
+        "Add Maine TANF Program",
+        "Add Nevada TANF Program",
+        "Add New Hampshire TANF program"
+      ],
+      "sample_items": [
+        {
+          "title": "Add Hawaii TANF Program",
+          "date": "2026-01-04",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7048"
+        },
+        {
+          "title": "Add Maine TANF Program",
+          "date": "2026-01-04",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7053"
+        },
+        {
+          "title": "Add Nevada TANF Program",
+          "date": "2026-01-04",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/6934"
+        },
+        {
+          "title": "Add New Hampshire TANF program",
+          "date": "2026-01-04",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7049"
+        }
+      ]
+    },
+    {
+      "id": "childcare_infrastructure",
+      "label": "Childcare Infrastructure",
+      "description": "Childcare work shifted from isolated state fixes toward reusable CCDF, CCAP, and CDCC infrastructure that can scale across states.",
+      "tweet_angle": "The childcare stack got more reusable: stronger state CDCC coverage, new CCAP modeling, and federal CCDF infrastructure for scaling.",
+      "count": 12,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-03",
+      "peak_count": 7,
+      "repos": {
+        "policyengine-us": 12
+      },
+      "concepts": {
+        "policy_surface_expansion": 6,
+        "takeup_modeling": 2,
+        "sample_reforms_and_trackers": 1,
+        "targets_database_and_schema": 1
+      },
+      "change_tags": {
+        "testing_validation": 12,
+        "bug_fix": 7,
+        "reform_modeling": 6,
+        "new_coverage": 6
+      },
+      "sample_titles": [
+        "NY A06774 Enhanced Child and Dependent Care Credit",
+        "CA Calworks childcare and CAPP",
+        "Fix Maryland CDCC to use federal credit allowed",
+        "Wire up all 51 state TANF programs, fix childcare cycle artifact, add takeup"
+      ],
+      "sample_items": [
+        {
+          "title": "NY A06774 Enhanced Child and Dependent Care Credit",
+          "date": "2026-01-21",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7220"
+        },
+        {
+          "title": "CA Calworks childcare and CAPP",
+          "date": "2026-01-28",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7197"
+        },
+        {
+          "title": "Fix Maryland CDCC to use federal credit allowed",
+          "date": "2026-02-17",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7419"
+        },
+        {
+          "title": "Wire up all 51 state TANF programs, fix childcare cycle artifact, add takeup",
+          "date": "2026-02-18",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7401"
+        }
+      ]
+    },
+    {
+      "id": "health_coverage_realism",
+      "label": "ACA And Medicaid Realism",
+      "description": "ACA, Medicaid, and CHIP modeling became more realistic through eligibility fixes, immigrant coverage work, pricing inputs, and take-up.",
+      "tweet_angle": "ACA and Medicaid realism stepped up with better eligibility logic, immigrant coverage modeling, rating-area premiums, and post-calibration overrides.",
+      "count": 4,
+      "first_month": "2026-01",
+      "last_month": "2026-02",
+      "peak_month": "2026-01",
+      "peak_count": 3,
+      "repos": {
+        "policyengine-us": 4
+      },
+      "concepts": {},
+      "change_tags": {
+        "bug_fix": 4,
+        "testing_validation": 4,
+        "new_coverage": 2,
+        "annual_update": 2
+      },
+      "sample_titles": [
+        "Add safety catch in aca_ptc to return zero before 2025",
+        "Exclude Medicaid recipients from QI eligibility",
+        "Fix Medicaid category assignment order - mandatory before optional",
+        "Add 2024 SLCSP premiums by rating area"
+      ],
+      "sample_items": [
+        {
+          "title": "Add safety catch in aca_ptc to return zero before 2025",
+          "date": "2026-01-25",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7246"
+        },
+        {
+          "title": "Exclude Medicaid recipients from QI eligibility",
+          "date": "2026-01-28",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7271"
+        },
+        {
+          "title": "Fix Medicaid category assignment order - mandatory before optional",
+          "date": "2026-01-29",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7272"
+        },
+        {
+          "title": "Add 2024 SLCSP premiums by rating area",
+          "date": "2026-02-20",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7430"
+        }
+      ]
+    },
+    {
+      "id": "state_tax_refresh",
+      "label": "State Tax Refresh And Reform Depth",
+      "description": "A broad 2025 baseline refresh landed across many states, while the reform library deepened with contributed proposals and better state-specific logic.",
+      "tweet_angle": "State-tax coverage broadened sharply in 2026: wide 2025 baseline refreshes plus deeper reform modeling across states like CT, KY, PA, SC, VA, and more.",
+      "count": 65,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 48,
+      "repos": {
+        "policyengine-us": 64,
+        "policyengine-us-data": 1
+      },
+      "concepts": {
+        "sample_reforms_and_trackers": 12,
+        "policy_surface_expansion": 7,
+        "targets_database_and_schema": 1
+      },
+      "change_tags": {
+        "testing_validation": 64,
+        "annual_update": 54,
+        "reform_modeling": 47,
+        "new_coverage": 41
+      },
+      "sample_titles": [
+        "Add SC H.3492 partially refundable EITC reform",
+        "Add missing label metadata to bracket/scale parameters",
+        "Model RI Governor Dan McKee's 2027 Tax Proposals",
+        "Update Rhode Island 2025 Individual Income Tax Model"
+      ],
+      "sample_items": [
+        {
+          "title": "Add SC H.3492 partially refundable EITC reform",
+          "date": "2026-01-19",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7189"
+        },
+        {
+          "title": "Add missing label metadata to bracket/scale parameters",
+          "date": "2026-01-19",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7116"
+        },
+        {
+          "title": "Model RI Governor Dan McKee's 2027 Tax Proposals",
+          "date": "2026-01-19",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7195"
+        },
+        {
+          "title": "Update Rhode Island 2025 Individual Income Tax Model",
+          "date": "2026-01-19",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7016"
+        }
+      ]
+    },
+    {
+      "id": "local_tax_depth",
+      "label": "Local Tax And Property Relief Depth",
+      "description": "Local-area tax modeling got more detailed, especially county income taxes, property-tax relief, renter credits, and programs like Stay NJ.",
+      "tweet_angle": "Local tax depth improved too, with county income taxes, property-tax credits, renter relief, and more realistic local benefit offsets.",
+      "count": 3,
+      "first_month": "2026-02",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 2,
+      "repos": {
+        "policyengine-us": 3
+      },
+      "concepts": {},
+      "change_tags": {
+        "new_coverage": 3,
+        "annual_update": 3,
+        "testing_validation": 3,
+        "reform_modeling": 2
+      },
+      "sample_titles": [
+        "Implement Multnomah County Preschool for All (PFA) Personal Income Tax",
+        "Add Connecticut HB-5009 expanded property tax credit reform",
+        "Add Connecticut HB-5114 renter's tax credit reform"
+      ],
+      "sample_items": [
+        {
+          "title": "Implement Multnomah County Preschool for All (PFA) Personal Income Tax",
+          "date": "2026-02-20",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7443"
+        },
+        {
+          "title": "Add Connecticut HB-5009 expanded property tax credit reform",
+          "date": "2026-02-24",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7478"
+        },
+        {
+          "title": "Add Connecticut HB-5114 renter's tax credit reform",
+          "date": "2026-03-13",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7755"
+        }
+      ]
+    },
+    {
+      "id": "district_calibration",
+      "label": "District-Level Calibration",
+      "description": "The stack moved toward congressional-district, state-legislative-district, and census-block-aware modeling instead of coarse geography only.",
+      "tweet_angle": "One of the biggest data milestones: calibration is now much more district- and block-aware, opening the door to cleaner congressional and state-legislative analysis.",
+      "count": 24,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-01",
+      "peak_count": 8,
+      "repos": {
+        "policyengine-us-data": 19,
+        "policyengine-us": 5
+      },
+      "concepts": {
+        "district_level_geography": 17,
+        "census_block_assignment": 8,
+        "unified_national_calibration": 8,
+        "calibration_target_expansion": 7
+      },
+      "change_tags": {
+        "testing_validation": 22,
+        "bug_fix": 18,
+        "infrastructure": 18,
+        "new_coverage": 12
+      },
+      "sample_titles": [
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Fix county assignment issues",
+        "Add census block-level geographic assignment with comprehensive lookups",
+        "Add health insurance premiums to local area calibration, a matrix builder function, Modal model fitting"
+      ],
+      "sample_items": [
+        {
+          "title": "Add stacked dataset builder and P(county|CD) distributions",
+          "date": "2026-01-01",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/457"
+        },
+        {
+          "title": "Fix county assignment issues",
+          "date": "2026-01-13",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/467"
+        },
+        {
+          "title": "Add census block-level geographic assignment with comprehensive lookups",
+          "date": "2026-01-26",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/484"
+        },
+        {
+          "title": "Add health insurance premiums to local area calibration, a matrix builder function, Modal model fitting",
+          "date": "2026-01-26",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/473"
+        }
+      ]
+    },
+    {
+      "id": "high_income_realism",
+      "label": "High-Income Realism",
+      "description": "Top-end income handling improved through better AGI ceilings, richer high-income brackets, and more robust calibration for ultra-rich households.",
+      "tweet_angle": "High-income realism improved materially: the stack can now represent much richer households without blowing up calibration.",
+      "count": 4,
+      "first_month": "2026-01",
+      "last_month": "2026-02",
+      "peak_month": "2026-01",
+      "peak_count": 2,
+      "repos": {
+        "policyengine-us": 2,
+        "policyengine-us-data": 2
+      },
+      "concepts": {
+        "top_end_income_modeling": 2,
+        "policy_surface_expansion": 1,
+        "state_aware_imputation": 1,
+        "census_block_assignment": 1
+      },
+      "change_tags": {
+        "bug_fix": 4,
+        "new_coverage": 3,
+        "testing_validation": 3,
+        "infrastructure": 2
+      },
+      "sample_titles": [
+        "Add income_tax_positive variable for CBO-consistent calibration",
+        "Fix federal income tax calibration to use income_tax_positive",
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)",
+        "Add NY tax calculation for filters with AGI above $25 million"
+      ],
+      "sample_items": [
+        {
+          "title": "Add income_tax_positive variable for CBO-consistent calibration",
+          "date": "2026-01-30",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7288"
+        },
+        {
+          "title": "Fix federal income tax calibration to use income_tax_positive",
+          "date": "2026-01-31",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/498"
+        },
+        {
+          "title": "Add PUF + source impute modules, fix AGI ceiling (issue #530)",
+          "date": "2026-02-18",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/537"
+        },
+        {
+          "title": "Add NY tax calculation for filters with AGI above $25 million",
+          "date": "2026-02-24",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/6914"
+        }
+      ]
+    },
+    {
+      "id": "retirement_social_security_upgrade",
+      "label": "Retirement And Social Security Upgrades",
+      "description": "Retirement and Social Security modeling deepened through exclusion fixes, SECURE 2.0 work, contribution calibration, and long-run wage-base paths.",
+      "tweet_angle": "Retirement and Social Security got deeper, from SECURE 2.0 catch-up modeling to NAWI-based payroll-cap and wage-base extensions through 2100.",
+      "count": 8,
+      "first_month": "2026-01",
+      "last_month": "2026-04",
+      "peak_month": "2026-02",
+      "peak_count": 3,
+      "repos": {
+        "policyengine-us": 5,
+        "policyengine-us-data": 3
+      },
+      "concepts": {
+        "calibration_target_expansion": 2,
+        "modal_gpu_pipeline": 1,
+        "census_block_assignment": 1,
+        "unified_national_calibration": 1
+      },
+      "change_tags": {
+        "testing_validation": 6,
+        "annual_update": 5,
+        "reform_modeling": 3,
+        "bug_fix": 3
+      },
+      "sample_titles": [
+        "Improve retirement income imputation and calibration",
+        "Fix RI retirement income subtraction per-person cap",
+        "Add Wisconsin retirement income exclusion (Line 16, $24K, age 67+)",
+        "Implement SECURE 2.0 enhanced 401(k) catch-up contributions for ages 60-63"
+      ],
+      "sample_items": [
+        {
+          "title": "Improve retirement income imputation and calibration",
+          "date": "2026-01-31",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/496"
+        },
+        {
+          "title": "Fix RI retirement income subtraction per-person cap",
+          "date": "2026-02-01",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7295"
+        },
+        {
+          "title": "Add Wisconsin retirement income exclusion (Line 16, $24K, age 67+)",
+          "date": "2026-02-18",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7426"
+        },
+        {
+          "title": "Implement SECURE 2.0 enhanced 401(k) catch-up contributions for ages 60-63",
+          "date": "2026-02-23",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7457"
+        }
+      ]
+    },
+    {
+      "id": "calibration_platform_maturity",
+      "label": "Calibration Platform Maturity",
+      "description": "Calibration became a production-grade platform with a governed targets database, Modal workflows, validation, checkpointing, and release gates.",
+      "tweet_angle": "The data pipeline is no longer just a one-off build: calibration now runs through a more production-grade platform with Modal, validation, and promotion gates.",
+      "count": 36,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 16,
+      "repos": {
+        "policyengine-us-data": 27,
+        "policyengine-us": 9
+      },
+      "concepts": {
+        "provenance_and_quality_gates": 16,
+        "targets_database_and_schema": 14,
+        "calibration_target_expansion": 14,
+        "modal_gpu_pipeline": 9
+      },
+      "change_tags": {
+        "testing_validation": 34,
+        "bug_fix": 24,
+        "infrastructure": 21,
+        "new_coverage": 19
+      },
+      "sample_titles": [
+        "Fix Publish workflow by migrating dev deps to PEP 735",
+        "Add Modal integration for CI/CD workflows",
+        "Fix versioning workflow checkout for push events",
+        "Add Microsimulation API documentation"
+      ],
+      "sample_items": [
+        {
+          "title": "Fix Publish workflow by migrating dev deps to PEP 735",
+          "date": "2026-01-06",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/462"
+        },
+        {
+          "title": "Add Modal integration for CI/CD workflows",
+          "date": "2026-01-09",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/465"
+        },
+        {
+          "title": "Fix versioning workflow checkout for push events",
+          "date": "2026-01-10",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/469"
+        },
+        {
+          "title": "Add Microsimulation API documentation",
+          "date": "2026-01-15",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7188"
+        }
+      ]
+    },
+    {
+      "id": "filer_behavior_and_taxsim",
+      "label": "Filer Behavior And TAXSIM Validation",
+      "description": "Filer behavior, filing propensity, and TAXSIM validation all improved, strengthening the simulation layer around who files and how outputs compare.",
+      "tweet_angle": "The filing layer improved too: better filer assignment, filing-propensity variables, and stronger TAXSIM validation.",
+      "count": 3,
+      "first_month": "2026-01",
+      "last_month": "2026-02",
+      "peak_month": "2026-02",
+      "peak_count": 2,
+      "repos": {
+        "policyengine-us": 2,
+        "policyengine-us-data": 1
+      },
+      "concepts": {
+        "calibration_target_expansion": 1
+      },
+      "change_tags": {
+        "new_coverage": 3,
+        "testing_validation": 3,
+        "documentation": 2,
+        "reform_modeling": 1
+      },
+      "sample_titles": [
+        "Add tax_unit_is_filer tests",
+        "Add tax filing propensity variables",
+        "Add voluntary tax filer assignment"
+      ],
+      "sample_items": [
+        {
+          "title": "Add tax_unit_is_filer tests",
+          "date": "2026-01-31",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7305"
+        },
+        {
+          "title": "Add tax filing propensity variables",
+          "date": "2026-02-07",
+          "repo": "policyengine-us",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us/pull/7333"
+        },
+        {
+          "title": "Add voluntary tax filer assignment",
+          "date": "2026-02-07",
+          "repo": "policyengine-us-data",
+          "pr_url": "https://github.com/PolicyEngine/policyengine-us-data/pull/513"
+        }
       ]
     }
   ],
