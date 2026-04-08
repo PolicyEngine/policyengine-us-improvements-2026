@@ -12,7 +12,7 @@ The source repos are treated as read-only because both have unrelated local chan
 1. Build a raw commit inventory from first-parent git history since `2026-01-01`.
 2. Resolve GitHub PR numbers to titles and descriptions using `gh`.
 3. Tag each item with broad heuristic themes for browsing and summarization.
-4. Tag each change with a primary domain, change-type tags, topical tags, month, and quarter.
+4. Tag each change with a primary domain, change-type tags, topical tags, deeper concept tags, month, and quarter.
 5. Surface the results in a Next.js + Tailwind dashboard that uses PolicyEngine design tokens.
 6. Generate machine-readable artifacts in `data/`.
 
@@ -20,8 +20,8 @@ The source repos are treated as read-only because both have unrelated local chan
 
 - `data/commit_inventory.json` — normalized changes with resolved PR titles when available.
 - `data/theme_summary.json` — aggregated counts by repo and theme.
-- `data/taxonomy_summary.json` — domain, change-type, topical-tag, and storyline summaries.
-- `data/timeline_summary.json` — month-by-month evolution across repos and categories.
+- `data/taxonomy_summary.json` — domain, concept, change-type, topical-tag, and storyline summaries.
+- `data/timeline_summary.json` — month-by-month evolution across repos, concepts, and categories.
 - `data/cache/prs/` — cached GitHub PR metadata.
 - `app/` and `components/` — the interactive dashboard UI.
 - `notes/` — written synthesis and repo-level notes.

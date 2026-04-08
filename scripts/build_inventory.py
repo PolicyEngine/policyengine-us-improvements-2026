@@ -522,6 +522,346 @@ TOPICAL_TAG_RULES = (
 )
 
 
+CONCEPT_RULES = (
+    (
+        "district_level_geography",
+        (
+            "congressional district",
+            "congressional districts",
+            "state legislative district",
+            "state legislative districts",
+            "sldu",
+            "sldl",
+            "at-large district",
+            "census block",
+            "block-level",
+            "district naming",
+            "p(county|cd)",
+            "county|cd",
+            "county assignment",
+            "local area calibration",
+            "county income tax",
+            "three_digit_zip_code",
+            "census stc",
+        ),
+    ),
+    (
+        "state_aware_imputation",
+        (
+            "state-aware imputation",
+            "state aware imputation",
+            "state_fips",
+            "state fips",
+            "state predictor",
+            "source impute",
+            "source_impute",
+            "acs re-imputation",
+            "regional variation",
+            "cross-state variation",
+            "hourly wage",
+            "hourly wages",
+            "org hourly wages",
+            "outgoing rotation group",
+        ),
+    ),
+    (
+        "top_end_income_modeling",
+        (
+            "high-income tail",
+            "agi ceiling",
+            "max agi",
+            "top 0.5%",
+            "$400 million",
+            "400 million",
+            "$25 million",
+            "25 million",
+            "400m max agi",
+            "$400m",
+            "agi > $10m",
+            "capital income predictors",
+            "soi table 4.3",
+            "granular high income brackets",
+        ),
+    ),
+    (
+        "census_block_assignment",
+        (
+            "clone_and_assign",
+            "geographic clones",
+            "clone-by-clone",
+            "population-weighted",
+            "population-weighted random sample",
+            "county_assignment",
+            "clone",
+            "clones",
+            "puf clone",
+            "puf cloning",
+            "double_geography_for_puf",
+            "census block assignment",
+            "census block sampling",
+            "donation algorithm",
+            "donor household",
+            "donor households",
+            "census block-level geographic assignment",
+            "census-block-first calibration pipeline",
+            "p(county|cd)",
+            "county|cd",
+        ),
+    ),
+    (
+        "takeup_modeling",
+        (
+            "takeup",
+            "take-up",
+            "state-aware takeup",
+            "takeup seeding",
+            "rerandomize",
+            "rerandomization",
+            "seeded_rng",
+            "name-based seeding",
+            "salt parameter",
+            "state-specific medicaid",
+            "reported recipients",
+            "participation",
+        ),
+    ),
+    (
+        "targets_database_and_schema",
+        (
+            "targets database",
+            "calibration database",
+            "field_valid_values",
+            "policy_data.db",
+            "target_overview",
+            "human-readable overview",
+            "distinct reform ids",
+            "etl scripts",
+            "database guide",
+            "source field",
+            "source values",
+            "schema",
+            "trigger",
+            "triggers",
+            "views",
+            "consistency checks",
+            "target loading",
+            "stale calibration targets",
+            "time_period from dataset",
+            "calibration database build pipeline",
+        ),
+    ),
+    (
+        "calibration_target_expansion",
+        (
+            "pregnancy calibration",
+            "retirement contributions",
+            "ss reconciliation",
+            "soi table 4.3",
+            "outgoing rotation group",
+            "hierarchical uprating",
+            "uprating of targets",
+            "reconciled to add up",
+            "calibration targets",
+            "target processing",
+            "target config",
+            "national targets",
+            "aca ptc state multipliers",
+            "filer count calibration targets",
+            "irs soi",
+        ),
+    ),
+    (
+        "unified_national_calibration",
+        (
+            "national calibration",
+            "us.h5",
+            "unified_calibration",
+            "unified_matrix_builder",
+            "unified pipeline",
+            "under one roof",
+            "districts, states, and cities",
+            "graded against the income",
+            "calibration consolidation",
+            "stacked dataset",
+            "cps_2024.h5",
+            "published h5 datasets",
+            "enhanced_cps_2024.h5",
+            "huggingface upload",
+        ),
+    ),
+    (
+        "modal_gpu_pipeline",
+        (
+            "gpu",
+            "modal",
+            "serverless flow",
+            "50 workers",
+            "restart a partially completed pipeline run",
+            "intermediate artifacts",
+            "volume staging",
+            "checkpointing",
+            "checkpoint",
+            "build-only",
+            "package-path",
+            "pipeline fingerprint",
+            "artifact validation",
+            "h5 pipeline scaling",
+            "oom",
+            "model fitting",
+            "hyperparameter cli",
+            "modal ci",
+        ),
+    ),
+    (
+        "provenance_and_quality_gates",
+        (
+            "provenance",
+            "run id",
+            "data lineage",
+            "sha256",
+            "stale data",
+            "unit vs integration tests",
+            "quality gates",
+            "staging",
+            "promotion",
+            "sanity checks",
+            "validation scripts",
+            "logs are saved",
+            "hashes",
+            "manifest validation",
+            "deterministic country package",
+            "end-to-end test",
+            "corrupted dataset uploads",
+            "upload validation",
+            "sanity tests",
+            "versioning workflow",
+            "publish workflow",
+        ),
+    ),
+    (
+        "sample_reforms_and_trackers",
+        (
+            "sample reform",
+            "sample reforms",
+            "charitable deduction",
+            "van hollen",
+            "state legislative tracker",
+            "legislative tracker",
+            "state reforms",
+            "working americans' tax cut act",
+            "contributed reform",
+            "tax proposal",
+            "tax reform",
+        ),
+    ),
+    (
+        "policy_surface_expansion",
+        (
+            "tanf",
+            "ccdf",
+            "ssi state supplements",
+            "liheap",
+            "backdating",
+            "adoption",
+            "taxsim",
+            "lwi",
+            "jec",
+            "crs",
+            "opportunity insights",
+            "policyengine.org/us/model",
+        ),
+    ),
+)
+
+
+CONCEPT_METADATA = {
+    "district_level_geography": {
+        "label": "District-Level Geography",
+        "description": (
+            "More granular geographic modeling through congressional districts, "
+            "state legislative districts, census blocks, and block-derived crosswalks."
+        ),
+    },
+    "state_aware_imputation": {
+        "label": "State-Aware Imputation",
+        "description": (
+            "Using state and local geography signals to improve rent, real estate "
+            "tax, wage, and other source imputations."
+        ),
+    },
+    "top_end_income_modeling": {
+        "label": "Top-End Income Modeling",
+        "description": (
+            "Better handling of ultra-high-income households, AGI ceilings, and "
+            "high-bracket calibration or imputation."
+        ),
+    },
+    "census_block_assignment": {
+        "label": "Census-Block Assignment",
+        "description": (
+            "Assigning cloned or donor households to economically plausible census "
+            "blocks and districts instead of flat cross-district replication."
+        ),
+    },
+    "takeup_modeling": {
+        "label": "Take-up Modeling",
+        "description": (
+            "State-aware take-up rates and seeded stochastic assignment for "
+            "reproducible participation modeling."
+        ),
+    },
+    "targets_database_and_schema": {
+        "label": "Targets Database And Schema",
+        "description": (
+            "Turning calibration targets into a governed database with schema "
+            "checks, views, metadata, and source tracking."
+        ),
+    },
+    "calibration_target_expansion": {
+        "label": "Calibration Target Expansion",
+        "description": (
+            "Adding new calibration targets, richer target processing, uprating, "
+            "and reconciliation across geographic levels."
+        ),
+    },
+    "unified_national_calibration": {
+        "label": "Unified National Calibration",
+        "description": (
+            "Consolidating separate calibration artifacts into one national, "
+            "multi-level calibration architecture."
+        ),
+    },
+    "modal_gpu_pipeline": {
+        "label": "Modal GPU Pipeline",
+        "description": (
+            "GPU-backed, serverless Modal workflows for fitting, publishing, "
+            "checkpointing, and scaling the calibration build."
+        ),
+    },
+    "provenance_and_quality_gates": {
+        "label": "Provenance And Quality Gates",
+        "description": (
+            "Run IDs, hashes, staging or promotion, validation, and release gates "
+            "around calibrated datasets."
+        ),
+    },
+    "sample_reforms_and_trackers": {
+        "label": "Sample Reforms And Trackers",
+        "description": (
+            "External-facing reform examples and tracker-style products that turn "
+            "the model stack into narrative analysis."
+        ),
+    },
+    "policy_surface_expansion": {
+        "label": "Policy Surface Expansion",
+        "description": (
+            "New modeled programs, backdating work, and public-facing products "
+            "built on top of the underlying model and data stack."
+        ),
+    },
+}
+
+
 def run(*args: str) -> str:
     return subprocess.check_output(args, text=True)
 
@@ -547,6 +887,15 @@ def normalize_summary(body: str) -> str:
     if not lines:
         return ""
     return lines[0][:500]
+
+
+def normalize_classification_text(*parts: str) -> str:
+    text = "\n".join(part for part in parts if part).strip()
+    if not text:
+        return ""
+    text = re.sub(r"\r\n?", "\n", text)
+    text = re.sub(r"\s+", " ", text)
+    return text[:12000]
 
 
 def quarter_for_date(date: str) -> str:
@@ -683,8 +1032,14 @@ def build_repo_inventory(repo: RepoConfig) -> list[dict]:
     inventory = []
     for commit in commits:
         pr_data = resolve_pr_data(commit, pr_lookup)
-        text_blob = "\n".join(
-            [pr_data["resolved_title"], pr_data["pr_summary"], commit["subject"]]
+        pr_body = ""
+        if commit["pr_numbers"]:
+            pr_body = (pr_lookup.get(commit["pr_numbers"][0]) or {}).get("body", "")
+        text_blob = normalize_classification_text(
+            pr_data["resolved_title"],
+            pr_body,
+            pr_data["pr_summary"],
+            commit["subject"],
         )
         themes = classify_themes(repo.name, text_blob)
         primary_theme = pick_primary_theme(themes)
@@ -699,6 +1054,7 @@ def build_repo_inventory(repo: RepoConfig) -> list[dict]:
                 "primary_domain": THEME_TO_DOMAIN[primary_theme],
                 "change_tags": classify_rules(text_blob, CHANGE_TYPE_RULES, default="other"),
                 "topical_tags": classify_rules(text_blob, TOPICAL_TAG_RULES, default="other"),
+                "concept_tags": classify_rules(text_blob, CONCEPT_RULES, default="other"),
                 "noise": is_noise(commit["subject"]),
             }
         )
@@ -745,13 +1101,16 @@ def build_theme_summary(inventory: list[dict]) -> dict:
     return output
 
 
-def build_storylines(inventory: list[dict]) -> list[dict]:
+def build_storylines_for_field(
+    inventory: list[dict], field: str, *, skip_values: set[str] | None = None
+) -> list[dict]:
+    skip_values = skip_values or {"other"}
     by_tag = defaultdict(list)
     for item in inventory:
         if item["noise"]:
             continue
-        for tag in item["topical_tags"]:
-            if tag == "other":
+        for tag in item[field]:
+            if tag in skip_values:
                 continue
             by_tag[tag].append(item)
 
@@ -800,6 +1159,35 @@ def build_storylines(inventory: list[dict]) -> list[dict]:
     return sorted(storylines, key=lambda value: (-value["count"], value["tag"]))
 
 
+def build_storylines(inventory: list[dict]) -> list[dict]:
+    return build_storylines_for_field(inventory, "topical_tags")
+
+
+def build_concept_storylines(inventory: list[dict]) -> list[dict]:
+    return build_storylines_for_field(inventory, "concept_tags")
+
+
+def build_concept_cards(inventory: list[dict]) -> list[dict]:
+    cards = []
+    for storyline in build_concept_storylines(inventory):
+        metadata = CONCEPT_METADATA[storyline["tag"]]
+        cards.append(
+            {
+                "id": storyline["tag"],
+                "label": metadata["label"],
+                "description": metadata["description"],
+                "count": storyline["count"],
+                "first_month": storyline["first_month"],
+                "last_month": storyline["last_month"],
+                "peak_month": storyline["peak_month"],
+                "peak_count": storyline["peak_count"],
+                "repos": storyline["repos"],
+                "sample_titles": storyline["sample_titles"],
+            }
+        )
+    return cards
+
+
 def build_timeline_summary(inventory: list[dict]) -> list[dict]:
     signal_items = [item for item in inventory if not item["noise"]]
     months = sorted({item["month"] for item in signal_items})
@@ -840,6 +1228,14 @@ def build_timeline_summary(inventory: list[dict]) -> list[dict]:
                         if tag != "other"
                     ).most_common(10)
                 ),
+                "concept_tags": dict(
+                    Counter(
+                        tag
+                        for item in month_items
+                        for tag in item["concept_tags"]
+                        if tag != "other"
+                    ).most_common(12)
+                ),
             }
         )
     return output
@@ -870,12 +1266,20 @@ def build_taxonomy_summary(inventory: list[dict]) -> dict:
             multiple=True,
             skip_values={"other"},
         ),
+        "concepts": build_counter_summary(
+            signal_items,
+            "concept_tags",
+            multiple=True,
+            skip_values={"other"},
+        ),
         "quarters": build_counter_summary(
             signal_items,
             "quarter",
             multiple=False,
         ),
+        "concept_cards": build_concept_cards(inventory),
         "storylines": build_storylines(inventory),
+        "concept_storylines": build_concept_storylines(inventory),
     }
 
 

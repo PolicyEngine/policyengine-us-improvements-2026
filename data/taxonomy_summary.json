@@ -1,94 +1,124 @@
 {
   "domains": {
     "policyengine-us-data": {
-      "calibration_and_data_pipeline": 38,
-      "other": 11,
-      "quality_tooling_and_docs": 10,
-      "geography_and_local_area": 2
+      "calibration_and_data_pipeline": 45,
+      "quality_tooling_and_docs": 9,
+      "other": 6,
+      "geography_and_local_area": 1
     },
     "policyengine-us": {
-      "state_tax_policy": 81,
-      "other": 79,
-      "benefits_and_childcare": 49,
+      "state_tax_policy": 121,
+      "benefits_and_childcare": 63,
+      "federal_tax_policy": 28,
+      "quality_tooling_and_docs": 23,
       "health_and_safety_net": 21,
-      "federal_tax_policy": 17,
-      "quality_tooling_and_docs": 17,
-      "geography_and_local_area": 5
+      "other": 11,
+      "geography_and_local_area": 2
     }
   },
   "themes": {
     "policyengine-us-data": {
-      "calibration_pipeline": 21,
-      "other": 11,
-      "validation_and_ci": 10,
-      "imputation_and_new_variables": 10,
-      "takeup_and_participation": 7,
-      "geography_and_dataset_build": 2
+      "calibration_pipeline": 31,
+      "validation_and_ci": 9,
+      "imputation_and_new_variables": 8,
+      "takeup_and_participation": 6,
+      "other": 6,
+      "geography_and_dataset_build": 1
     },
     "policyengine-us": {
-      "state_tax_and_legislation": 81,
-      "other": 79,
-      "state_benefits_and_childcare": 49,
+      "state_tax_and_legislation": 121,
+      "state_benefits_and_childcare": 63,
+      "federal_tax_and_retirement": 28,
+      "quality_tooling_and_docs": 23,
       "federal_benefits_and_health": 21,
-      "federal_tax_and_retirement": 17,
-      "quality_tooling_and_docs": 17,
-      "geography_and_baseline_inputs": 5
+      "other": 11,
+      "geography_and_baseline_inputs": 2
     }
   },
   "change_tags": {
     "policyengine-us-data": {
-      "bug_fix": 23,
-      "new_coverage": 22,
-      "infrastructure": 18,
-      "testing_validation": 9,
-      "documentation": 1,
-      "performance": 1,
-      "annual_update": 1
+      "testing_validation": 50,
+      "bug_fix": 36,
+      "infrastructure": 30,
+      "new_coverage": 26,
+      "documentation": 8,
+      "reform_modeling": 5,
+      "annual_update": 5,
+      "performance": 3
     },
     "policyengine-us": {
-      "new_coverage": 98,
-      "bug_fix": 74,
-      "annual_update": 54,
-      "reform_modeling": 45,
-      "historical_backfill": 14,
-      "infrastructure": 12,
-      "testing_validation": 12,
-      "documentation": 8,
-      "performance": 1
+      "testing_validation": 237,
+      "bug_fix": 154,
+      "new_coverage": 147,
+      "reform_modeling": 130,
+      "annual_update": 110,
+      "infrastructure": 41,
+      "historical_backfill": 33,
+      "documentation": 33,
+      "performance": 5
     }
   },
   "topical_tags": {
     "policyengine-us-data": {
-      "calibration": 18,
-      "validation_tooling": 12,
-      "imputation": 11,
-      "social_security_retirement": 8,
-      "takeup": 7,
-      "geography_local_area": 4,
-      "aca": 4,
-      "tanf": 3,
-      "state_income_tax": 2,
-      "filing_behavior": 1,
-      "long_run_projections": 1
+      "validation_tooling": 34,
+      "calibration": 27,
+      "social_security_retirement": 23,
+      "imputation": 18,
+      "takeup": 12,
+      "geography_local_area": 9,
+      "aca": 8,
+      "snap_school_meals": 7,
+      "state_income_tax": 6,
+      "long_run_projections": 5,
+      "tanf": 5,
+      "filing_behavior": 4,
+      "eitc": 3,
+      "medicaid_chip": 2
     },
     "policyengine-us": {
-      "state_income_tax": 49,
-      "tanf": 40,
-      "validation_tooling": 25,
-      "social_security_retirement": 25,
-      "ctc": 15,
-      "childcare": 13,
-      "aca": 7,
-      "medicaid_chip": 7,
-      "filing_behavior": 7,
-      "geography_local_area": 6,
-      "eitc": 6,
-      "snap_school_meals": 5,
-      "long_run_projections": 5,
-      "imputation": 2,
-      "property_tax_relief": 2,
-      "calibration": 1,
-      "takeup": 1
+      "validation_tooling": 216,
+      "social_security_retirement": 122,
+      "filing_behavior": 76,
+      "state_income_tax": 73,
+      "tanf": 54,
+      "childcare": 41,
+      "eitc": 34,
+      "ctc": 29,
+      "snap_school_meals": 19,
+      "aca": 16,
+      "geography_local_area": 15,
+      "medicaid_chip": 15,
+      "property_tax_relief": 14,
+      "long_run_projections": 12,
+      "imputation": 8,
+      "calibration": 7,
+      "takeup": 4
+    }
+  },
+  "concepts": {
+    "policyengine-us-data": {
+      "provenance_and_quality_gates": 14,
+      "calibration_target_expansion": 14,
+      "district_level_geography": 13,
+      "policy_surface_expansion": 11,
+      "takeup_modeling": 11,
+      "targets_database_and_schema": 9,
+      "unified_national_calibration": 8,
+      "modal_gpu_pipeline": 7,
+      "census_block_assignment": 6,
+      "state_aware_imputation": 4,
+      "top_end_income_modeling": 1
+    },
+    "policyengine-us": {
+      "policy_surface_expansion": 85,
+      "sample_reforms_and_trackers": 18,
+      "takeup_modeling": 9,
+      "targets_database_and_schema": 5,
+      "district_level_geography": 4,
+      "provenance_and_quality_gates": 2,
+      "census_block_assignment": 2,
+      "modal_gpu_pipeline": 2,
+      "top_end_income_modeling": 1
     }
   },
   "quarters": {
@@ -100,60 +130,19 @@
       "2026-Q2": 3
     }
   },
-  "storylines": [
+  "concept_cards": [
     {
-      "tag": "state_income_tax",
-      "count": 51,
+      "id": "policy_surface_expansion",
+      "label": "Policy Surface Expansion",
+      "description": "New modeled programs, backdating work, and public-facing products built on top of the underlying model and data stack.",
+      "count": 96,
       "first_month": "2026-01",
       "last_month": "2026-03",
       "peak_month": "2026-02",
-      "peak_count": 43,
+      "peak_count": 39,
       "repos": {
-        "policyengine-us": 49,
-        "policyengine-us-data": 2
-      },
-      "themes": {
-        "state_tax_and_legislation": 49,
-        "calibration_pipeline": 2
-      },
-      "change_tags": {
-        "annual_update": 40,
-        "new_coverage": 10,
-        "reform_modeling": 4,
-        "bug_fix": 3,
-        "testing_validation": 1
-      },
-      "sample_titles": [
-        "Update Rhode Island 2025 Individual Income Tax Model",
-        "Update Connecticut 2025 income tax",
-        "Update Virginia 2025 income tax parameters and tests",
-        "Model Virginia HB979 Income Tax Reform",
-        "Update Michigan 2025 Individual Income Tax Model"
-      ]
-    },
-    {
-      "tag": "tanf",
-      "count": 43,
-      "first_month": "2026-01",
-      "last_month": "2026-03",
-      "peak_month": "2026-02",
-      "peak_count": 21,
-      "repos": {
-        "policyengine-us": 40,
-        "policyengine-us-data": 3
-      },
-      "themes": {
-        "state_benefits_and_childcare": 39,
-        "calibration_pipeline": 2,
-        "federal_benefits_and_health": 1,
-        "takeup_and_participation": 1
-      },
-      "change_tags": {
-        "new_coverage": 24,
-        "historical_backfill": 9,
-        "bug_fix": 6,
-        "infrastructure": 2,
-        "annual_update": 1
+        "policyengine-us": 85,
+        "policyengine-us-data": 11
       },
       "sample_titles": [
         "Add Hawaii TANF Program",
@@ -164,453 +153,1139 @@
       ]
     },
     {
-      "tag": "validation_tooling",
-      "count": 37,
-      "first_month": "2026-01",
-      "last_month": "2026-04",
-      "peak_month": "2026-01",
-      "peak_count": 18,
-      "repos": {
-        "policyengine-us": 25,
-        "policyengine-us-data": 12
-      },
-      "themes": {
-        "quality_tooling_and_docs": 14,
-        "validation_and_ci": 8,
-        "other": 5,
-        "federal_tax_and_retirement": 3,
-        "calibration_pipeline": 3
-      },
-      "change_tags": {
-        "testing_validation": 18,
-        "infrastructure": 15,
-        "new_coverage": 14,
-        "bug_fix": 13,
-        "documentation": 8
-      },
-      "sample_titles": [
-        "Fix weekly uv.lock workflow for main branch",
-        "Remove non-existent labels from weekly uv.lock workflow",
-        "Remove uv.lock freshness check, add weekly update workflow",
-        "Add changelog entry to weekly uv.lock update workflow",
-        "Update the workflow to automatically generate changelog_entry.yaml alongside uv.lock"
-      ]
-    },
-    {
-      "tag": "social_security_retirement",
-      "count": 33,
-      "first_month": "2026-01",
-      "last_month": "2026-04",
-      "peak_month": "2026-02",
-      "peak_count": 13,
-      "repos": {
-        "policyengine-us": 25,
-        "policyengine-us-data": 8
-      },
-      "themes": {
-        "federal_benefits_and_health": 11,
-        "federal_tax_and_retirement": 6,
-        "state_benefits_and_childcare": 5,
-        "takeup_and_participation": 4,
-        "calibration_pipeline": 2
-      },
-      "change_tags": {
-        "new_coverage": 14,
-        "bug_fix": 7,
-        "annual_update": 2,
-        "infrastructure": 2,
-        "reform_modeling": 1
-      },
-      "sample_titles": [
-        "Add phase-out logic to CRFB Social Security nonrefundable credit",
-        "Connecticut Temporary Family Assistance (TFA) program",
-        "Allow API partners to override SSI income for IL AABD calculation",
-        "Fix county assignment issues",
-        "Add missing label metadata to bracket/scale parameters"
-      ]
-    },
-    {
-      "tag": "calibration",
-      "count": 19,
+      "id": "takeup_modeling",
+      "label": "Take-up Modeling",
+      "description": "State-aware take-up rates and seeded stochastic assignment for reproducible participation modeling.",
+      "count": 20,
       "first_month": "2026-01",
       "last_month": "2026-03",
       "peak_month": "2026-02",
-      "peak_count": 10,
+      "peak_count": 12,
       "repos": {
-        "policyengine-us-data": 18,
-        "policyengine-us": 1
-      },
-      "themes": {
-        "calibration_pipeline": 18,
-        "other": 1
-      },
-      "change_tags": {
-        "new_coverage": 11,
-        "infrastructure": 7,
-        "bug_fix": 6,
-        "testing_validation": 2,
-        "annual_update": 1
+        "policyengine-us-data": 11,
+        "policyengine-us": 9
       },
       "sample_titles": [
-        "Add health insurance premiums to local area calibration, a matrix builder function, Modal model fitting",
-        "Add income_tax_positive variable for CBO-consistent calibration",
-        "Make the Calibration Database first class",
-        "Add state income tax calibration targets from Census STC",
-        "Fix federal income tax calibration to use income_tax_positive"
+        "Add Florida TANF program",
+        "Add Wyoming POWER program",
+        "Implement North Dakota TANF program",
+        "Move all randomness to data package for deterministic country package",
+        "Move all stochastic randomness to data package for deterministic country package"
       ]
     },
     {
-      "tag": "ctc",
-      "count": 15,
+      "id": "sample_reforms_and_trackers",
+      "label": "Sample Reforms And Trackers",
+      "description": "External-facing reform examples and tracker-style products that turn the model stack into narrative analysis.",
+      "count": 18,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 7,
+      "repos": {
+        "policyengine-us": 18
+      },
+      "sample_titles": [
+        "Model RI Governor Dan McKee's 2027 Tax Proposals",
+        "Add CRFB AGI surtax reform",
+        "Fix SC H.3492 reform to use 5-year in_effect check pattern",
+        "Register AGI surtax reform and add expanded base option",
+        "Model Virginia HB979 Income Tax Reform"
+      ]
+    },
+    {
+      "id": "district_level_geography",
+      "label": "District-Level Geography",
+      "description": "More granular geographic modeling through congressional districts, state legislative districts, census blocks, and block-derived crosswalks.",
+      "count": 17,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-01",
+      "peak_count": 7,
+      "repos": {
+        "policyengine-us-data": 13,
+        "policyengine-us": 4
+      },
+      "sample_titles": [
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Fix county assignment issues",
+        "Add census block-level geographic assignment with comprehensive lookups",
+        "Add health insurance premiums to local area calibration, a matrix builder function, Modal model fitting",
+        "Add sldu and sldl variables for state legislative districts"
+      ]
+    },
+    {
+      "id": "provenance_and_quality_gates",
+      "label": "Provenance And Quality Gates",
+      "description": "Run IDs, hashes, staging or promotion, validation, and release gates around calibrated datasets.",
+      "count": 16,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-03",
+      "peak_count": 8,
+      "repos": {
+        "policyengine-us-data": 14,
+        "policyengine-us": 2
+      },
+      "sample_titles": [
+        "Fix Publish workflow by migrating dev deps to PEP 735",
+        "Fix versioning workflow checkout for push events",
+        "Add Microsimulation API documentation",
+        "Make the Calibration Database first class",
+        "Move all randomness to data package for deterministic country package"
+      ]
+    },
+    {
+      "id": "calibration_target_expansion",
+      "label": "Calibration Target Expansion",
+      "description": "Adding new calibration targets, richer target processing, uprating, and reconciliation across geographic levels.",
+      "count": 14,
       "first_month": "2026-01",
       "last_month": "2026-03",
       "peak_month": "2026-02",
       "peak_count": 8,
       "repos": {
-        "policyengine-us": 15
-      },
-      "themes": {
-        "state_tax_and_legislation": 13,
-        "other": 1,
-        "federal_tax_and_retirement": 1
-      },
-      "change_tags": {
-        "reform_modeling": 8,
-        "bug_fix": 7,
-        "new_coverage": 5,
-        "annual_update": 2
+        "policyengine-us-data": 14
       },
       "sample_titles": [
-        "Add range-based phaseout option for RI CTC",
-        "NY S04487 Supplemental Empire State Child Tax Credit for Newborns",
-        "Fix DC Child Tax Credit for 2026+ (new statute)",
-        "Fix Maryland CTC AGI eligibility boundary",
-        "Fix MN CTC eligible child to require dependent status"
-      ]
-    },
-    {
-      "tag": "childcare",
-      "count": 13,
-      "first_month": "2026-01",
-      "last_month": "2026-03",
-      "peak_month": "2026-03",
-      "peak_count": 7,
-      "repos": {
-        "policyengine-us": 13
-      },
-      "themes": {
-        "state_tax_and_legislation": 8,
-        "state_benefits_and_childcare": 4,
-        "other": 1
-      },
-      "change_tags": {
-        "bug_fix": 8,
-        "new_coverage": 5,
-        "reform_modeling": 2
-      },
-      "sample_titles": [
-        "NY A06774 Enhanced Child and Dependent Care Credit",
-        "CA Calworks childcare and CAPP",
-        "Fix Maryland CDCC to use federal credit allowed",
-        "Wire up all 51 state TANF programs, fix childcare cycle artifact, add takeup",
-        "Fix Hawaii CDCC going negative with negative SE income"
-      ]
-    },
-    {
-      "tag": "imputation",
-      "count": 13,
-      "first_month": "2026-01",
-      "last_month": "2026-03",
-      "peak_month": "2026-02",
-      "peak_count": 6,
-      "repos": {
-        "policyengine-us-data": 11,
-        "policyengine-us": 2
-      },
-      "themes": {
-        "imputation_and_new_variables": 5,
-        "calibration_pipeline": 4,
-        "federal_benefits_and_health": 1,
-        "state_tax_and_legislation": 1,
-        "geography_and_dataset_build": 1
-      },
-      "change_tags": {
-        "new_coverage": 5,
-        "bug_fix": 3,
-        "annual_update": 1,
-        "testing_validation": 1,
-        "performance": 1
-      },
-      "sample_titles": [
-        "Add partnership_se_income to IMPUTED_VARIABLES",
+        "Make the Calibration Database first class",
+        "Add state income tax calibration targets from Census STC",
         "Improve retirement income imputation and calibration",
-        "Add liquid asset imputation from SIPP",
-        "Add liquid asset variables for SSI modeling",
-        "Update Mississippi income tax parameters for 2025"
+        "Add voluntary tax filer assignment",
+        "Fix stale calibration targets by deriving time_period from dataset"
       ]
     },
     {
-      "tag": "aca",
-      "count": 11,
-      "first_month": "2026-01",
-      "last_month": "2026-03",
-      "peak_month": "2026-01",
-      "peak_count": 5,
-      "repos": {
-        "policyengine-us": 7,
-        "policyengine-us-data": 4
-      },
-      "themes": {
-        "federal_benefits_and_health": 7,
-        "takeup_and_participation": 3,
-        "calibration_pipeline": 1
-      },
-      "change_tags": {
-        "bug_fix": 6,
-        "new_coverage": 4,
-        "annual_update": 3,
-        "testing_validation": 1
-      },
-      "sample_titles": [
-        "Fix ACA required contribution percentage to be flat below 133% FPL",
-        "Add Colorado ACA subsidies for immigrants ",
-        "Fix CA Medi-Cal immigration eligibility for DACA/TPS in 2026",
-        "Remove DACA_TPS from immigration_status",
-        "Add safety catch in aca_ptc to return zero before 2025"
-      ]
-    },
-    {
-      "tag": "geography_local_area",
-      "count": 10,
-      "first_month": "2026-01",
-      "last_month": "2026-02",
-      "peak_month": "2026-01",
-      "peak_count": 7,
-      "repos": {
-        "policyengine-us": 6,
-        "policyengine-us-data": 4
-      },
-      "themes": {
-        "geography_and_baseline_inputs": 3,
-        "takeup_and_participation": 2,
-        "state_tax_and_legislation": 2,
-        "geography_and_dataset_build": 1,
-        "calibration_pipeline": 1
-      },
-      "change_tags": {
-        "new_coverage": 6,
-        "bug_fix": 3,
-        "infrastructure": 1
-      },
-      "sample_titles": [
-        "Add stacked dataset builder and P(county|CD) distributions",
-        "Remove 51 invalid County enum entries",
-        "Fix code bug in Riverside county general relief eligibility",
-        "Fix county assignment issues",
-        "Add census block-level geographic assignment with comprehensive lookups"
-      ]
-    },
-    {
-      "tag": "filing_behavior",
-      "count": 8,
+      "id": "targets_database_and_schema",
+      "label": "Targets Database And Schema",
+      "description": "Turning calibration targets into a governed database with schema checks, views, metadata, and source tracking.",
+      "count": 14,
       "first_month": "2026-01",
       "last_month": "2026-03",
       "peak_month": "2026-02",
-      "peak_count": 4,
+      "peak_count": 8,
       "repos": {
-        "policyengine-us": 7,
-        "policyengine-us-data": 1
-      },
-      "themes": {
-        "federal_tax_and_retirement": 3,
-        "quality_tooling_and_docs": 2,
-        "other": 1,
-        "imputation_and_new_variables": 1,
-        "state_tax_and_legislation": 1
-      },
-      "change_tags": {
-        "new_coverage": 5,
-        "testing_validation": 3,
-        "bug_fix": 3
+        "policyengine-us-data": 9,
+        "policyengine-us": 5
       },
       "sample_titles": [
-        "Add TAXSIM output variable tests",
-        "Add tax_unit_is_filer tests",
-        "Fix Head of Household eligibility for qualifying relatives",
-        "Add tax filing propensity variables",
-        "Add voluntary tax filer assignment"
+        "Fix Publish workflow by migrating dev deps to PEP 735",
+        "Add Modal integration for CI/CD workflows",
+        "Trigger CI",
+        "Make the Calibration Database first class",
+        "Fix stale calibration targets by deriving time_period from dataset"
       ]
     },
     {
-      "tag": "takeup",
-      "count": 8,
-      "first_month": "2026-02",
+      "id": "modal_gpu_pipeline",
+      "label": "Modal GPU Pipeline",
+      "description": "GPU-backed, serverless Modal workflows for fitting, publishing, checkpointing, and scaling the calibration build.",
+      "count": 9,
+      "first_month": "2026-01",
       "last_month": "2026-03",
       "peak_month": "2026-02",
       "peak_count": 4,
       "repos": {
         "policyengine-us-data": 7,
-        "policyengine-us": 1
-      },
-      "themes": {
-        "takeup_and_participation": 4,
-        "calibration_pipeline": 2,
-        "imputation_and_new_variables": 1,
-        "state_benefits_and_childcare": 1
-      },
-      "change_tags": {
-        "new_coverage": 5,
-        "bug_fix": 2,
-        "infrastructure": 2,
-        "testing_validation": 1,
-        "annual_update": 1
+        "policyengine-us": 2
       },
       "sample_titles": [
-        "Add voluntary tax filer assignment",
-        "Add TANF takeup rate (22%) to calibration pipeline",
-        "Wire up all 51 state TANF programs, fix childcare cycle artifact, add takeup",
-        "Add TANF takeup assignment to CPS data pipeline",
-        "Prioritize reported recipients in take-up assignment"
+        "Add Modal integration for CI/CD workflows",
+        "Add health insurance premiums to local area calibration, a matrix builder function, Modal model fitting",
+        "Make the Calibration Database first class",
+        " Supporting all calibration targets with SparseMatrixBuilder",
+        "Modal CI run efficiency improvement"
       ]
     },
     {
-      "tag": "medicaid_chip",
-      "count": 7,
-      "first_month": "2026-01",
-      "last_month": "2026-02",
-      "peak_month": "2026-01",
-      "peak_count": 4,
-      "repos": {
-        "policyengine-us": 7
-      },
-      "themes": {
-        "state_benefits_and_childcare": 6,
-        "federal_benefits_and_health": 1
-      },
-      "change_tags": {
-        "bug_fix": 4,
-        "new_coverage": 3,
-        "annual_update": 1,
-        "historical_backfill": 1,
-        "testing_validation": 1
-      },
-      "sample_titles": [
-        "Fix CA Medi-Cal immigration eligibility for DACA/TPS in 2026",
-        "Exclude Medicaid recipients from QI eligibility",
-        "Fix Medicaid category assignment order - mandatory before optional",
-        "Add 2018-2024 CHIP FCEP pregnant income limits from MACPAC",
-        "Add Oregon Medicaid for immigrants as separate program"
-      ]
-    },
-    {
-      "tag": "eitc",
-      "count": 6,
+      "id": "census_block_assignment",
+      "label": "Census-Block Assignment",
+      "description": "Assigning cloned or donor households to economically plausible census blocks and districts instead of flat cross-district replication.",
+      "count": 8,
       "first_month": "2026-01",
       "last_month": "2026-03",
-      "peak_month": "2026-02",
-      "peak_count": 4,
-      "repos": {
-        "policyengine-us": 6
-      },
-      "themes": {
-        "state_tax_and_legislation": 5,
-        "other": 1
-      },
-      "change_tags": {
-        "reform_modeling": 4,
-        "new_coverage": 2,
-        "bug_fix": 2,
-        "annual_update": 1
-      },
-      "sample_titles": [
-        "Add SC H.3492 partially refundable EITC reform",
-        "Update DC EITC match rate to 100% per Act 26-214",
-        "Fix CA EITC example by adding period to axes",
-        "Update state CTCs and EITCs aggregation lists for 2026",
-        "Fix WA Working Families Tax Credit phaseout to $50 minimum"
-      ]
-    },
-    {
-      "tag": "long_run_projections",
-      "count": 6,
-      "first_month": "2026-02",
-      "last_month": "2026-04",
-      "peak_month": "2026-04",
+      "peak_month": "2026-01",
       "peak_count": 3,
       "repos": {
-        "policyengine-us": 5,
-        "policyengine-us-data": 1
-      },
-      "themes": {
-        "federal_tax_and_retirement": 3,
-        "geography_and_baseline_inputs": 2,
-        "other": 1
-      },
-      "change_tags": {
-        "annual_update": 2,
-        "bug_fix": 1,
-        "infrastructure": 1,
-        "historical_backfill": 1,
-        "testing_validation": 1
+        "policyengine-us-data": 6,
+        "policyengine-us": 2
       },
       "sample_titles": [
-        "Update CBO baseline to February 2026",
-        "Update CPI projections with CBO September 2025 interim inflation",
-        "Fix SOI uprating dtype error",
-        "Avoid Microsimulation in uprating extension tests",
-        "Derive SS payroll cap from NAWI path"
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Add census block-level geographic assignment with comprehensive lookups",
+        "Add sldu and sldl variables for state legislative districts",
+        "Add census-block-first calibration pipeline (from PR #516)",
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)"
       ]
     },
     {
-      "tag": "snap_school_meals",
-      "count": 5,
+      "id": "unified_national_calibration",
+      "label": "Unified National Calibration",
+      "description": "Consolidating separate calibration artifacts into one national, multi-level calibration architecture.",
+      "count": 8,
       "first_month": "2026-01",
       "last_month": "2026-03",
-      "peak_month": "2026-01",
-      "peak_count": 2,
+      "peak_month": "2026-03",
+      "peak_count": 4,
       "repos": {
-        "policyengine-us": 5
-      },
-      "themes": {
-        "federal_tax_and_retirement": 2,
-        "federal_benefits_and_health": 2,
-        "state_benefits_and_childcare": 1
-      },
-      "change_tags": {
-        "bug_fix": 1,
-        "new_coverage": 1,
-        "annual_update": 1
+        "policyengine-us-data": 8
       },
       "sample_titles": [
-        "Fix Iowa SNAP self-employment simplified deduction rate",
-        "Update Iowa SNAP self-employment deduction effective date",
-        "Add SNAP immigration status eligibility",
-        "Update SNAP ABAWD work requirements for HR1 (P.L. 119-21) with missing exemptions and CA delay",
-        "Update CSFP per-slot cost parameters for FY 2019-2025"
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Add cps_2024.h5 to HuggingFace upload list",
+        "Add census-block-first calibration pipeline (from PR #516)",
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)",
+        "Calibrate retirement contributions: targets, SS reconciliation, and QRF imputation"
       ]
     },
     {
-      "tag": "property_tax_relief",
+      "id": "state_aware_imputation",
+      "label": "State-Aware Imputation",
+      "description": "Using state and local geography signals to improve rent, real estate tax, wage, and other source imputations.",
+      "count": 4,
+      "first_month": "2026-01",
+      "last_month": "2026-02",
+      "peak_month": "2026-02",
+      "peak_count": 3,
+      "repos": {
+        "policyengine-us-data": 4
+      },
+      "sample_titles": [
+        "Make the Calibration Database first class",
+        "Database consistency checks for target loading",
+        "Add census-block-first calibration pipeline (from PR #516)",
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)"
+      ]
+    },
+    {
+      "id": "top_end_income_modeling",
+      "label": "Top-End Income Modeling",
+      "description": "Better handling of ultra-high-income households, AGI ceilings, and high-bracket calibration or imputation.",
       "count": 2,
       "first_month": "2026-02",
       "last_month": "2026-02",
       "peak_month": "2026-02",
       "peak_count": 2,
       "repos": {
-        "policyengine-us": 2
+        "policyengine-us-data": 1,
+        "policyengine-us": 1
+      },
+      "sample_titles": [
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)",
+        "Add NY tax calculation for filters with AGI above $25 million"
+      ]
+    }
+  ],
+  "storylines": [
+    {
+      "tag": "validation_tooling",
+      "count": 250,
+      "first_month": "2026-01",
+      "last_month": "2026-04",
+      "peak_month": "2026-02",
+      "peak_count": 113,
+      "repos": {
+        "policyengine-us": 216,
+        "policyengine-us-data": 34
       },
       "themes": {
-        "other": 1,
+        "state_tax_and_legislation": 108,
+        "state_benefits_and_childcare": 51,
+        "federal_tax_and_retirement": 21,
+        "quality_tooling_and_docs": 20,
+        "calibration_pipeline": 20
+      },
+      "change_tags": {
+        "testing_validation": 244,
+        "bug_fix": 143,
+        "new_coverage": 140,
+        "reform_modeling": 116,
+        "annual_update": 96
+      },
+      "sample_titles": [
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Fix ACA required contribution percentage to be flat below 133% FPL",
+        "Fix weekly uv.lock workflow for main branch",
+        "Remove non-existent labels from weekly uv.lock workflow",
+        "Remove uv.lock freshness check, add weekly update workflow"
+      ]
+    },
+    {
+      "tag": "social_security_retirement",
+      "count": 145,
+      "first_month": "2026-01",
+      "last_month": "2026-04",
+      "peak_month": "2026-02",
+      "peak_count": 67,
+      "repos": {
+        "policyengine-us": 122,
+        "policyengine-us-data": 23
+      },
+      "themes": {
+        "state_tax_and_legislation": 50,
+        "state_benefits_and_childcare": 46,
+        "federal_benefits_and_health": 15,
+        "calibration_pipeline": 15,
+        "federal_tax_and_retirement": 11
+      },
+      "change_tags": {
+        "testing_validation": 137,
+        "bug_fix": 87,
+        "new_coverage": 78,
+        "reform_modeling": 73,
+        "annual_update": 67
+      },
+      "sample_titles": [
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Add Hawaii TANF Program",
+        "Add Maine TANF Program",
+        "Add Nevada TANF Program",
+        "Add New Hampshire TANF program"
+      ]
+    },
+    {
+      "tag": "filing_behavior",
+      "count": 80,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 48,
+      "repos": {
+        "policyengine-us": 76,
+        "policyengine-us-data": 4
+      },
+      "themes": {
+        "state_tax_and_legislation": 57,
+        "federal_tax_and_retirement": 12,
+        "state_benefits_and_childcare": 4,
+        "quality_tooling_and_docs": 3,
+        "calibration_pipeline": 3
+      },
+      "change_tags": {
+        "testing_validation": 80,
+        "new_coverage": 52,
+        "reform_modeling": 42,
+        "bug_fix": 42,
+        "annual_update": 35
+      },
+      "sample_titles": [
+        "Add Maine TANF Program",
+        "Add phase-out logic to CRFB Social Security nonrefundable credit",
+        "Create reform to separate dependent children from Virginia personal exemption",
+        "Add parameter discovery documentation guide",
+        "Add range-based phaseout option for RI CTC"
+      ]
+    },
+    {
+      "tag": "state_income_tax",
+      "count": 79,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 58,
+      "repos": {
+        "policyengine-us": 73,
+        "policyengine-us-data": 6
+      },
+      "themes": {
+        "state_tax_and_legislation": 73,
+        "calibration_pipeline": 6
+      },
+      "change_tags": {
+        "testing_validation": 76,
+        "annual_update": 52,
+        "new_coverage": 46,
+        "reform_modeling": 44,
+        "bug_fix": 44
+      },
+      "sample_titles": [
+        "Add SC H.3492 partially refundable EITC reform",
+        "Add missing label metadata to bracket/scale parameters",
+        "Model RI Governor Dan McKee's 2027 Tax Proposals",
+        "Update Rhode Island 2025 Individual Income Tax Model",
+        "Update Connecticut 2025 income tax"
+      ]
+    },
+    {
+      "tag": "tanf",
+      "count": 59,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 27,
+      "repos": {
+        "policyengine-us": 54,
+        "policyengine-us-data": 5
+      },
+      "themes": {
+        "state_benefits_and_childcare": 48,
+        "state_tax_and_legislation": 6,
+        "calibration_pipeline": 4,
+        "imputation_and_new_variables": 1
+      },
+      "change_tags": {
+        "testing_validation": 55,
+        "new_coverage": 36,
+        "bug_fix": 29,
+        "reform_modeling": 28,
+        "historical_backfill": 27
+      },
+      "sample_titles": [
+        "Add Hawaii TANF Program",
+        "Add Maine TANF Program",
+        "Add Nevada TANF Program",
+        "Add New Hampshire TANF program",
+        "Add Tennessee Families First (TANF) program"
+      ]
+    },
+    {
+      "tag": "childcare",
+      "count": 41,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 19,
+      "repos": {
+        "policyengine-us": 41
+      },
+      "themes": {
+        "state_tax_and_legislation": 23,
+        "state_benefits_and_childcare": 18
+      },
+      "change_tags": {
+        "testing_validation": 39,
+        "new_coverage": 25,
+        "annual_update": 21,
+        "reform_modeling": 21,
+        "bug_fix": 19
+      },
+      "sample_titles": [
+        "Add Maine TANF Program",
+        "Add New Hampshire TANF program",
+        "Add Tennessee Families First (TANF) program",
+        "Implement Delaware TANF",
+        "Implement Rhode Island TANF program"
+      ]
+    },
+    {
+      "tag": "eitc",
+      "count": 37,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 22,
+      "repos": {
+        "policyengine-us": 34,
+        "policyengine-us-data": 3
+      },
+      "themes": {
+        "state_tax_and_legislation": 34,
+        "calibration_pipeline": 3
+      },
+      "change_tags": {
+        "testing_validation": 36,
+        "reform_modeling": 25,
+        "new_coverage": 24,
+        "annual_update": 23,
+        "bug_fix": 16
+      },
+      "sample_titles": [
+        "Add SC H.3492 partially refundable EITC reform",
+        "Add Utah HB 210 taxpayer credit add-on structural reform",
+        "Add missing label metadata to bracket/scale parameters",
+        "Fix SC H.3492 reform to use 5-year in_effect check pattern",
+        "Update Connecticut 2025 income tax"
+      ]
+    },
+    {
+      "tag": "calibration",
+      "count": 34,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 20,
+      "repos": {
+        "policyengine-us-data": 27,
+        "policyengine-us": 7
+      },
+      "themes": {
+        "calibration_pipeline": 26,
+        "state_tax_and_legislation": 5,
+        "imputation_and_new_variables": 1,
+        "federal_benefits_and_health": 1,
+        "state_benefits_and_childcare": 1
+      },
+      "change_tags": {
+        "testing_validation": 32,
+        "bug_fix": 24,
+        "infrastructure": 20,
+        "new_coverage": 19,
+        "documentation": 7
+      },
+      "sample_titles": [
+        "Fix county assignment issues",
+        "fix: Add breakdown and label metadata to pseudo-breakdown parameters",
+        "Add health insurance premiums to local area calibration, a matrix builder function, Modal model fitting",
+        "Add income_tax_positive variable for CBO-consistent calibration",
+        "Make the Calibration Database first class"
+      ]
+    },
+    {
+      "tag": "ctc",
+      "count": 29,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 18,
+      "repos": {
+        "policyengine-us": 29
+      },
+      "themes": {
+        "state_tax_and_legislation": 27,
+        "federal_benefits_and_health": 1,
+        "federal_tax_and_retirement": 1
+      },
+      "change_tags": {
+        "testing_validation": 28,
+        "reform_modeling": 22,
+        "new_coverage": 20,
+        "annual_update": 17,
+        "bug_fix": 16
+      },
+      "sample_titles": [
+        "Add range-based phaseout option for RI CTC",
+        "Model RI Governor Dan McKee's 2027 Tax Proposals",
+        "fix: Add breakdown and label metadata to pseudo-breakdown parameters",
+        "Add NY A04038 Enhanced Empire State Child Credit for Infants Act reform",
+        "NY S04487 Supplemental Empire State Child Tax Credit for Newborns"
+      ]
+    },
+    {
+      "tag": "imputation",
+      "count": 26,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 11,
+      "repos": {
+        "policyengine-us-data": 18,
+        "policyengine-us": 8
+      },
+      "themes": {
+        "calibration_pipeline": 9,
+        "imputation_and_new_variables": 7,
+        "state_benefits_and_childcare": 6,
+        "state_tax_and_legislation": 2,
+        "geography_and_dataset_build": 1
+      },
+      "change_tags": {
+        "testing_validation": 22,
+        "bug_fix": 13,
+        "new_coverage": 12,
+        "infrastructure": 9,
+        "annual_update": 7
+      },
+      "sample_titles": [
+        "Add partnership_se_income to IMPUTED_VARIABLES",
+        "Derive partnership_se_income from PUF source columns",
+        "Add 2018-2024 CHIP FCEP pregnant income limits from MACPAC",
+        "Add cps_2024.h5 to HuggingFace upload list",
+        "Add weeks_unemployed variable from CPS LKWEEKS"
+      ]
+    },
+    {
+      "tag": "snap_school_meals",
+      "count": 26,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-01",
+      "peak_count": 10,
+      "repos": {
+        "policyengine-us": 19,
+        "policyengine-us-data": 7
+      },
+      "themes": {
+        "state_benefits_and_childcare": 11,
+        "calibration_pipeline": 6,
+        "federal_benefits_and_health": 3,
+        "state_tax_and_legislation": 3,
+        "federal_tax_and_retirement": 2
+      },
+      "change_tags": {
+        "testing_validation": 26,
+        "bug_fix": 14,
+        "new_coverage": 13,
+        "reform_modeling": 10,
+        "infrastructure": 10
+      },
+      "sample_titles": [
+        "Add missing label metadata to breakdown parameters",
+        "feat: Add breakdown_labels metadata for range() dimensions",
+        "Add Wyoming POWER program",
+        "Fix Iowa SNAP self-employment simplified deduction rate",
+        "Update Iowa SNAP self-employment deduction effective date"
+      ]
+    },
+    {
+      "tag": "aca",
+      "count": 24,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 9,
+      "repos": {
+        "policyengine-us": 16,
+        "policyengine-us-data": 8
+      },
+      "themes": {
+        "state_benefits_and_childcare": 7,
+        "federal_benefits_and_health": 6,
+        "calibration_pipeline": 5,
+        "state_tax_and_legislation": 3,
+        "takeup_and_participation": 3
+      },
+      "change_tags": {
+        "testing_validation": 20,
+        "bug_fix": 17,
+        "new_coverage": 14,
+        "annual_update": 8,
+        "infrastructure": 7
+      },
+      "sample_titles": [
+        "Fix ACA required contribution percentage to be flat below 133% FPL",
+        "Add Colorado ACA subsidies for immigrants ",
+        "Fix CA Medi-Cal immigration eligibility for DACA/TPS in 2026",
+        "Add missing label metadata to bracket/scale parameters",
+        "feat: Add breakdown_labels metadata for range() dimensions"
+      ]
+    },
+    {
+      "tag": "geography_local_area",
+      "count": 24,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 12,
+      "repos": {
+        "policyengine-us": 15,
+        "policyengine-us-data": 9
+      },
+      "themes": {
+        "calibration_pipeline": 6,
+        "federal_benefits_and_health": 5,
+        "state_tax_and_legislation": 5,
+        "state_benefits_and_childcare": 3,
+        "takeup_and_participation": 2
+      },
+      "change_tags": {
+        "testing_validation": 20,
+        "bug_fix": 15,
+        "new_coverage": 14,
+        "infrastructure": 10,
+        "reform_modeling": 8
+      },
+      "sample_titles": [
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Add Modal integration for CI/CD workflows",
+        "Remove 51 invalid County enum entries",
+        "Fix code bug in Riverside county general relief eligibility",
+        "Fix county assignment issues"
+      ]
+    },
+    {
+      "tag": "long_run_projections",
+      "count": 17,
+      "first_month": "2026-01",
+      "last_month": "2026-04",
+      "peak_month": "2026-02",
+      "peak_count": 6,
+      "repos": {
+        "policyengine-us": 12,
+        "policyengine-us-data": 5
+      },
+      "themes": {
+        "federal_tax_and_retirement": 6,
+        "state_tax_and_legislation": 4,
+        "calibration_pipeline": 3,
+        "imputation_and_new_variables": 1,
+        "geography_and_baseline_inputs": 1
+      },
+      "change_tags": {
+        "testing_validation": 14,
+        "bug_fix": 9,
+        "annual_update": 7,
+        "new_coverage": 6,
+        "infrastructure": 6
+      },
+      "sample_titles": [
+        "Add range-based phaseout option for RI CTC",
+        "Update 2026 FPL values",
+        "Derive partnership_se_income from PUF source columns",
+        "Fix DC Child Tax Credit for 2026+ (new statute)",
+        "Fix Head of Household eligibility for qualifying relatives"
+      ]
+    },
+    {
+      "tag": "medicaid_chip",
+      "count": 17,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 8,
+      "repos": {
+        "policyengine-us": 15,
+        "policyengine-us-data": 2
+      },
+      "themes": {
+        "state_benefits_and_childcare": 13,
+        "state_tax_and_legislation": 2,
+        "calibration_pipeline": 1,
+        "imputation_and_new_variables": 1
+      },
+      "change_tags": {
+        "bug_fix": 15,
+        "testing_validation": 15,
+        "new_coverage": 8,
+        "infrastructure": 4,
+        "reform_modeling": 3
+      },
+      "sample_titles": [
+        "Fix CA Medi-Cal immigration eligibility for DACA/TPS in 2026",
+        "fix: Add breakdown and label metadata to pseudo-breakdown parameters",
+        "Use default argument to numpy.select instead of dummy True condition",
+        "Exclude Medicaid recipients from QI eligibility",
+        "Fix Medicaid category assignment order - mandatory before optional"
+      ]
+    },
+    {
+      "tag": "takeup",
+      "count": 16,
+      "first_month": "2026-02",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 12,
+      "repos": {
+        "policyengine-us-data": 12,
+        "policyengine-us": 4
+      },
+      "themes": {
+        "calibration_pipeline": 9,
+        "state_benefits_and_childcare": 4,
+        "takeup_and_participation": 3
+      },
+      "change_tags": {
+        "testing_validation": 14,
+        "bug_fix": 10,
+        "new_coverage": 9,
+        "infrastructure": 7,
+        "reform_modeling": 2
+      },
+      "sample_titles": [
+        "Move all randomness to data package for deterministic country package",
+        "Move all stochastic randomness to data package for deterministic country package",
+        "Add voluntary tax filer assignment",
+        "Add census-block-first calibration pipeline (from PR #516)",
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)"
+      ]
+    },
+    {
+      "tag": "property_tax_relief",
+      "count": 14,
+      "first_month": "2026-01",
+      "last_month": "2026-02",
+      "peak_month": "2026-02",
+      "peak_count": 9,
+      "repos": {
+        "policyengine-us": 14
+      },
+      "themes": {
+        "state_tax_and_legislation": 13,
+        "federal_benefits_and_health": 1
+      },
+      "change_tags": {
+        "reform_modeling": 13,
+        "testing_validation": 13,
+        "annual_update": 12,
+        "new_coverage": 9,
+        "bug_fix": 9
+      },
+      "sample_titles": [
+        "Add missing label metadata to bracket/scale parameters",
+        "Update Rhode Island 2025 Individual Income Tax Model",
+        "Remove DACA_TPS from immigration_status",
+        "Update Connecticut 2025 income tax",
+        "Add Illinois Senior Citizens Real Estate Tax Deferral Program"
+      ]
+    }
+  ],
+  "concept_storylines": [
+    {
+      "tag": "policy_surface_expansion",
+      "count": 96,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 39,
+      "repos": {
+        "policyengine-us": 85,
+        "policyengine-us-data": 11
+      },
+      "themes": {
+        "state_benefits_and_childcare": 52,
+        "state_tax_and_legislation": 20,
+        "calibration_pipeline": 7,
+        "quality_tooling_and_docs": 6,
+        "federal_tax_and_retirement": 4
+      },
+      "change_tags": {
+        "testing_validation": 90,
+        "new_coverage": 56,
+        "bug_fix": 55,
+        "reform_modeling": 39,
+        "annual_update": 35
+      },
+      "sample_titles": [
+        "Add Hawaii TANF Program",
+        "Add Maine TANF Program",
+        "Add Nevada TANF Program",
+        "Add New Hampshire TANF program",
+        "Add Tennessee Families First (TANF) program"
+      ]
+    },
+    {
+      "tag": "takeup_modeling",
+      "count": 20,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 12,
+      "repos": {
+        "policyengine-us-data": 11,
+        "policyengine-us": 9
+      },
+      "themes": {
+        "state_benefits_and_childcare": 8,
+        "calibration_pipeline": 8,
+        "takeup_and_participation": 3,
         "state_tax_and_legislation": 1
       },
       "change_tags": {
-        "new_coverage": 2,
-        "reform_modeling": 2,
-        "bug_fix": 1
+        "testing_validation": 18,
+        "new_coverage": 13,
+        "bug_fix": 10,
+        "infrastructure": 9,
+        "reform_modeling": 5
       },
       "sample_titles": [
-        "Fix Stay NJ benefit formula and add Senior Freeze offset",
-        "Add Connecticut HB-5009 expanded property tax credit reform"
+        "Add Florida TANF program",
+        "Add Wyoming POWER program",
+        "Implement North Dakota TANF program",
+        "Move all randomness to data package for deterministic country package",
+        "Move all stochastic randomness to data package for deterministic country package"
+      ]
+    },
+    {
+      "tag": "sample_reforms_and_trackers",
+      "count": 18,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 7,
+      "repos": {
+        "policyengine-us": 18
+      },
+      "themes": {
+        "state_tax_and_legislation": 17,
+        "federal_tax_and_retirement": 1
+      },
+      "change_tags": {
+        "reform_modeling": 18,
+        "testing_validation": 18,
+        "new_coverage": 12,
+        "annual_update": 7,
+        "bug_fix": 4
+      },
+      "sample_titles": [
+        "Model RI Governor Dan McKee's 2027 Tax Proposals",
+        "Add CRFB AGI surtax reform",
+        "Fix SC H.3492 reform to use 5-year in_effect check pattern",
+        "Register AGI surtax reform and add expanded base option",
+        "Model Virginia HB979 Income Tax Reform"
+      ]
+    },
+    {
+      "tag": "district_level_geography",
+      "count": 17,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-01",
+      "peak_count": 7,
+      "repos": {
+        "policyengine-us-data": 13,
+        "policyengine-us": 4
+      },
+      "themes": {
+        "calibration_pipeline": 11,
+        "takeup_and_participation": 2,
+        "federal_benefits_and_health": 2,
+        "state_tax_and_legislation": 1,
+        "state_benefits_and_childcare": 1
+      },
+      "change_tags": {
+        "testing_validation": 16,
+        "infrastructure": 14,
+        "bug_fix": 12,
+        "new_coverage": 10,
+        "documentation": 5
+      },
+      "sample_titles": [
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Fix county assignment issues",
+        "Add census block-level geographic assignment with comprehensive lookups",
+        "Add health insurance premiums to local area calibration, a matrix builder function, Modal model fitting",
+        "Add sldu and sldl variables for state legislative districts"
+      ]
+    },
+    {
+      "tag": "provenance_and_quality_gates",
+      "count": 16,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-03",
+      "peak_count": 8,
+      "repos": {
+        "policyengine-us-data": 14,
+        "policyengine-us": 2
+      },
+      "themes": {
+        "calibration_pipeline": 11,
+        "validation_and_ci": 3,
+        "federal_tax_and_retirement": 1,
+        "state_benefits_and_childcare": 1
+      },
+      "change_tags": {
+        "bug_fix": 16,
+        "testing_validation": 16,
+        "infrastructure": 11,
+        "new_coverage": 5,
+        "documentation": 4
+      },
+      "sample_titles": [
+        "Fix Publish workflow by migrating dev deps to PEP 735",
+        "Fix versioning workflow checkout for push events",
+        "Add Microsimulation API documentation",
+        "Make the Calibration Database first class",
+        "Move all randomness to data package for deterministic country package"
+      ]
+    },
+    {
+      "tag": "calibration_target_expansion",
+      "count": 14,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 8,
+      "repos": {
+        "policyengine-us-data": 14
+      },
+      "themes": {
+        "calibration_pipeline": 14
+      },
+      "change_tags": {
+        "testing_validation": 13,
+        "infrastructure": 11,
+        "new_coverage": 10,
+        "bug_fix": 10,
+        "documentation": 4
+      },
+      "sample_titles": [
+        "Make the Calibration Database first class",
+        "Add state income tax calibration targets from Census STC",
+        "Improve retirement income imputation and calibration",
+        "Add voluntary tax filer assignment",
+        "Fix stale calibration targets by deriving time_period from dataset"
+      ]
+    },
+    {
+      "tag": "targets_database_and_schema",
+      "count": 14,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 8,
+      "repos": {
+        "policyengine-us-data": 9,
+        "policyengine-us": 5
+      },
+      "themes": {
+        "calibration_pipeline": 6,
+        "state_tax_and_legislation": 4,
+        "validation_and_ci": 2,
+        "other": 1,
+        "quality_tooling_and_docs": 1
+      },
+      "change_tags": {
+        "testing_validation": 13,
+        "new_coverage": 10,
+        "infrastructure": 9,
+        "bug_fix": 7,
+        "annual_update": 4
+      },
+      "sample_titles": [
+        "Fix Publish workflow by migrating dev deps to PEP 735",
+        "Add Modal integration for CI/CD workflows",
+        "Trigger CI",
+        "Make the Calibration Database first class",
+        "Fix stale calibration targets by deriving time_period from dataset"
+      ]
+    },
+    {
+      "tag": "modal_gpu_pipeline",
+      "count": 9,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-02",
+      "peak_count": 4,
+      "repos": {
+        "policyengine-us-data": 7,
+        "policyengine-us": 2
+      },
+      "themes": {
+        "calibration_pipeline": 6,
+        "validation_and_ci": 1,
+        "federal_tax_and_retirement": 1,
+        "federal_benefits_and_health": 1
+      },
+      "change_tags": {
+        "testing_validation": 9,
+        "infrastructure": 7,
+        "new_coverage": 6,
+        "bug_fix": 6,
+        "documentation": 4
+      },
+      "sample_titles": [
+        "Add Modal integration for CI/CD workflows",
+        "Add health insurance premiums to local area calibration, a matrix builder function, Modal model fitting",
+        "Make the Calibration Database first class",
+        " Supporting all calibration targets with SparseMatrixBuilder",
+        "Modal CI run efficiency improvement"
+      ]
+    },
+    {
+      "tag": "census_block_assignment",
+      "count": 8,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-01",
+      "peak_count": 3,
+      "repos": {
+        "policyengine-us-data": 6,
+        "policyengine-us": 2
+      },
+      "themes": {
+        "calibration_pipeline": 3,
+        "takeup_and_participation": 2,
+        "federal_benefits_and_health": 1,
+        "quality_tooling_and_docs": 1,
+        "imputation_and_new_variables": 1
+      },
+      "change_tags": {
+        "testing_validation": 8,
+        "infrastructure": 6,
+        "new_coverage": 5,
+        "bug_fix": 5,
+        "reform_modeling": 3
+      },
+      "sample_titles": [
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Add census block-level geographic assignment with comprehensive lookups",
+        "Add sldu and sldl variables for state legislative districts",
+        "Add census-block-first calibration pipeline (from PR #516)",
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)"
+      ]
+    },
+    {
+      "tag": "unified_national_calibration",
+      "count": 8,
+      "first_month": "2026-01",
+      "last_month": "2026-03",
+      "peak_month": "2026-03",
+      "peak_count": 4,
+      "repos": {
+        "policyengine-us-data": 8
+      },
+      "themes": {
+        "calibration_pipeline": 5,
+        "takeup_and_participation": 1,
+        "geography_and_dataset_build": 1,
+        "other": 1
+      },
+      "change_tags": {
+        "infrastructure": 7,
+        "testing_validation": 7,
+        "bug_fix": 6,
+        "new_coverage": 5,
+        "reform_modeling": 1
+      },
+      "sample_titles": [
+        "Add stacked dataset builder and P(county|CD) distributions",
+        "Add cps_2024.h5 to HuggingFace upload list",
+        "Add census-block-first calibration pipeline (from PR #516)",
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)",
+        "Calibrate retirement contributions: targets, SS reconciliation, and QRF imputation"
+      ]
+    },
+    {
+      "tag": "state_aware_imputation",
+      "count": 4,
+      "first_month": "2026-01",
+      "last_month": "2026-02",
+      "peak_month": "2026-02",
+      "peak_count": 3,
+      "repos": {
+        "policyengine-us-data": 4
+      },
+      "themes": {
+        "calibration_pipeline": 4
+      },
+      "change_tags": {
+        "infrastructure": 4,
+        "testing_validation": 4,
+        "new_coverage": 3,
+        "bug_fix": 3,
+        "documentation": 2
+      },
+      "sample_titles": [
+        "Make the Calibration Database first class",
+        "Database consistency checks for target loading",
+        "Add census-block-first calibration pipeline (from PR #516)",
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)"
+      ]
+    },
+    {
+      "tag": "top_end_income_modeling",
+      "count": 2,
+      "first_month": "2026-02",
+      "last_month": "2026-02",
+      "peak_month": "2026-02",
+      "peak_count": 2,
+      "repos": {
+        "policyengine-us-data": 1,
+        "policyengine-us": 1
+      },
+      "themes": {
+        "calibration_pipeline": 1,
+        "other": 1
+      },
+      "change_tags": {
+        "new_coverage": 2,
+        "bug_fix": 2,
+        "infrastructure": 1,
+        "testing_validation": 1
+      },
+      "sample_titles": [
+        "Add PUF + source impute modules, fix AGI ceiling (issue #530)",
+        "Add NY tax calculation for filters with AGI above $25 million"
       ]
     }
   ]

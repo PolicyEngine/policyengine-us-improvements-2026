@@ -56,7 +56,46 @@ const LABEL_OVERRIDES = {
   takeup: "Take-up",
   validation_tooling: "Validation / Tooling",
   long_run_projections: "Long-run Projections",
+  district_level_geography: "District-Level Geography",
+  state_aware_imputation: "State-Aware Imputation",
+  top_end_income_modeling: "Top-End Income Modeling",
+  census_block_assignment: "Census-Block Assignment",
+  takeup_modeling: "Take-up Modeling",
+  targets_database_and_schema: "Targets Database And Schema",
+  calibration_target_expansion: "Calibration Target Expansion",
+  unified_national_calibration: "Unified National Calibration",
+  modal_gpu_pipeline: "Modal / GPU Pipeline",
+  provenance_and_quality_gates: "Provenance And Quality Gates",
+  sample_reforms_and_trackers: "Sample Reforms And Trackers",
+  policy_surface_expansion: "Policy Surface Expansion",
   other: "Other",
+};
+
+const CONCEPT_DETAILS = {
+  district_level_geography:
+    "Tracks the move from broad geography to district- and block-aware modeling, including congressional districts, state legislative districts, at-large fixes, and block-level assignment.",
+  state_aware_imputation:
+    "Covers the newer imputation work that uses state context directly, especially for rent, real estate taxes, hourly wages, and other geographically sensitive variables.",
+  top_end_income_modeling:
+    "Captures the effort to model ultra-high incomes more realistically, including better high-AGI imputation, capital-income predictors, and calibration safeguards for very rich households.",
+  census_block_assignment:
+    "Groups the donor-household assignment redesign: clone strategy, population-weighted block sampling, and AGI-aware placement into plausible census blocks.",
+  takeup_modeling:
+    "Covers state-aware participation rates, seeded take-up assignments, and the reproducibility work needed to keep program participation stable across rebuilds.",
+  targets_database_and_schema:
+    "Represents the target-database hardening work: schema enforcement, validation triggers, clearer views, and distinct IDs that make calibration targets governable.",
+  calibration_target_expansion:
+    "Covers the growing target set itself: new pregnancy, retirement, reconciliation, wage, and hierarchical uprating targets that deepen calibration fidelity.",
+  unified_national_calibration:
+    "Represents consolidation of districts, states, cities, and national calibration into one coordinated artifact, especially the US.h5-based workflow.",
+  modal_gpu_pipeline:
+    "Captures the operational leap from ad hoc external fitting to a restartable, checkpointed, GPU-backed Modal pipeline that scales out heavy calibration jobs.",
+  provenance_and_quality_gates:
+    "Covers lineage, run IDs, hashing, staging and promotion controls, sanity checks, and the broader quality-gate work around trustworthy data releases.",
+  sample_reforms_and_trackers:
+    "Groups concrete analysis products and exemplars such as charitable-deduction work, Van Hollen-style reforms, and state legislative tracker concepts.",
+  policy_surface_expansion:
+    "Captures expansion of the modeled policy surface and surrounding research products, including TANF, CCDF, SSI supplements, LIHEAP, Taxsim, and related tools.",
 };
 
 function formatLabel(value) {
@@ -175,11 +214,11 @@ function buildMonthRows(items) {
   }));
 }
 
-function buildStorylines(items) {
+function buildMultiValueStorylines(items, key, { skip = new Set(["other"]) } = {}) {
   const byTag = new Map();
   for (const item of items) {
-    for (const tag of item.topical_tags || []) {
-      if (!tag || tag === "other") {
+    for (const tag of item[key] || []) {
+      if (!tag || skip.has(tag)) {
         continue;
       }
       const bucket = byTag.get(tag) || [];
@@ -193,6 +232,18 @@ function buildStorylines(items) {
       const monthCounts = countValues(taggedItems, "month");
       const months = [...new Set(taggedItems.map((item) => item.month))].sort();
       const repoCounts = countValues(taggedItems, "repo");
+      const sampleTitles = [];
+      const seenTitles = new Set();
+      for (const item of taggedItems) {
+        if (seenTitles.has(item.resolved_title)) {
+          continue;
+        }
+        seenTitles.add(item.resolved_title);
+        sampleTitles.push(item.resolved_title);
+        if (sampleTitles.length >= 3) {
+          break;
+        }
+      }
       return {
         tag,
         count: taggedItems.length,
@@ -201,9 +252,18 @@ function buildStorylines(items) {
         peakCount: monthCounts[0]?.[1] || 0,
         lastMonth: months.at(-1) || "",
         repos: repoCounts,
+        sampleTitles,
       };
     })
     .sort((a, b) => b.count - a.count);
+}
+
+function buildStorylines(items) {
+  return buildMultiValueStorylines(items, "topical_tags");
+}
+
+function buildConceptStorylines(items) {
+  return buildMultiValueStorylines(items, "concept_tags");
 }
 
 function buildFilterOptions(items, key, { multiple = false, skip = new Set() } = {}) {
@@ -269,6 +329,7 @@ export default function DashboardClient({
   const [quarterFilter, setQuarterFilter] = useState("all");
   const [domainFilter, setDomainFilter] = useState("all");
   const [changeFilter, setChangeFilter] = useState("all");
+  const [conceptFilter, setConceptFilter] = useState("all");
   const [tagFilter, setTagFilter] = useState("all");
   const [hasMounted, setHasMounted] = useState(false);
   const [colors, setColors] = useState({
@@ -293,6 +354,10 @@ export default function DashboardClient({
     multiple: true,
     skip: new Set(["other"]),
   });
+  const conceptOptions = buildFilterOptions(signalItems, "concept_tags", {
+    multiple: true,
+    skip: new Set(["other"]),
+  });
   const tagOptions = buildFilterOptions(signalItems, "topical_tags", {
     multiple: true,
     skip: new Set(["other"]),
@@ -303,6 +368,9 @@ export default function DashboardClient({
     .filter((item) => quarterFilter === "all" || item.quarter === quarterFilter)
     .filter((item) => domainFilter === "all" || item.primary_domain === domainFilter)
     .filter((item) => changeFilter === "all" || item.change_tags.includes(changeFilter))
+    .filter(
+      (item) => conceptFilter === "all" || item.concept_tags.includes(conceptFilter),
+    )
     .filter((item) => tagFilter === "all" || item.topical_tags.includes(tagFilter))
     .filter((item) => {
       const query = deferredSearch.trim().toLowerCase();
@@ -316,6 +384,7 @@ export default function DashboardClient({
         item.primary_domain,
         item.primary_theme,
         item.change_tags.join(" "),
+        item.concept_tags.join(" "),
         item.topical_tags.join(" "),
         item.resolved_title,
         item.pr_summary,
@@ -330,11 +399,17 @@ export default function DashboardClient({
   const metricCards = buildMetricCards(filteredItems);
   const domainRows = buildDomainRows(filteredItems);
   const monthRows = buildMonthRows(filteredItems);
+  const allConceptStorylines = buildConceptStorylines(filteredItems);
+  const conceptStorylines = allConceptStorylines.slice(0, 6);
   const storylines = buildStorylines(filteredItems).slice(0, 6);
   const topChangeTags = countValues(filteredItems, "change_tags", {
     multiple: true,
     skip: new Set(["other"]),
   }).slice(0, 8);
+  const topConcepts = countValues(filteredItems, "concept_tags", {
+    multiple: true,
+    skip: new Set(["other"]),
+  }).slice(0, 10);
   const topThemes = countValues(filteredItems, "themes", {
     multiple: true,
     skip: new Set(["other"]),
@@ -343,11 +418,15 @@ export default function DashboardClient({
     multiple: true,
     skip: new Set(["other"]),
   }).slice(0, 10);
-  const overallStorylines = taxonomySummary.storylines.slice(0, 4);
+  const overallConcepts = taxonomySummary.concept_storylines.slice(0, 4);
   const activeTimelineRows =
     quarterFilter === "all"
       ? timelineSummary
       : timelineSummary.filter((row) => row.quarter === quarterFilter);
+  const selectedConcept =
+    conceptFilter === "all" ? conceptStorylines[0]?.tag || null : conceptFilter;
+  const selectedConceptStoryline =
+    allConceptStorylines.find((storyline) => storyline.tag === selectedConcept) || null;
 
   return (
     <main className="pe-shell space-y-6">
@@ -361,22 +440,22 @@ export default function DashboardClient({
               </h1>
               <p className="max-w-3xl text-base leading-7 text-pe-text-secondary sm:text-lg">
                 This dashboard now tags each change by primary domain, change type,
-                topical tags, month, and quarter. The goal is to move from raw PR
-                enumeration to a navigable picture of how the US model stack evolved
-                over 2026.
+                concept lens, topical tags, month, and quarter. The goal is to move
+                from raw PR enumeration to a navigable picture of how the US model
+                stack evolved over 2026.
               </p>
             </div>
             <SummaryIntro executiveSummary={executiveSummary} />
           </div>
 
           <div className="rounded-pe-container border border-pe-border-light bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(242,249,247,0.96))] p-5">
-            <div className="pe-label">Largest storylines this year</div>
+            <div className="pe-label">Largest concept lenses this year</div>
             <div className="mt-4 space-y-3">
-              {overallStorylines.map((storyline) => (
+              {overallConcepts.map((storyline) => (
                 <button
                   key={storyline.tag}
                   className="w-full rounded-pe-element border border-pe-border-light bg-white px-4 py-3 text-left transition hover:border-pe-primary-500"
-                  onClick={() => setTagFilter(storyline.tag)}
+                  onClick={() => setConceptFilter(storyline.tag)}
                   type="button"
                 >
                   <div className="flex items-center justify-between gap-3">
@@ -417,7 +496,7 @@ export default function DashboardClient({
       </section>
 
       <section className="pe-panel p-5 sm:p-6">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-6">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-7">
           <label className="space-y-2 xl:col-span-2">
             <span className="pe-label">Search</span>
             <input
@@ -485,6 +564,21 @@ export default function DashboardClient({
               ))}
             </select>
           </label>
+          <label className="space-y-2">
+            <span className="pe-label">Concept Lens</span>
+            <select
+              className="pe-input w-full"
+              value={conceptFilter}
+              onChange={(event) => setConceptFilter(event.target.value)}
+            >
+              <option value="all">All concepts</option>
+              {conceptOptions.map((concept) => (
+                <option key={concept} value={concept}>
+                  {formatLabel(concept)}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
 
         <div className="mt-4 grid gap-4 md:grid-cols-[1fr_auto]">
@@ -512,6 +606,7 @@ export default function DashboardClient({
                 setQuarterFilter("all");
                 setDomainFilter("all");
                 setChangeFilter("all");
+                setConceptFilter("all");
                 setTagFilter("all");
               }}
               type="button"
@@ -611,7 +706,105 @@ export default function DashboardClient({
 
       <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
         <article className="pe-panel p-5 sm:p-6">
-          <div className="pe-label">Storylines</div>
+          <div className="pe-label">Concept lenses</div>
+          <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
+            What deeper capabilities connect these changes?
+          </h2>
+          <div className="mt-6 grid gap-3">
+            {conceptStorylines.map((storyline) => (
+              <button
+                key={storyline.tag}
+                className="rounded-pe-container border border-pe-border-light bg-pe-gray-50/80 p-4 text-left transition hover:border-pe-primary-500"
+                onClick={() => setConceptFilter(storyline.tag)}
+                type="button"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div className="font-semibold text-pe-text-primary">
+                    {formatLabel(storyline.tag)}
+                  </div>
+                  <div className="text-sm text-pe-text-secondary">
+                    {storyline.count} matching changes
+                  </div>
+                </div>
+                <div className="mt-2 text-sm leading-6 text-pe-text-secondary">
+                  First seen {storyline.firstMonth}. Peak month {storyline.peakMonth}
+                  {" "}
+                  with {storyline.peakCount}. Last active {storyline.lastMonth}.
+                </div>
+                {storyline.sampleTitles.length ? (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {storyline.sampleTitles.map((title) => (
+                      <span key={title} className="pe-chip">
+                        {title}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </button>
+            ))}
+          </div>
+        </article>
+
+        <article className="pe-panel p-5 sm:p-6">
+          <div className="pe-label">Concept glossary</div>
+          <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
+            Use concepts to navigate the year
+          </h2>
+
+          {selectedConceptStoryline ? (
+            <div className="mt-6 rounded-pe-container border border-pe-border-light bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(247,250,249,0.98))] p-4">
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="text-lg font-semibold text-pe-text-primary">
+                  {formatLabel(selectedConceptStoryline.tag)}
+                </div>
+                <div className="text-sm text-pe-text-secondary">
+                  {selectedConceptStoryline.count} filtered changes
+                </div>
+              </div>
+              <p className="mt-3 text-sm leading-6 text-pe-text-secondary">
+                {CONCEPT_DETAILS[selectedConceptStoryline.tag] ||
+                  "A higher-level analytical lens used to group related improvements."}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {selectedConceptStoryline.repos.map(([repo, count]) => (
+                  <span key={repo} className="pe-chip">
+                    {formatRepo(repo)}: {count}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          <div className="mt-6">
+            <div className="mb-2 text-sm font-semibold text-pe-text-primary">
+              Top concepts in this slice
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {topConcepts.map(([value, count]) => (
+                <button
+                  key={value}
+                  className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                  onClick={() => setConceptFilter(value)}
+                  type="button"
+                >
+                  {formatLabel(value)}: {count}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-4 text-sm leading-6 text-pe-text-secondary">
+            These concepts come from the richer narrative framing you supplied, so
+            they are intended to capture capabilities like district-level targeting,
+            state-aware imputation, top-end modeling, and pipeline maturity rather
+            than narrow policy labels.
+          </p>
+        </article>
+      </section>
+
+      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+        <article className="pe-panel p-5 sm:p-6">
+          <div className="pe-label">Topical storylines</div>
           <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
             What threads ran through the year?
           </h2>
@@ -675,6 +868,24 @@ export default function DashboardClient({
 
             <div>
               <div className="mb-2 text-sm font-semibold text-pe-text-primary">
+                Top concepts
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {topConcepts.map(([value, count]) => (
+                  <button
+                    key={value}
+                    className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                    onClick={() => setConceptFilter(value)}
+                    type="button"
+                  >
+                    {formatLabel(value)}: {count}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-2 text-sm font-semibold text-pe-text-primary">
                 Top themes
               </div>
               <div className="flex flex-wrap gap-2">
@@ -716,7 +927,7 @@ export default function DashboardClient({
             </h2>
           </div>
           <div className="text-sm text-pe-text-secondary">
-            Stored summaries: domains, change types, topical storylines, and timeline rollups
+            Stored summaries: domains, concepts, change types, topical storylines, and timeline rollups
           </div>
         </div>
 
@@ -724,6 +935,7 @@ export default function DashboardClient({
           {filteredItems.map((item) => {
             const visibleTopicalTags = item.topical_tags.filter((tag) => tag !== "other").slice(0, 4);
             const visibleChangeTags = item.change_tags.filter((tag) => tag !== "other").slice(0, 4);
+            const visibleConceptTags = item.concept_tags.filter((tag) => tag !== "other").slice(0, 4);
             return (
               <article key={`${item.repo}-${item.sha}`} className="pe-panel p-5">
                 <div className="flex flex-wrap items-center justify-between gap-3 text-sm text-pe-text-secondary">
@@ -762,6 +974,26 @@ export default function DashboardClient({
                           key={tag}
                           className="pe-chip cursor-pointer hover:border-pe-primary-500"
                           onClick={() => setChangeFilter(tag)}
+                          type="button"
+                        >
+                          {formatLabel(tag)}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ) : null}
+
+                {visibleConceptTags.length ? (
+                  <div className="mt-4">
+                    <div className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-pe-text-tertiary">
+                      Concept lenses
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {visibleConceptTags.map((tag) => (
+                        <button
+                          key={tag}
+                          className="pe-chip cursor-pointer hover:border-pe-primary-500"
+                          onClick={() => setConceptFilter(tag)}
                           type="button"
                         >
                           {formatLabel(tag)}

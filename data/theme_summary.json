@@ -1,12 +1,12 @@
 {
   "policyengine-us-data": {
     "signal": {
-      "calibration_pipeline": 21,
-      "validation_and_ci": 17,
-      "imputation_and_new_variables": 14,
-      "takeup_and_participation": 11,
-      "other": 11,
-      "geography_and_dataset_build": 6
+      "validation_and_ci": 50,
+      "calibration_pipeline": 31,
+      "takeup_and_participation": 17,
+      "imputation_and_new_variables": 16,
+      "geography_and_dataset_build": 14,
+      "other": 6
     },
     "noise": {
       "other": 41
@@ -14,13 +14,13 @@
   },
   "policyengine-us": {
     "signal": {
-      "state_tax_and_legislation": 81,
-      "other": 79,
-      "state_benefits_and_childcare": 49,
-      "federal_benefits_and_health": 32,
-      "quality_tooling_and_docs": 23,
-      "federal_tax_and_retirement": 19,
-      "geography_and_baseline_inputs": 7
+      "quality_tooling_and_docs": 242,
+      "state_tax_and_legislation": 121,
+      "federal_benefits_and_health": 120,
+      "federal_tax_and_retirement": 90,
+      "state_benefits_and_childcare": 70,
+      "geography_and_baseline_inputs": 16,
+      "other": 11
     },
     "noise": {
       "other": 255
