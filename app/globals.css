@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pe-primary-50: var(--pe-color-primary-50);
+  --color-pe-primary-100: var(--pe-color-primary-100);
+  --color-pe-primary-200: var(--pe-color-primary-200);
+  --color-pe-primary-500: var(--pe-color-primary-500);
+  --color-pe-primary-600: var(--pe-color-primary-600);
+  --color-pe-primary-700: var(--pe-color-primary-700);
+
+  --color-pe-gray-50: var(--pe-color-gray-50);
+  --color-pe-gray-100: var(--pe-color-gray-100);
+  --color-pe-gray-200: var(--pe-color-gray-200);
+  --color-pe-gray-300: var(--pe-color-gray-300);
+  --color-pe-gray-400: var(--pe-color-gray-400);
+  --color-pe-gray-500: var(--pe-color-gray-500);
+
+  --color-pe-bg-primary: var(--pe-color-bg-primary);
+  --color-pe-text-primary: var(--pe-color-text-primary);
+  --color-pe-text-secondary: var(--pe-color-text-secondary);
+  --color-pe-text-tertiary: var(--pe-color-text-tertiary);
+  --color-pe-border-light: var(--pe-color-border-light);
+  --color-pe-success: #2d7a4b;
+
+  --radius-pe-element: var(--pe-radius-element);
+  --radius-pe-container: var(--pe-radius-container);
+}
+
+body {
+  font-family: "Inter", var(--pe-font-family-primary);
+  color: var(--pe-color-text-primary);
+  background:
+    radial-gradient(circle at top right, rgba(27, 72, 74, 0.14), transparent 24%),
+    linear-gradient(180deg, #f6fbfb 0%, #f5f7f4 52%, #fdf8ef 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--pe-color-primary-200);
+}
+
+@layer components {
+  .pe-shell {
+    @apply mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8;
+  }
+
+  .pe-panel {
+    @apply rounded-pe-container border border-pe-border-light bg-white/88 shadow-[0_18px_50px_rgba(20,37,38,0.08)] backdrop-blur;
+  }
+
+  .pe-card {
+    @apply rounded-pe-container border border-pe-border-light bg-pe-gray-50/85 p-5;
+  }
+
+  .pe-label {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-pe-text-tertiary;
+  }
+
+  .pe-input {
+    @apply rounded-pe-element border border-pe-border-light bg-white px-3 py-3 text-sm text-pe-text-primary outline-none transition;
+  }
+
+  .pe-input:focus {
+    border-color: var(--pe-color-primary-500);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--pe-color-primary-100) 55%, transparent);
+  }
+
+  .pe-chip {
+    @apply inline-flex items-center rounded-full border border-pe-border-light bg-white px-3 py-1 text-xs font-medium text-pe-text-secondary;
+  }
+}
