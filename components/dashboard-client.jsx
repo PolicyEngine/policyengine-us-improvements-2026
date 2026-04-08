@@ -629,7 +629,7 @@ export default function DashboardClient({
           </div>
           <div className="mt-6 h-[360px]">
             <ChartFrame hasMounted={hasMounted}>
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={320}>
                 <BarChart
                   data={domainRows}
                   layout="vertical"
@@ -678,7 +678,7 @@ export default function DashboardClient({
           </div>
           <div className="mt-6 h-[360px]">
             <ChartFrame hasMounted={hasMounted}>
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer width="100%" height="100%" minWidth={0} minHeight={320}>
                 <BarChart data={monthRows} margin={{ top: 4, right: 12, left: 0, bottom: 4 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#d9e1e0" vertical={false} />
                   <XAxis dataKey="month" tickLine={false} axisLine={false} />
