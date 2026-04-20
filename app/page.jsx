@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import DashboardClient from "@/components/dashboard-client";
 
-export const dynamic = "force-dynamic";
+export const dynamic = "force-static";
 
 async function loadJson(filename) {
   const filePath = path.join(process.cwd(), "data", filename);
