@@ -471,8 +471,8 @@ export default function DashboardClient({
     allConceptStorylines.find((storyline) => storyline.tag === selectedConcept) || null;
 
   return (
-    <main className="pe-shell space-y-6">
-      <section className="pe-panel overflow-hidden">
+    <main className="pe-shell space-y-6" role="main">
+      <section className="pe-panel overflow-hidden" aria-label="Overview">
         <div className="grid gap-8 px-6 py-8 lg:grid-cols-[1.25fr_0.95fr] lg:px-8">
           <div className="space-y-5">
             <div className="pe-label">PolicyEngine improvements taxonomy</div>
@@ -525,7 +525,7 @@ export default function DashboardClient({
         </div>
       </section>
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4" aria-label="Key metrics">
         {metricCards.map((card) => (
           <article key={card.label} className="pe-card">
             <div className="pe-label">{card.label}</div>
@@ -537,7 +537,7 @@ export default function DashboardClient({
         ))}
       </section>
 
-      <section className="pe-panel p-5 sm:p-6">
+      <section className="pe-panel p-5 sm:p-6" aria-label="Filters">
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-7">
           <label className="space-y-2 xl:col-span-2">
             <span className="pe-label">Search</span>
@@ -675,7 +675,7 @@ export default function DashboardClient({
         </div>
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-2">
+      <section className="grid gap-6 xl:grid-cols-2" aria-label="Charts">
         <article className="pe-panel p-5 sm:p-6">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
@@ -762,7 +762,7 @@ export default function DashboardClient({
         </article>
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]" aria-label="Milestones">
         <article className="pe-panel p-5 sm:p-6">
           <div className="pe-label">Tweetable milestones</div>
           <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
@@ -875,7 +875,7 @@ export default function DashboardClient({
         </article>
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]" aria-label="Concept lenses">
         <article className="pe-panel p-5 sm:p-6">
           <div className="pe-label">Concept lenses</div>
           <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
@@ -973,7 +973,7 @@ export default function DashboardClient({
         </article>
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
+      <section className="grid gap-6 xl:grid-cols-[1.15fr_0.85fr]" aria-label="Topical storylines">
         <article className="pe-panel p-5 sm:p-6">
           <div className="pe-label">Topical storylines</div>
           <h2 className="mt-2 text-2xl font-semibold text-pe-text-primary">
@@ -1107,7 +1107,7 @@ export default function DashboardClient({
         </article>
       </section>
 
-      <section className="space-y-4">
+      <section className="space-y-4" aria-label="Change inventory">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <div className="pe-label">Inventory</div>
@@ -1238,7 +1238,7 @@ export default function DashboardClient({
                     <a
                       className="font-medium text-pe-primary-700 hover:text-pe-primary-600"
                       href={item.pr_url}
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       target="_blank"
                     >
                       Open PR
