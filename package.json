@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@policyengine/design-system": "^0.3.0",
+    "@policyengine/ui-kit": "^0.8.0",
     "next": "^16.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
